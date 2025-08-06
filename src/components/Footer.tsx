@@ -7,13 +7,13 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {/* Contact Info */}
           <div className="sketchy-card bg-white/10 backdrop-blur-sm border-white/20">
-            <h3 className="text-xl font-bold mb-4 font-handwrite">
-              📬 Get In Touch
+            <h3 className="text-xl font-bold mb-4 font-robotic">
+              // Contact
             </h3>
             <div className="space-y-3">
               <a 
                 href="mailto:john.doe@example.com"
-                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors font-handwrite"
+                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors font-code"
               >
                 <Mail className="w-5 h-5" />
                 john.doe@example.com
@@ -22,7 +22,7 @@ const Footer = () => {
                 href="https://wa.me/1234567890"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors font-handwrite"
+                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors font-code"
               >
                 <Phone className="w-5 h-5" />
                 +1 (234) 567-8890
@@ -32,8 +32,8 @@ const Footer = () => {
           
           {/* Social Links */}
           <div className="sketchy-card bg-white/10 backdrop-blur-sm border-white/20">
-            <h3 className="text-xl font-bold mb-4 font-handwrite">
-              🌐 Connect With Me
+            <h3 className="text-xl font-bold mb-4 font-robotic">
+              // Social Links
             </h3>
             <div className="flex gap-4">
               <a
@@ -57,8 +57,8 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div className="sketchy-card bg-white/10 backdrop-blur-sm border-white/20">
-            <h3 className="text-xl font-bold mb-4 font-handwrite">
-              🔗 Quick Links
+            <h3 className="text-xl font-bold mb-4 font-robotic">
+              // Navigation
             </h3>
             <div className="space-y-2">
               {['About', 'Projects', 'Certificates', 'Achievements', 'Hobbies'].map((item) => (
@@ -70,7 +70,7 @@ const Footer = () => {
                       element.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="block text-white/80 hover:text-white transition-colors font-handwrite"
+                  className="block text-white/80 hover:text-white transition-colors font-code"
                 >
                   {item}
                 </button>
@@ -82,17 +82,17 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-white/20 mt-12 pt-8 text-center">
           <div className="sketchy-card bg-white/5 backdrop-blur-sm border-white/10 max-w-2xl mx-auto">
-            <p className="font-handwrite text-white/80 mb-4">
-              "Thanks for visiting my sketchy little corner of the internet! 
-              Feel free to reach out if you want to collaborate on something awesome."
+            <p className="font-code text-white/80 mb-4">
+              // Thanks for exploring my digital workspace!
+              // Let's collaborate on something innovative.
             </p>
             <div className="flex items-center justify-center gap-2 text-white/60">
-              <span className="font-handwrite">Made with</span>
+              <span className="font-code">Powered by</span>
               <Heart className="w-4 h-4 text-red-400" />
-              <span className="font-handwrite">and lots of coffee ☕</span>
+              <span className="font-code">& caffeine.exec()</span>
             </div>
-            <p className="text-sm text-white/50 font-handwrite mt-4">
-              © 2024 John Doe. All rights reserved. | Built with React & Tailwind CSS
+            <p className="text-sm text-white/50 font-code mt-4">
+              © 2024 John Doe. All rights reserved. | Built with React & TypeScript
             </p>
           </div>
         </div>

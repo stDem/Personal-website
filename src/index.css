@@ -111,7 +111,27 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sketchy;
+    @apply bg-background text-foreground font-robotic;
+    background-image: 
+      radial-gradient(circle at 25px 25px, rgba(255,255,255,0.1) 2%, transparent 0%), 
+      radial-gradient(circle at 75px 75px, rgba(255,255,255,0.1) 2%, transparent 0%);
+    background-size: 100px 100px;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(90deg, transparent 79px, rgba(255,255,255,0.04) 81px, transparent 82px),
+      linear-gradient(rgba(255,255,255,0.04) 50%, transparent 50%);
+    background-size: 82px 4px;
+    pointer-events: none;
+    z-index: -1;
   }
 }
 
@@ -162,9 +182,9 @@ All colors MUST be HSL.
   }
   
   .sketchy-title {
-    @apply text-4xl font-bold text-sketchy-neutral mb-8;
+    @apply text-4xl font-bold text-sketchy-neutral mb-8 font-robotic;
     transform: rotate(-1deg);
-    font-family: 'Kalam', cursive;
+    text-shadow: 0 0 10px rgba(0,255,255,0.3);
   }
   
   .paper-texture {
