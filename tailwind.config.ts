@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sketchy': ['Kalam', 'Patrick Hand', 'Comic Neue', 'cursive'],
+				'handwrite': ['Patrick Hand', 'Kalam', 'cursive'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'sketchy-primary': 'hsl(var(--sketchy-primary))',
+				'sketchy-secondary': 'hsl(var(--sketchy-secondary))',
+				'sketchy-accent': 'hsl(var(--sketchy-accent))',
+				'sketchy-neutral': 'hsl(var(--sketchy-neutral))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
