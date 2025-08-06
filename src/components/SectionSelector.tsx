@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Code, User, Briefcase, Award, Trophy, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface SectionSelectorProps {
   onSectionChange: (section: string) => void;
@@ -7,36 +9,37 @@ interface SectionSelectorProps {
 
 const SectionSelector = ({ onSectionChange, currentSection }: SectionSelectorProps) => {
   const sections = [
-    { id: 'about', name: 'About', icon: User },
-    { id: 'projects', name: 'Projects', icon: Code },
-    { id: 'certificates', name: 'Certificates', icon: Award },
-    { id: 'achievements', name: 'Achievements', icon: Trophy },
-    { id: 'hobbies', name: 'Hobbies', icon: Heart },
+    { id: 'about', name: '// About', icon: User },
+    { id: 'projects', name: '// Projects', icon: Code },
+    { id: 'certificates', name: '// Certificates', icon: Award },
+    { id: 'achievements', name: '// Achievements', icon: Trophy },
+    { id: 'hobbies', name: '// Hobbies', icon: Heart },
   ];
 
   return (
-    <div className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="sketchy-tab-container bg-card/95 backdrop-blur-lg p-1">
-        <div className="flex gap-1">
+    <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="sketchy-card bg-sketchy-neutral/90 backdrop-blur-lg border-sketchy-primary/30 p-2">
+        <div className="flex gap-2 flex-wrap justify-center">
           {sections.map((section) => {
             const IconComponent = section.icon;
-            const isActive = currentSection === section.id;
             return (
-              <div
+              <Button
                 key={section.id}
+                variant={currentSection === section.id ? "default" : "outline"}
+                size="sm"
                 onClick={() => onSectionChange(section.id)}
                 className={`
-                  sketchy-tab cursor-pointer px-4 py-2 font-robotic text-sm font-medium
-                  transition-all duration-300 flex items-center gap-2
-                  ${isActive 
-                    ? 'bg-primary text-primary-foreground shadow-lg -translate-y-1' 
-                    : 'bg-muted/80 text-muted-foreground hover:bg-muted hover:text-foreground'
+                  font-code text-xs transition-all duration-200 
+                  ${currentSection === section.id 
+                    ? 'bg-sketchy-primary text-white shadow-lg scale-105' 
+                    : 'bg-transparent border-sketchy-primary/50 text-sketchy-primary hover:bg-sketchy-primary/10'
                   }
+                  sketchy-border
                 `}
               >
-                <IconComponent className="w-4 h-4" />
+                <IconComponent className="w-3 h-3 mr-1" />
                 {section.name}
-              </div>
+              </Button>
             );
           })}
         </div>
