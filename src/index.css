@@ -135,7 +135,8 @@ All colors MUST be HSL.
   }
   
   .sketchy-card {
-    @apply sketchy-border bg-card shadow-paper p-6;
+    @apply sketchy-border bg-card p-6;
+    box-shadow: var(--shadow-paper);
     transform: rotate(-0.5deg);
     transition: all 0.3s ease;
   }
