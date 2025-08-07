@@ -169,6 +169,11 @@ All colors MUST be HSL.
     color: hsl(var(--primary));
   }
   
+  .sketchy-border {
+    border: 2px solid hsl(var(--border));
+    border-radius: var(--radius);
+  }
+
   .sketchy-card {
     @apply sketchy-border bg-card p-6;
     box-shadow: var(--shadow-paper);
