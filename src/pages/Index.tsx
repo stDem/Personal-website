@@ -29,9 +29,9 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen relative pb-16">
+    <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8">
-        <header className="text-center mb-16">
+        <header className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4 font-mono">
             Prof. Dr. <br />
             <span className="text-6xl">Your Name</span>
@@ -39,15 +39,15 @@ const Index = () => {
           <div className="w-full h-0.5 bg-foreground mb-8"></div>
         </header>
         
-        <main className="max-w-4xl mx-auto">
+        <SectionSelector 
+          currentSection={currentSection} 
+          onSectionChange={setCurrentSection} 
+        />
+        
+        <main className="max-w-4xl mx-auto mt-8">
           {renderSection()}
         </main>
       </div>
-      
-      <SectionSelector 
-        currentSection={currentSection} 
-        onSectionChange={setCurrentSection} 
-      />
     </div>
   );
 };

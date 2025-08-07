@@ -13,19 +13,17 @@ const SectionSelector = ({ onSectionChange, currentSection }: SectionSelectorPro
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border">
-      <div className="container mx-auto">
-        <div className="flex justify-center">
-          {sections.map((section) => (
-            <button
-              key={section.id}
-              onClick={() => onSectionChange(section.id)}
-              className={`code-tab ${currentSection === section.id ? 'active' : ''}`}
-            >
-              {section.name}
-            </button>
-          ))}
-        </div>
+    <nav className="mb-8">
+      <div className="flex justify-center">
+        {sections.map((section) => (
+          <button
+            key={section.id}
+            onClick={() => onSectionChange(section.id)}
+            className={`code-tab ${currentSection === section.id ? 'active' : ''}`}
+          >
+            {section.name}
+          </button>
+        ))}
       </div>
     </nav>
   );
