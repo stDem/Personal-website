@@ -2,6 +2,7 @@ import { useState } from "react";
 import SectionSelector from "@/components/SectionSelector";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import CVSection from "@/components/CVSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import CertificatesSection from "@/components/CertificatesSection";
 import AchievementsSection from "@/components/AchievementsSection";
@@ -15,6 +16,8 @@ const Index = () => {
     switch (currentSection) {
       case 'personal':
         return <AboutSection />;
+      case 'cv':
+        return <CVSection />;
       case 'projects':
         return <ProjectsSection />;
       case 'certificates':
@@ -47,6 +50,8 @@ const Index = () => {
           {renderSection()}
         </main>
       </div>
+      
+      <Footer />
     </div>
   );
 };

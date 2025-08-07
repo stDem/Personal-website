@@ -1,115 +1,169 @@
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg";
+
 const AboutSection = () => {
   return (
-    <section id="about" className="sketchy-section bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <h2 className="sketchy-title text-center">About Me</h2>
+    <section id="personal" className="max-w-4xl mx-auto">
+      {/* Hero Section with Split Design */}
+      <div className="relative min-h-[60vh] bg-gradient-to-br from-background to-muted rounded-lg overflow-hidden mb-12">
+        {/* Coding Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="text-xs font-mono text-foreground/20 leading-relaxed p-8">
+            <pre>{`
+const developer = {
+  name: "Anastasiia Demidova",
+  skills: ["React", "TypeScript", "Python", "AI/ML"],
+  passion: "Building innovative solutions",
+  location: "Remote"
+};
+
+function createAmazingThings() {
+  return developer.skills.map(skill => 
+    skill + " = innovation"
+  );
+}
+
+class AIEngineer extends Developer {
+  constructor() {
+    super();
+    this.specialties = ["Machine Learning", "Deep Learning"];
+  }
+  
+  solve(problem) {
+    return this.ai.process(problem);
+  }
+}
+
+// Always learning, always creating
+while(coding) {
+  learn();
+  build();
+  innovate();
+}
+            `}</pre>
+          </div>
+        </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Education */}
-          <div className="sketchy-card">
-            <h3 className="text-2xl font-bold mb-4 text-sketchy-primary font-handwrite">
-              🎓 Education
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold">Bachelor of Computer Science</h4>
-                <p className="text-muted-foreground font-handwrite">University of Technology (2018-2022)</p>
-                <p className="text-sm">GPA: 3.8/4.0</p>
-              </div>
-              <div>
-                <h4 className="font-semibold">High School Diploma</h4>
-                <p className="text-muted-foreground font-handwrite">Tech High School (2016-2018)</p>
-                <p className="text-sm">Valedictorian</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Experience */}
-          <div className="sketchy-card">
-            <h3 className="text-2xl font-bold mb-4 text-sketchy-secondary font-handwrite">
-              💼 Experience
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold">Senior Full Stack Developer</h4>
-                <p className="text-muted-foreground font-handwrite">TechCorp Inc. (2022-Present)</p>
-                <p className="text-sm">Leading development of scalable web applications using React, Node.js, and AWS</p>
-              </div>
-              <div>
-                <h4 className="font-semibold">Junior Developer</h4>
-                <p className="text-muted-foreground font-handwrite">StartupXYZ (2021-2022)</p>
-                <p className="text-sm">Built responsive frontends and REST APIs</p>
-              </div>
-              <div>
-                <h4 className="font-semibold">Intern Developer</h4>
-                <p className="text-muted-foreground font-handwrite">WebSolutions (Summer 2021)</p>
-                <p className="text-sm">Contributed to e-commerce platform development</p>
+        {/* Content */}
+        <div className="relative z-10 h-full flex items-center">
+          <div className="grid md:grid-cols-2 gap-12 w-full p-8">
+            {/* Left Side - Web Developer */}
+            <div className="text-center md:text-left">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+                Web Developer
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Frontend developer who writes clean, elegant and efficient code.
+              </p>
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                {["React", "TypeScript", "Next.js", "Tailwind"].map((tech) => (
+                  <span key={tech} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
-          </div>
-
-          {/* Skills */}
-          <div className="sketchy-card md:col-span-2 lg:col-span-1">
-            <h3 className="text-2xl font-bold mb-4 text-sketchy-accent font-handwrite">
-              🚀 Skills
-            </h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <h4 className="font-semibold mb-2">Frontend</h4>
-                <ul className="text-sm space-y-1 font-handwrite">
-                  <li>• React & Next.js</li>
-                  <li>• TypeScript</li>
-                  <li>• Tailwind CSS</li>
-                  <li>• Vue.js</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-2">Backend</h4>
-                <ul className="text-sm space-y-1 font-handwrite">
-                  <li>• Node.js</li>
-                  <li>• Python</li>
-                  <li>• PostgreSQL</li>
-                  <li>• MongoDB</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-2">Tools</h4>
-                <ul className="text-sm space-y-1 font-handwrite">
-                  <li>• Git & GitHub</li>
-                  <li>• Docker</li>
-                  <li>• AWS</li>
-                  <li>• Figma</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-2">Other</h4>
-                <ul className="text-sm space-y-1 font-handwrite">
-                  <li>• Agile/Scrum</li>
-                  <li>• Team Leadership</li>
-                  <li>• UI/UX Design</li>
-                  <li>• Testing</li>
-                </ul>
+            
+            {/* Right Side - AI Engineer */}
+            <div className="text-center md:text-right">
+              <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+                AI Engineer
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                AI engineer who builds intelligent systems and machine learning solutions.
+              </p>
+              <div className="flex flex-wrap gap-2 justify-center md:justify-end">
+                {["Python", "TensorFlow", "PyTorch", "ML/AI"].map((tech) => (
+                  <span key={tech} className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Personal Info */}
-        <div className="sketchy-card max-w-4xl mx-auto mt-8">
-          <h3 className="text-2xl font-bold mb-4 text-sketchy-neutral font-handwrite text-center">
-            📍 Personal Details
-          </h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <p><strong>Location:</strong> San Francisco, CA</p>
-              <p><strong>Languages:</strong> English (Native), Spanish (Fluent), French (Basic)</p>
-              <p><strong>Availability:</strong> Open to new opportunities</p>
-            </div>
-            <div className="space-y-2">
-              <p><strong>Interests:</strong> Open Source, AI/ML, Sustainable Tech</p>
-              <p><strong>Volunteer Work:</strong> Coding bootcamp mentor</p>
-              <p><strong>Fun Fact:</strong> I once built a robot that makes coffee! ☕</p>
-            </div>
+      {/* Personal Info Cards */}
+      <div className="grid md:grid-cols-2 gap-8">
+        {/* Profile & Bio */}
+        <div className="bg-card rounded-lg p-6 border">
+          <div className="flex flex-col items-center text-center mb-6">
+            <img 
+              src={profilePhoto} 
+              alt="Anastasiia Demidova" 
+              className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary/20"
+            />
+            <h3 className="text-2xl font-bold mb-2">Anastasiia Demidova</h3>
+            <p className="text-muted-foreground">Full Stack Developer & AI Engineer</p>
+          </div>
+          
+          <p className="text-muted-foreground leading-relaxed">
+            Passionate developer with expertise in both web development and artificial intelligence. 
+            I love creating innovative solutions that bridge the gap between traditional software 
+            development and cutting-edge AI technologies. Always eager to learn new technologies 
+            and tackle challenging problems.
+          </p>
+        </div>
+
+        {/* Contact Info */}
+        <div className="bg-card rounded-lg p-6 border">
+          <h3 className="text-xl font-bold mb-6">Get In Touch</h3>
+          
+          <div className="space-y-4">
+            <a 
+              href="mailto:anastasiia.demidova@example.com"
+              className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+            >
+              <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                <Mail className="w-5 h-5 text-primary" />
+              </div>
+              <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                anastasiia.demidova@example.com
+              </span>
+            </a>
+            
+            <a 
+              href="https://github.com/anastasiiademidova"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+            >
+              <div className="p-2 bg-secondary/10 rounded-lg group-hover:bg-secondary/20 transition-colors">
+                <Github className="w-5 h-5 text-secondary" />
+              </div>
+              <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                github.com/anastasiiademidova
+              </span>
+            </a>
+            
+            <a 
+              href="https://linkedin.com/in/anastasiiademidova"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+            >
+              <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
+                <Linkedin className="w-5 h-5 text-accent" />
+              </div>
+              <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                linkedin.com/in/anastasiiademidova
+              </span>
+            </a>
+            
+            <a 
+              href="https://wa.me/1234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+            >
+              <div className="p-2 bg-muted rounded-lg group-hover:bg-muted-foreground/20 transition-colors">
+                <Phone className="w-5 h-5 text-muted-foreground" />
+              </div>
+              <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                +1 (234) 567-8890
+              </span>
+            </a>
           </div>
         </div>
       </div>

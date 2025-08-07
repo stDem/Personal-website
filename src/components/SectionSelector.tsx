@@ -6,6 +6,7 @@ interface SectionSelectorProps {
 const SectionSelector = ({ onSectionChange, currentSection }: SectionSelectorProps) => {
   const sections = [
     { id: 'personal', name: 'Personal Info' },
+    { id: 'cv', name: 'CV' },
     { id: 'projects', name: 'Projects' },
     { id: 'certificates', name: 'Certificates' },
     { id: 'achievements', name: 'Achievements' },
