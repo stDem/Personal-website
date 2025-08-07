@@ -9,11 +9,11 @@ import HobbiesSection from "@/components/HobbiesSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  const [currentSection, setCurrentSection] = useState('about');
+  const [currentSection, setCurrentSection] = useState('personal');
 
   const renderSection = () => {
     switch (currentSection) {
-      case 'about':
+      case 'personal':
         return <AboutSection />;
       case 'projects':
         return <ProjectsSection />;
@@ -32,11 +32,8 @@ const Index = () => {
     <div className="min-h-screen">
       <div className="container mx-auto px-4 py-12">
         <header className="text-left mb-12 max-w-4xl mx-auto">
-          <div className="mb-2">
-            <span className="text-2xl text-foreground font-serif">Prof. Dr.</span>
-          </div>
           <h1 className="text-6xl text-foreground mb-8 font-serif font-normal">
-            Ivan P. Yamshchikov
+            Anastasiia Demidova
           </h1>
           <div className="w-full h-px bg-foreground mb-12"></div>
         </header>

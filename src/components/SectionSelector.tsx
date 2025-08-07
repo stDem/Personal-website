@@ -5,10 +5,11 @@ interface SectionSelectorProps {
 
 const SectionSelector = ({ onSectionChange, currentSection }: SectionSelectorProps) => {
   const sections = [
-    { id: 'about', name: 'Home' },
-    { id: 'certificates', name: 'CV' },
-    { id: 'achievements', name: 'Works and Talks' },
-    { id: 'hobbies', name: 'Contact' },
+    { id: 'personal', name: 'Personal Info' },
+    { id: 'projects', name: 'Projects' },
+    { id: 'certificates', name: 'Certificates' },
+    { id: 'achievements', name: 'Achievements' },
+    { id: 'hobbies', name: 'Hobbies' },
   ];
 
   return (
