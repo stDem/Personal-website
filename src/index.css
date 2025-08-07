@@ -111,11 +111,15 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-robotic;
-    background-image: 
-      radial-gradient(circle at 25px 25px, rgba(255,255,255,0.1) 2%, transparent 0%), 
-      radial-gradient(circle at 75px 75px, rgba(255,255,255,0.1) 2%, transparent 0%);
-    background-size: 100px 100px;
+    @apply bg-background text-foreground font-mono;
+    background: 
+      linear-gradient(90deg, transparent 0%, rgba(0,255,136,0.03) 50%, transparent 100%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 18px,
+        rgba(0,255,136,0.05) 20px
+      );
     position: relative;
   }
   
@@ -126,32 +130,43 @@ All colors MUST be HSL.
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-      linear-gradient(90deg, transparent 79px, rgba(255,255,255,0.04) 81px, transparent 82px),
-      linear-gradient(rgba(255,255,255,0.04) 50%, transparent 50%);
-    background-size: 82px 4px;
+    background-image: 
+      linear-gradient(90deg, rgba(0,255,136,0.02) 1px, transparent 1px),
+      linear-gradient(rgba(0,255,136,0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
     pointer-events: none;
     z-index: -1;
   }
 }
 
 @layer components {
-  .sketchy-border {
-    border-radius: 15px 25px 20px 18px;
-    border: 2px solid hsl(var(--border));
+  .code-tab {
+    @apply relative px-6 py-3 font-mono text-sm transition-all duration-300;
+    background: rgba(0, 0, 0, 0.05);
+    border-bottom: 2px solid transparent;
     position: relative;
   }
   
-  .sketchy-border::before {
+  .code-tab::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
     bottom: -2px;
-    border: 1px solid hsl(var(--border) / 0.3);
-    border-radius: 18px 22px 25px 15px;
-    pointer-events: none;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .code-tab:hover::before,
+  .code-tab.active::before {
+    transform: scaleX(1);
+  }
+  
+  .code-tab.active {
+    background: rgba(0, 255, 136, 0.1);
+    color: hsl(var(--primary));
   }
   
   .sketchy-card {

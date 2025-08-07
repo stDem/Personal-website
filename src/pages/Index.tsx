@@ -29,16 +29,25 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative pb-16">
+      <div className="container mx-auto px-4 py-8">
+        <header className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-foreground mb-4 font-mono">
+            Prof. Dr. <br />
+            <span className="text-6xl">Your Name</span>
+          </h1>
+          <div className="w-full h-0.5 bg-foreground mb-8"></div>
+        </header>
+        
+        <main className="max-w-4xl mx-auto">
+          {renderSection()}
+        </main>
+      </div>
+      
       <SectionSelector 
         currentSection={currentSection} 
         onSectionChange={setCurrentSection} 
       />
-      <div className="pt-20">
-        <HeroSection />
-        {renderSection()}
-      </div>
-      <Footer />
     </div>
   );
 };
