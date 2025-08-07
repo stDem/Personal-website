@@ -1,188 +1,303 @@
 const CVSection = () => {
   return (
-    <section className="py-16">
-      <div className="max-w-4xl mx-auto">
-        {/* Summary */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-orange-500 uppercase tracking-wide">Summary</h2>
-          <p className="text-base leading-relaxed">
-            <strong>Artificial Intelligence</strong> Master's student with a solid foundation in Machine learning, Natural Language Processing 
-            (with expertise in LLM, LoRA, BERT, GPT, LLaMA etc.), Deep Learning, GenAI, and Computer Vision, and strong analytical skills. 
-            Possess a knowledge of databases SQL and Web development technologies, supporting the seamless integration of AI models into 
-            interactive applications. Pursued a bachelor's degree in Robotics with a strong knowledge in industrial automation. Known for a 
-            strong sense of responsibility, adaptability, and a continuous drive to learn and improve in both technical and collaborative environments.
-          </p>
-        </div>
+    <section className="max-w-4xl mx-auto">
+      {/* Summary */}
+      <div className="bg-card rounded-lg p-8 border mb-8">
+        <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Summary</h2>
+        <p className="text-muted-foreground leading-relaxed">
+          <strong className="text-foreground">Artificial Intelligence</strong> Master's student with a solid foundation in Machine learning, Natural Language Processing 
+          (with expertise in LLM, LoRA, BERT, GPT, LLaMA etc.), Deep Learning, GenAI, and Computer Vision, and strong analytical skills. 
+          Possess a knowledge of databases SQL and Web development technologies, supporting the seamless integration of AI models into 
+          interactive applications. Pursued a bachelor's degree in Robotics with a strong knowledge in industrial automation. Known for a 
+          strong sense of responsibility, adaptability, and a continuous drive to learn and improve in both technical and collaborative environments.
+        </p>
+      </div>
 
-        {/* Education */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-orange-500 uppercase tracking-wide">Education</h2>
-          <div className="space-y-6">
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-lg font-bold">Technische Hochschule Würzburg-Schweinfurt</h3>
-                <p className="font-semibold">Master's degree in computer science:</p>
-                <p>• Artificial Intelligence</p>
-              </div>
-              <p className="text-muted-foreground italic">Mar 2024 – Ongoing / Würzburg, DE</p>
+      {/* Education */}
+      <div className="bg-card rounded-lg p-8 border mb-8">
+        <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Education</h2>
+        <div className="space-y-6">
+          <div className="border-l-4 border-primary/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <h3 className="text-xl font-bold text-foreground">Technische Hochschule Würzburg-Schweinfurt</h3>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Mar 2024 – Ongoing / Würzburg, DE</span>
             </div>
-            <div className="flex justify-between items-start">
+            <p className="font-semibold text-foreground mb-1">Master's degree in computer science:</p>
+            <p className="text-muted-foreground">• Artificial Intelligence</p>
+          </div>
+          
+          <div className="border-l-4 border-secondary/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <h3 className="text-xl font-bold text-foreground">Moscow Polytechnic University</h3>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Sep 2018 – Jun 2022 / Moscow, RU</span>
+            </div>
+            <p className="font-semibold text-foreground mb-1">Bachelor's degree with honors in engineering:</p>
+            <p className="text-muted-foreground">• Automation of technological processes and production (Robotics)</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Experience */}
+      <div className="bg-card rounded-lg p-8 border mb-8">
+        <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Experience</h2>
+        <div className="space-y-8">
+          <div className="border-l-4 border-primary/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
               <div>
-                <h3 className="text-lg font-bold">Moscow Polytechnic University</h3>
-                <p className="font-semibold">Bachelor's degree with honors in engineering:</p>
-                <p>• Automation of technological processes and production (Robotics)</p>
+                <h3 className="text-xl font-bold text-foreground">RTSoft</h3>
+                <p className="font-semibold text-secondary">Design Engineer</p>
               </div>
-              <p className="text-muted-foreground italic">Sep 2018 – Jun 2022 / Moscow, RU</p>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Oct 2021 – Mar 2024 / Moscow, RU</span>
+            </div>
+            <div className="mt-3 space-y-2">
+              <p className="text-muted-foreground">• Design of automation systems for technological processes and production.</p>
+              <p className="text-muted-foreground">• Creation of design, repair and operational documentation for automation systems and their individual objects</p>
+            </div>
+          </div>
+          
+          <div className="border-l-4 border-secondary/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <div>
+                <h3 className="text-xl font-bold text-foreground">RTSoft</h3>
+                <p className="font-semibold text-secondary">Intern</p>
+              </div>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Jun 2021 – Jul 2021 / Moscow, RU</span>
+            </div>
+            <div className="mt-3">
+              <p className="text-muted-foreground">• Development of an integrated software and hardware complex for automated control and management of technological processes, aimed at testing the core hardware and software components of created automation systems</p>
+            </div>
+          </div>
+          
+          <div className="border-l-4 border-accent/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <div>
+                <h3 className="text-xl font-bold text-foreground">United design bureau "Ilizium"</h3>
+                <p className="font-semibold text-secondary">Engineer-developer</p>
+              </div>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Sep 2019 – Apr 2020 / Moscow, RU</span>
+            </div>
+            <div className="mt-3 space-y-2">
+              <p className="text-muted-foreground">• Participation in the project to develop a robotic tracking self-propelled device (as engineer and C programmer).</p>
+              <p className="text-muted-foreground">• Organizing and planning the team's work process, preparation of reporting documentation.</p>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Experience */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-orange-500 uppercase tracking-wide">Experience</h2>
-          <div className="space-y-8">
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-lg font-bold">RTSoft</h3>
-                <p className="font-semibold">Design Engineer</p>
-                <div className="mt-2 space-y-1">
-                  <p>• Design of automation systems for technological processes and production.</p>
-                  <p>• Creation of design, repair and operational documentation for automation systems and their individual objects</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground italic">Oct 2021 – Mar 2024 / Moscow, RU</p>
+      {/* Skills */}
+      <div className="bg-card rounded-lg p-8 border mb-8">
+        <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Skills</h2>
+        <div className="grid gap-6">
+          <div className="p-4 bg-muted/50 rounded-lg">
+            <h4 className="font-bold text-foreground mb-3">Programming Languages</h4>
+            <div className="flex flex-wrap gap-2">
+              {["Python", "JavaScript/TypeScript", "HTML5", "CSS/SCSS", "SQL"].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                  {skill}
+                </span>
+              ))}
             </div>
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-lg font-bold">RTSoft</h3>
-                <p className="font-semibold">Intern</p>
-                <div className="mt-2">
-                  <p>• Development of an integrated software and hardware complex for automated control and management of technological processes, aimed at testing the core hardware and software components of created automation systems</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground italic">Jun 2021 – Jul 2021 / Moscow, RU</p>
+          </div>
+          
+          <div className="p-4 bg-muted/50 rounded-lg">
+            <h4 className="font-bold text-foreground mb-3">Software Development</h4>
+            <div className="flex flex-wrap gap-2">
+              {["GIT", "Node.js", "API", "Linux", "My-SQL-Workbench", "Programming Paradigms"].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">
+                  {skill}
+                </span>
+              ))}
             </div>
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-lg font-bold">United design bureau "Ilizium"</h3>
-                <p className="font-semibold">Engineer-developer</p>
-                <div className="mt-2 space-y-1">
-                  <p>• Participation in the project to develop a robotic tracking self-propelled device (as engineer and C programmer).</p>
-                  <p>• Organizing and planning the team's work process, preparation of reporting documentation.</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground italic">Sep 2019 – Apr 2020 / Moscow, RU</p>
+          </div>
+          
+          <div className="p-4 bg-muted/50 rounded-lg">
+            <h4 className="font-bold text-foreground mb-3">Python Frameworks & Libraries</h4>
+            <div className="flex flex-wrap gap-2">
+              {["PyTorch", "TensorFlow", "Numpy", "Pandas", "Keras", "Flask", "scikit-learn", "Jupyter"].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <div className="p-4 bg-muted/50 rounded-lg">
+            <h4 className="font-bold text-foreground mb-3">Web Frameworks & Libraries</h4>
+            <div className="flex flex-wrap gap-2">
+              {["React JS", "Vue.js", "Bootstrap", "Chakra UI", "Material UI"].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <div className="p-4 bg-muted/50 rounded-lg">
+            <h4 className="font-bold text-foreground mb-3">Languages</h4>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">C1: English</span>
+              <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">B1: German</span>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Skills */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-orange-500 uppercase tracking-wide">Skills</h2>
-          <div className="space-y-4">
-            <div className="flex flex-wrap gap-x-8 gap-y-2">
-              <div className="min-w-0">
-                <strong>Programming Languages:</strong>
-                <span className="ml-2 italic">Python | JavaScript/TypeScript | HTML5 | CSS/SCSS | SQL</span>
+      {/* Additional Diplomas and Certificates */}
+      <div className="bg-card rounded-lg p-8 border mb-8">
+        <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Additional Diplomas and Certificates</h2>
+        <div className="space-y-6">
+          <div className="border-l-4 border-primary/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <div>
+                <h3 className="text-lg font-bold text-foreground">Julius-Maximilians-Universität Würzburg</h3>
+                <p className="font-semibold text-secondary">Certificate: Web Programming</p>
               </div>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Mar 2025 – Ongoing / Würzburg, DE</span>
             </div>
-            <div className="flex flex-wrap gap-x-8 gap-y-2">
-              <div className="min-w-0">
-                <strong>Software Development:</strong>
-                <span className="ml-2 italic">GIT | Node.js | API | Linux | My-SQL-Workbench | Programming Paradigms</span>
+          </div>
+          
+          <div className="border-l-4 border-secondary/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <div>
+                <h3 className="text-lg font-bold text-foreground">Meta</h3>
+                <p className="font-semibold text-secondary">Certificate: Meta Front-End Developer</p>
               </div>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Okt 2021 – Apr 2025 / Online</span>
             </div>
-            <div className="flex flex-wrap gap-x-8 gap-y-2">
-              <div className="min-w-0">
-                <strong>Python Frameworks & Libraries:</strong>
-                <span className="ml-2 italic">PyTorch | TensorFlow | Numpy | Pandas | Keras | Flask | scikit-learn | Jupyter</span>
+          </div>
+          
+          <div className="border-l-4 border-accent/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <div>
+                <h3 className="text-lg font-bold text-foreground">Kreativstorm</h3>
+                <p className="font-semibold text-secondary">Certificate: Frontend Development Hands-on Training</p>
               </div>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Jan 2025 – Feb 2025 / Online, Germany</span>
             </div>
-            <div className="flex flex-wrap gap-x-8 gap-y-2">
-              <div className="min-w-0">
-                <strong>Web Frameworks & Libraries:</strong>
-                <span className="ml-2 italic">React JS | Vue.js | Bootstrap | Chakra UI | Material UI</span>
+          </div>
+          
+          <div className="border-l-4 border-primary/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <div>
+                <h3 className="text-lg font-bold text-foreground">GeekBrains</h3>
+                <p className="font-semibold text-secondary">Diploma of professional retraining: Frontend-developer. Specialist</p>
               </div>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Jun 2023 – Oct 2024 / Moscow, RU</span>
             </div>
-            <div className="flex flex-wrap gap-x-8 gap-y-2">
-              <div className="min-w-0">
-                <strong>Languages:</strong>
-                <span className="ml-2 italic">C1: English | B1: German</span>
+          </div>
+          
+          <div className="border-l-4 border-secondary/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <div>
+                <h3 className="text-lg font-bold text-foreground">Moscow polytechnic university</h3>
+                <p className="font-semibold text-secondary">Diploma of professional retraining: Information Systems and Technologies</p>
               </div>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Nov 2021 – Jun 2022 / Moscow, RU</span>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Additional Diplomas and Certificates */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-orange-500 uppercase tracking-wide">Additional diplomas and certificates</h2>
-          <div className="space-y-4">
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-lg font-bold">Julius-Maximilians-Universität Würzburg</h3>
-                <p className="font-semibold">Certificate:</p>
-                <p>• Web Programming</p>
+      {/* Projects */}
+      <div className="bg-card rounded-lg p-8 border">
+        <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Projects</h2>
+        <div className="space-y-8">
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-secondary">AI Projects</h3>
+            <div className="grid gap-4">
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-primary/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-primary">ML, NLP, JS, HTML, CSS:</span> Dota2 draft prediction (
+                  <a href="https://github.com/stDem/Dota2-draft-prediction" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
               </div>
-              <p className="text-muted-foreground italic">Mar 2025 – Ongoing / Würzburg, DE</p>
-            </div>
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-lg font-bold">Meta</h3>
-                <p className="font-semibold">Certificate:</p>
-                <p>• Meta Front-End Developer</p>
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-secondary/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-secondary">ML, Computer Vision, Mobile app, Chatbot:</span> Fall detection (
+                  <a href="https://github.com/stDem/Fall-Detection-Project" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
               </div>
-              <p className="text-muted-foreground italic">Okt 2021 – Apr 2025 / Online</p>
-            </div>
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-lg font-bold">Kreativstorm</h3>
-                <p className="font-semibold">Certificate:</p>
-                <p>• Frontend Development Hands-on Training</p>
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-accent/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-accent">Deep Learning:</span> Numpy array images classification (
+                  <a href="https://github.com/stDem/ANN-numpy-array-images" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
               </div>
-              <p className="text-muted-foreground italic">Jan 2025 – Feb 2025 / Online, Germany</p>
-            </div>
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-lg font-bold">GeekBrains</h3>
-                <p className="font-semibold">Diploma of professional retraining:</p>
-                <p>• Frontend-developer. Specialist</p>
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-primary/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-primary">ML:</span> Motions classification (
+                  <a href="https://github.com/stDem/Motions-classification" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
               </div>
-              <p className="text-muted-foreground italic">Jun 2023 – Oct 2024 / Moscow, RU</p>
-            </div>
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-lg font-bold">Moscow polytechnic university</h3>
-                <p className="font-semibold">Diploma of professional retraining:</p>
-                <p>• Information Systems and Technologies</p>
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-secondary/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-secondary">ML:</span> Classification of Onion dataset (
+                  <a href="https://github.com/stDem/Classification-of-Onion-dataset" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
               </div>
-              <p className="text-muted-foreground italic">Nov 2021 – Jun 2022 / Moscow, RU</p>
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-accent/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-accent">AI API, Vite, TS, React, Tailwind CSS:</span> AI Web Design Analysis (
+                  <a href="https://github.com/stDem/AI-Web-Design-Analysis" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Projects */}
-        <div>
-          <h2 className="text-2xl font-bold mb-6 text-orange-500 uppercase tracking-wide">Projects</h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-lg font-bold mb-2">AI Projects:</h3>
-              <div className="space-y-2 ml-4">
-                <p><strong>ML, NLP, JS, HTML, CSS:</strong> Dota2 draft prediction (<a href="https://github.com/stDem/Dota2-draft-prediction" className="text-blue-600 hover:underline">https://github.com/stDem/Dota2-draft-prediction</a>);</p>
-                <p><strong>ML, Computer Vision, Mobile app, Chatbot:</strong> Fall detection (<a href="https://github.com/stDem/Fall-Detection-Project" className="text-blue-600 hover:underline">https://github.com/stDem/Fall-Detection-Project</a>);</p>
-                <p><strong>Deep Learning:</strong> Numpy array images classification (<a href="https://github.com/stDem/ANN-numpy-array-images" className="text-blue-600 hover:underline">https://github.com/stDem/ANN-numpy-array-images</a>);</p>
-                <p><strong>ML:</strong> Motions classification (<a href="https://github.com/stDem/Motions-classification" className="text-blue-600 hover:underline">https://github.com/stDem/Motions-classification</a>).</p>
-                <p><strong>ML:</strong> Classification of Onion dataset (<a href="https://github.com/stDem/Classification-of-Onion-dataset" className="text-blue-600 hover:underline">https://github.com/stDem/Classification-of-Onion-dataset</a>).</p>
-                <p><strong>AI API, Vite, TS, React, Tailwind CSS:</strong> AI Web Design Analysis (<a href="https://github.com/stDem/AI-Web-Design-Analysis" className="text-blue-600 hover:underline">https://github.com/stDem/AI-Web-Design-Analysis</a>);</p>
+          
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-secondary">Web Projects</h3>
+            <div className="grid gap-4">
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-primary/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-primary">React, Chakra UI:</span> Portfolio website (
+                  <a href="https://github.com/stDem/Portfolio-site" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
               </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold mb-2">Web Projects:</h3>
-              <div className="space-y-2 ml-4">
-                <p><strong>React, Chakra UI:</strong> Portfolio website (<a href="https://github.com/stDem/Portfolio-site" className="text-blue-600 hover:underline">https://github.com/stDem/Portfolio-site</a>);</p>
-                <p><strong>JS, HTML, SCSS, API:</strong> Work Space website (<a href="https://github.com/stDem/WorkSpace---portfolio-site" className="text-blue-600 hover:underline">https://github.com/stDem/WorkSpace---portfolio-site</a>);</p>
-                <p><strong>React, SCSS, API:</strong> Little Lemon Restaurant website (<a href="https://github.com/stDem/Little-Lemon-website" className="text-blue-600 hover:underline">https://github.com/stDem/Little-Lemon-website</a>);</p>
-                <p><strong>Vue.js, SCSS:</strong> Interior Design website (<a href="https://github.com/stDem/InteriorDesign---portfolio-site" className="text-blue-600 hover:underline">https://github.com/stDem/InteriorDesign---portfolio-site</a>);</p>
-                <p><strong>JS, HTML, SCSS:</strong> Auto Service website (<a href="https://github.com/stDem/AutoService---portfolio-site" className="text-blue-600 hover:underline">https://github.com/stDem/AutoService---portfolio-site</a>);</p>
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-secondary/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-secondary">JS, HTML, SCSS, API:</span> Work Space website (
+                  <a href="https://github.com/stDem/WorkSpace---portfolio-site" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
+              </div>
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-accent/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-accent">React, SCSS, API:</span> Little Lemon Restaurant website (
+                  <a href="https://github.com/stDem/Little-Lemon-website" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
+              </div>
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-primary/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-primary">Vue.js, SCSS:</span> Interior Design website (
+                  <a href="https://github.com/stDem/InteriorDesign---portfolio-site" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
+              </div>
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-secondary/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-secondary">JS, HTML, SCSS:</span> Auto Service website (
+                  <a href="https://github.com/stDem/AutoService---portfolio-site" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
               </div>
             </div>
           </div>
