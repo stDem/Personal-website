@@ -185,56 +185,57 @@ const CertificatesSection = () => {
                   
                   const duration = `${months} months`;
                   
-                  // Calculate color block height based on duration
-                  const blockWidth = 'w-6'; // Make blocks narrower like in the image
-                  let blockHeight;
-                  if (months >= 40) blockHeight = 'h-40';
-                  else if (months >= 30) blockHeight = 'h-32';
-                  else if (months >= 20) blockHeight = 'h-24';
-                  else if (months >= 10) blockHeight = 'h-16';
-                  else blockHeight = 'h-12';
+                  // Calculate color block height based on duration (proportional to months)
+                  const baseHeight = 40; // Base height in pixels for scaling
+                  const heightPerMonth = 3; // Pixels per month
+                  const dynamicHeight = Math.max(baseHeight, months * heightPerMonth);
+                  const blockHeight = `${dynamicHeight}px`;
                   
                   return (
-                    <div key={`${yearData.year}-${itemIndex}`} className="relative mb-20 flex items-start">
-                      {isLeft ? (
-                        <>
-                          {/* Certificate description on left */}
-                          <div className="w-1/2 pr-12 flex justify-end">
-                            <div className="sketchy-card max-w-sm">
-                              <div className="flex items-start justify-between mb-3">
-                                <div className="flex-1">
-                                  <h3 className="text-lg font-bold text-sketchy-primary font-handwrite mb-1">
-                                    {cert.title}
-                                  </h3>
-                                  <p className="text-muted-foreground font-handwrite text-sm">
-                                    {cert.issuer}
-                                  </p>
-                                </div>
-                                <div className="ml-3 text-2xl">🏆</div>
+                    <div key={`${yearData.year}-${itemIndex}`} className="relative mb-20">
+                      <div className="flex items-center justify-center">
+                        {/* Certificate description on left */}
+                        <div className="w-5/12 pr-8">
+                          <div className="sketchy-card max-w-sm ml-auto">
+                            <div className="flex items-start justify-between mb-3">
+                              <div className="flex-1">
+                                <h3 className="text-lg font-bold text-sketchy-primary font-handwrite mb-1">
+                                  {cert.title}
+                                </h3>
+                                <p className="text-muted-foreground font-handwrite text-sm">
+                                  {cert.issuer}
+                                </p>
                               </div>
-                              
-                              <p className="text-muted-foreground mb-3 font-handwrite leading-relaxed text-sm">
-                                {cert.description}
-                              </p>
-                              
-                              <div className="mb-3">
-                                <div className="flex flex-wrap gap-1">
-                                  {cert.skills.slice(0, 3).map((skill, skillIndex) => (
-                                    <span 
-                                      key={skillIndex}
-                                      className="text-xs px-2 py-1 bg-primary/10 text-primary rounded font-handwrite"
-                                    >
-                                      {skill}
-                                    </span>
-                                  ))}
-                                </div>
+                              <div className="ml-3 text-2xl">🏆</div>
+                            </div>
+                            
+                            <p className="text-muted-foreground mb-3 font-handwrite leading-relaxed text-sm">
+                              {cert.description}
+                            </p>
+                            
+                            <div className="mb-3">
+                              <div className="flex flex-wrap gap-1">
+                                {cert.skills.slice(0, 3).map((skill, skillIndex) => (
+                                  <span 
+                                    key={skillIndex}
+                                    className="text-xs px-2 py-1 bg-primary/10 text-primary rounded font-handwrite"
+                                  >
+                                    {skill}
+                                  </span>
+                                ))}
                               </div>
                             </div>
                           </div>
-                          
-                          {/* Duration block near timeline on right */}
-                          <div className="flex flex-col items-center">
-                            <div className={`${cert.color} ${blockWidth} ${blockHeight} rounded-lg shadow-lg mr-2 flex flex-col justify-center items-center text-white p-2`}>
+                        </div>
+                        
+                        {/* Central timeline with color blocks */}
+                        <div className="w-2/12 flex justify-center relative">
+                          <div className="flex items-center gap-4">
+                            {/* Color block on left side of timeline */}
+                            <div 
+                              className={`${cert.color} w-6 rounded-lg shadow-lg flex flex-col justify-center items-center text-white p-2`}
+                              style={{ height: blockHeight }}
+                            >
                               <div className="text-xs font-handwrite opacity-90 mb-1 text-center leading-tight">
                                 {cert.date}
                               </div>
@@ -242,15 +243,15 @@ const CertificatesSection = () => {
                                 {duration}
                               </div>
                             </div>
-                            {/* Connection line to timeline */}
-                            <div className="w-8 h-1 bg-primary/30 mt-2"></div>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          {/* Duration block near timeline on left */}
-                          <div className="flex flex-col items-center">
-                            <div className={`${cert.color} ${blockWidth} ${blockHeight} rounded-lg shadow-lg ml-2 flex flex-col justify-center items-center text-white p-2`}>
+                            
+                            {/* Timeline connection dot */}
+                            <div className="w-4 h-4 bg-primary rounded-full border-4 border-background shadow-md z-10"></div>
+                            
+                            {/* Color block on right side of timeline */}
+                            <div 
+                              className={`${cert.color} w-6 rounded-lg shadow-lg flex flex-col justify-center items-center text-white p-2`}
+                              style={{ height: blockHeight }}
+                            >
                               <div className="text-xs font-handwrite opacity-90 mb-1 text-center leading-tight">
                                 {cert.date}
                               </div>
@@ -258,45 +259,43 @@ const CertificatesSection = () => {
                                 {duration}
                               </div>
                             </div>
-                            {/* Connection line to timeline */}
-                            <div className="w-8 h-1 bg-primary/30 mt-2"></div>
                           </div>
-                          
-                          {/* Certificate description on right */}
-                          <div className="w-1/2 pl-12">
-                            <div className="sketchy-card max-w-sm">
-                              <div className="flex items-start justify-between mb-3">
-                                <div className="flex-1">
-                                  <h3 className="text-lg font-bold text-sketchy-primary font-handwrite mb-1">
-                                    {cert.title}
-                                  </h3>
-                                  <p className="text-muted-foreground font-handwrite text-sm">
-                                    {cert.issuer}
-                                  </p>
-                                </div>
-                                <div className="ml-3 text-2xl">🏆</div>
+                        </div>
+                        
+                        {/* Certificate description on right */}
+                        <div className="w-5/12 pl-8">
+                          <div className="sketchy-card max-w-sm">
+                            <div className="flex items-start justify-between mb-3">
+                              <div className="flex-1">
+                                <h3 className="text-lg font-bold text-sketchy-primary font-handwrite mb-1">
+                                  {cert.title}
+                                </h3>
+                                <p className="text-muted-foreground font-handwrite text-sm">
+                                  {cert.issuer}
+                                </p>
                               </div>
-                              
-                              <p className="text-muted-foreground mb-3 font-handwrite leading-relaxed text-sm">
-                                {cert.description}
-                              </p>
-                              
-                              <div className="mb-3">
-                                <div className="flex flex-wrap gap-1">
-                                  {cert.skills.slice(0, 3).map((skill, skillIndex) => (
-                                    <span 
-                                      key={skillIndex}
-                                      className="text-xs px-2 py-1 bg-primary/10 text-primary rounded font-handwrite"
-                                    >
-                                      {skill}
-                                    </span>
-                                  ))}
-                                </div>
+                              <div className="ml-3 text-2xl">🏆</div>
+                            </div>
+                            
+                            <p className="text-muted-foreground mb-3 font-handwrite leading-relaxed text-sm">
+                              {cert.description}
+                            </p>
+                            
+                            <div className="mb-3">
+                              <div className="flex flex-wrap gap-1">
+                                {cert.skills.slice(0, 3).map((skill, skillIndex) => (
+                                  <span 
+                                    key={skillIndex}
+                                    className="text-xs px-2 py-1 bg-primary/10 text-primary rounded font-handwrite"
+                                  >
+                                    {skill}
+                                  </span>
+                                ))}
                               </div>
                             </div>
                           </div>
-                        </>
-                      )}
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
