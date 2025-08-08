@@ -127,75 +127,80 @@ const CertificatesSection = () => {
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/20 h-full"></div>
           
           {timelineData.map((yearData, yearIndex) => (
-            <div key={yearData.year} className="relative mb-8">
+            <div key={yearData.year} className="relative mb-16">
               {/* Year label */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 top-4">
-                <div className="bg-background border-2 border-primary px-3 py-1 rounded font-bold text-sm font-handwrite">
+              <div className="absolute left-1/2 transform -translate-x-1/2 top-4 z-10">
+                <div className="bg-background border-2 border-primary px-4 py-2 rounded-lg font-bold text-lg font-handwrite shadow-md">
                   {yearData.year}
                 </div>
               </div>
               
               {/* Certificate items */}
-              <div className="pt-12">
+              <div className="pt-16">
                 {yearData.items.filter(Boolean).map((cert, itemIndex) => {
                   if (!cert || !cert.title) return null;
                   
-                  const isLeft = itemIndex % 2 === 0;
+                  // Use a pattern to determine positioning that prevents overlaps
+                  const globalIndex = yearIndex * 2 + itemIndex;
+                  const isLeft = globalIndex % 2 === 0;
                   
-                  // Calculate actual duration
-                  let duration;
-                  let colorBlockHeight = 'h-16'; // default height
-                  
+                  // Calculate actual duration for ongoing certificates
+                  let months;
                   if (cert.date.includes('Ongoing')) {
                     const startDateStr = cert.date.split(' – ')[0];
-                    const startMonth = startDateStr.includes('Mar') ? 'March' : startDateStr.includes('Jan') ? 'January' : startDateStr;
-                    const startYear = cert.date.includes('Mar 2024') ? '2024' : '2025';
-                    const months = calculateDuration(`${startMonth} 1, ${startYear}`, 'Ongoing');
-                    duration = `${months} months`;
-                    colorBlockHeight = months > 12 ? 'h-24' : 'h-16'; // longer blocks for longer durations
+                    let startMonth, startYear;
+                    
+                    if (startDateStr.includes('Mar 2024')) {
+                      startMonth = 'March';
+                      startYear = '2024';
+                    } else if (startDateStr.includes('Mar 2025')) {
+                      startMonth = 'March';
+                      startYear = '2025';
+                    } else if (startDateStr.includes('Jan 2025')) {
+                      startMonth = 'January';
+                      startYear = '2025';
+                    }
+                    
+                    months = calculateDuration(`${startMonth} 1, ${startYear}`, 'Ongoing');
                   } else {
                     const [startPart, endPart] = cert.date.split(' – ');
-                    const startYear = startPart.includes('2018') ? '2018' : startPart.includes('2021') ? '2021' : startPart.includes('2023') ? '2023' : '2025';
-                    const endYear = endPart.includes('2022') ? '2022' : endPart.includes('2024') ? '2024' : '2025';
                     
-                    let startMonth, endMonth;
-                    if (startPart.includes('Sep')) startMonth = 'September';
-                    else if (startPart.includes('Nov')) startMonth = 'November';
-                    else if (startPart.includes('Oct')) startMonth = 'October';
-                    else if (startPart.includes('Jun')) startMonth = 'June';
-                    else if (startPart.includes('Jan')) startMonth = 'January';
+                    // Parse start date
+                    let startMonth, startYear;
+                    if (startPart.includes('Sep 2018')) { startMonth = 'September'; startYear = '2018'; }
+                    else if (startPart.includes('Nov 2021')) { startMonth = 'November'; startYear = '2021'; }
+                    else if (startPart.includes('Oct 2021')) { startMonth = 'October'; startYear = '2021'; }
+                    else if (startPart.includes('Jun 2023')) { startMonth = 'June'; startYear = '2023'; }
+                    else if (startPart.includes('Jan 2025')) { startMonth = 'January'; startYear = '2025'; }
                     
-                    if (endPart.includes('Jun')) endMonth = 'June';
-                    else if (endPart.includes('Oct')) endMonth = 'October';
-                    else if (endPart.includes('Apr')) endMonth = 'April';
-                    else if (endPart.includes('Feb')) endMonth = 'February';
+                    // Parse end date
+                    let endMonth, endYear;
+                    if (endPart.includes('Jun 2022')) { endMonth = 'June'; endYear = '2022'; }
+                    else if (endPart.includes('Oct 2024')) { endMonth = 'October'; endYear = '2024'; }
+                    else if (endPart.includes('Apr 2025')) { endMonth = 'April'; endYear = '2025'; }
+                    else if (endPart.includes('Feb 2025')) { endMonth = 'February'; endYear = '2025'; }
                     
-                    const months = calculateDuration(`${startMonth} 1, ${startYear}`, `${endMonth} 1, ${endYear}`);
-                    duration = `${months} months`;
-                    colorBlockHeight = months > 24 ? 'h-32' : months > 12 ? 'h-24' : 'h-16'; // variable heights based on duration
+                    months = calculateDuration(`${startMonth} 1, ${startYear}`, `${endMonth} 1, ${endYear}`);
                   }
                   
+                  const duration = `${months} months`;
+                  
+                  // Calculate color block height based on duration
+                  const blockWidth = 'w-6'; // Make blocks narrower like in the image
+                  let blockHeight;
+                  if (months >= 40) blockHeight = 'h-40';
+                  else if (months >= 30) blockHeight = 'h-32';
+                  else if (months >= 20) blockHeight = 'h-24';
+                  else if (months >= 10) blockHeight = 'h-16';
+                  else blockHeight = 'h-12';
+                  
                   return (
-                    <div key={`${yearData.year}-${itemIndex}`} className="relative mb-12 flex items-center">
+                    <div key={`${yearData.year}-${itemIndex}`} className="relative mb-20 flex items-start">
                       {isLeft ? (
                         <>
-                          {/* Duration block on left */}
-                          <div className="w-1/2 pr-8 flex justify-end">
-                            <div className={`${cert.color} text-white p-4 rounded-lg shadow-lg max-w-xs ${colorBlockHeight} flex flex-col justify-center`}>
-                              <div className="text-sm font-handwrite opacity-90">{cert.date}</div>
-                              <div className="font-bold font-handwrite">{duration}</div>
-                              <div className="text-xs font-handwrite opacity-75 mt-1">Duration</div>
-                            </div>
-                          </div>
-                          
-                          {/* Timeline connector */}
-                          <div className="w-8 flex justify-center">
-                            <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg`}></div>
-                          </div>
-                          
-                          {/* Content on right */}
-                          <div className="w-1/2 pl-8">
-                            <div className="sketchy-card max-w-md">
+                          {/* Certificate description on left */}
+                          <div className="w-1/2 pr-12 flex justify-end">
+                            <div className="sketchy-card max-w-sm">
                               <div className="flex items-start justify-between mb-3">
                                 <div className="flex-1">
                                   <h3 className="text-lg font-bold text-sketchy-primary font-handwrite mb-1">
@@ -225,13 +230,41 @@ const CertificatesSection = () => {
                                 </div>
                               </div>
                             </div>
+                          </div>
+                          
+                          {/* Duration block near timeline on right */}
+                          <div className="flex flex-col items-center">
+                            <div className={`${cert.color} ${blockWidth} ${blockHeight} rounded-lg shadow-lg mr-2 flex flex-col justify-center items-center text-white p-2`}>
+                              <div className="text-xs font-handwrite opacity-90 mb-1 text-center leading-tight">
+                                {cert.date}
+                              </div>
+                              <div className="font-bold font-handwrite text-xs text-center">
+                                {duration}
+                              </div>
+                            </div>
+                            {/* Connection line to timeline */}
+                            <div className="w-8 h-1 bg-primary/30 mt-2"></div>
                           </div>
                         </>
                       ) : (
                         <>
-                          {/* Content on left */}
-                          <div className="w-1/2 pr-8 flex justify-end">
-                            <div className="sketchy-card max-w-md">
+                          {/* Duration block near timeline on left */}
+                          <div className="flex flex-col items-center">
+                            <div className={`${cert.color} ${blockWidth} ${blockHeight} rounded-lg shadow-lg ml-2 flex flex-col justify-center items-center text-white p-2`}>
+                              <div className="text-xs font-handwrite opacity-90 mb-1 text-center leading-tight">
+                                {cert.date}
+                              </div>
+                              <div className="font-bold font-handwrite text-xs text-center">
+                                {duration}
+                              </div>
+                            </div>
+                            {/* Connection line to timeline */}
+                            <div className="w-8 h-1 bg-primary/30 mt-2"></div>
+                          </div>
+                          
+                          {/* Certificate description on right */}
+                          <div className="w-1/2 pl-12">
+                            <div className="sketchy-card max-w-sm">
                               <div className="flex items-start justify-between mb-3">
                                 <div className="flex-1">
                                   <h3 className="text-lg font-bold text-sketchy-primary font-handwrite mb-1">
@@ -260,20 +293,6 @@ const CertificatesSection = () => {
                                   ))}
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                          
-                          {/* Timeline connector */}
-                          <div className="w-8 flex justify-center">
-                            <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg`}></div>
-                          </div>
-                          
-                          {/* Duration block on right */}
-                          <div className="w-1/2 pl-8">
-                            <div className={`${cert.color} text-white p-4 rounded-lg shadow-lg max-w-xs ${colorBlockHeight} flex flex-col justify-center`}>
-                              <div className="text-sm font-handwrite opacity-90">{cert.date}</div>
-                              <div className="font-bold font-handwrite">{duration}</div>
-                              <div className="text-xs font-handwrite opacity-75 mt-1">Duration</div>
                             </div>
                           </div>
                         </>
