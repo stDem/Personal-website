@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section id="personal" className="max-w-4xl mx-auto">
       {/* Hero Section with Split Design */}
-      <div className="relative min-h-[60vh] bg-gradient-to-br from-background to-muted rounded-lg overflow-hidden mb-12">
+      <div className="relative min-h-[60vh] bg-gradient-to-br from-background to-muted rounded-lg overflow-hidden mb-12" style={{backgroundImage: `url('/lovable-uploads/f572ab7b-70d8-4650-9924-634ac527b867.png')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'overlay'}}>
         {/* Coding Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="text-xs font-mono text-foreground/20 leading-relaxed p-8">
@@ -46,7 +46,7 @@ while(coding) {
         
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="grid md:grid-cols-3 gap-8 w-full p-8 items-center">
+          <div className="grid md:grid-cols-2 gap-12 w-full p-8">
             {/* Left Side - Web Developer */}
             <div className="text-center md:text-left">
               <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
@@ -62,15 +62,6 @@ while(coding) {
                   </span>
                 ))}
               </div>
-            </div>
-            
-            {/* Center - Creative Portrait */}
-            <div className="flex justify-center">
-              <img 
-                src="/lovable-uploads/f572ab7b-70d8-4650-9924-634ac527b867.png" 
-                alt="Creative portrait with artistic elements" 
-                className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-primary/20 shadow-lg"
-              />
             </div>
             
             {/* Right Side - AI Engineer */}
