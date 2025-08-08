@@ -6,7 +6,7 @@ const CertificatesSection = () => {
     {
       title: "Web Programming Certificate",
       issuer: "Julius-Maximilians-Universität Würzburg",
-      date: "Mar 2025 – Ongoing",
+      date: "Mar 2025 – Aug 2025",
       description: "Advanced web programming concepts & frameworks.",
       skills: ["Web Programming", "Advanced Concepts", "Frameworks", "Development Practices"],
       startYear: 2025,
