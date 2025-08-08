@@ -34,7 +34,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto px-4 py-12">
-        <header className="text-left mb-12 max-w-4xl mx-auto">
+        <header className="text-right mb-12 max-w-4xl mx-auto">
           <h1 className="text-6xl text-foreground mb-8 font-serif font-normal">
             Anastasiia Demidova
           </h1>

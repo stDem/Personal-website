@@ -118,7 +118,7 @@ All colors MUST be HSL.
 
 @layer components {
   .academic-tab {
-    @apply text-lg text-foreground font-serif relative pb-1 bg-transparent border-0 cursor-pointer transition-all duration-200;
+    @apply text-lg text-foreground font-serif relative pr-3 bg-transparent border-0 cursor-pointer transition-all duration-200;
   }
   
   .academic-tab:hover {
@@ -132,10 +132,10 @@ All colors MUST be HSL.
   .academic-tab.active::after {
     content: '';
     position: absolute;
-    bottom: -2px;
-    left: 0;
+    top: 0;
     right: 0;
-    height: 1px;
+    bottom: 0;
+    width: 2px;
     background-color: hsl(var(--foreground));
   }
 }
