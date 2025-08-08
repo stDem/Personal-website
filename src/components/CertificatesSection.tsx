@@ -204,7 +204,7 @@ const CertificatesSection = () => {
             const baseShift = positionInSameSide * 25; // 25px per position away from line
             
             // Simplified card positioning: space cards evenly on each side
-            const cardSpacing = 280; // Reduced spacing between cards
+            const cardSpacing = 350; // Minimum space between cards
             
             // Count cards on the same side before this one
             let cardsOnSameSide = 0;
@@ -217,19 +217,7 @@ const CertificatesSection = () => {
             // Position card based on color block center + spacing for same-side cards
             const colorBlockTop = getBarTopPosition(cert.startYear, cert.endYear);
             const colorBlockCenter = colorBlockTop + (getBarHeight(cert.startYear, cert.endYear) / 2);
-            
-            // Improved positioning: prioritize staying close to color block
-            let basePosition;
-            if (cardsOnSameSide === 0) {
-              // First card on this side - position near its color block
-              basePosition = Math.max(colorBlockTop - 60, 0);
-            } else {
-              // Subsequent cards - use smaller spacing and try to stay close to color block
-              const previousCardPosition = cardsOnSameSide * cardSpacing;
-              const nearColorBlock = Math.max(colorBlockTop - 60, 0);
-              basePosition = Math.max(previousCardPosition, nearColorBlock);
-            }
-            
+            const basePosition = Math.max(colorBlockTop - 60, cardsOnSameSide * cardSpacing);
             const topPosition = basePosition + 20;
             
             // Calculate connection line from color block center to card center
