@@ -141,29 +141,6 @@ const CertificatesSection = () => {
             const barTopPosition = getBarTopPosition(cert.startYear, cert.endYear);
             const barWidth = 12;
             
-            // Check for overlaps with previous certificates and shift if needed
-            const checkOverlap = (currentIndex) => {
-              const current = certificates[currentIndex];
-              const currentTop = getBarTopPosition(current.startYear, current.endYear);
-              const currentBottom = currentTop + getBarHeight(current.startYear, current.endYear);
-              
-              let shift = 0;
-              for (let i = 0; i < currentIndex; i++) {
-                const prev = certificates[i];
-                const prevTop = getBarTopPosition(prev.startYear, prev.endYear);
-                const prevBottom = prevTop + getBarHeight(prev.startYear, prev.endYear);
-                
-                // Check if they overlap vertically
-                if (!(currentBottom < prevTop || currentTop > prevBottom)) {
-                  // They overlap, apply shift
-                  shift += 20; // 20px shift for each overlap
-                }
-              }
-              return shift;
-            };
-            
-            const horizontalShift = checkOverlap(index);
-            
             // Custom positioning to avoid overlaps
             const getBarSide = (index) => {
               const pattern = [false, true, false, true, true, false, false]; // Custom pattern
@@ -171,14 +148,29 @@ const CertificatesSection = () => {
             };
             const isLeft = getBarSide(index);
             
+            // Calculate certificate duration for distance from main line
+            const duration = cert.endYear - cert.startYear + 1;
+            
+            // Get all certificates on the same side and sort by duration (longest first)
+            const sameSideCerts = certificates
+              .map((c, i) => ({ cert: c, index: i, duration: c.endYear - c.startYear + 1 }))
+              .filter((c) => getBarSide(c.index) === isLeft)
+              .sort((a, b) => b.duration - a.duration);
+            
+            // Find the position of current certificate in the sorted order
+            const positionInSameSide = sameSideCerts.findIndex(c => c.index === index);
+            
+            // Calculate horizontal shift based on position (closer to line = less shift)
+            const baseShift = positionInSameSide * 25; // 25px per position away from line
+            
             return (
               <div
                 key={index}
                 className={`absolute ${cert.color} opacity-80 rounded`}
                 style={{
                   left: isLeft 
-                    ? `calc(50% - ${40 + horizontalShift}px)` 
-                    : `calc(50% + ${28 + horizontalShift}px)`,
+                    ? `calc(50% - ${40 + baseShift}px)` 
+                    : `calc(50% + ${28 + baseShift}px)`,
                   top: `${barTopPosition}px`,
                   width: `${barWidth}px`,
                   height: `${barHeight}px`,
@@ -195,28 +187,20 @@ const CertificatesSection = () => {
               return pattern[index];
             };
             
-            // Get horizontal shift for color blocks (same logic as above)
-            const checkOverlap = (currentIndex) => {
-              const current = certificates[currentIndex];
-              const currentTop = getBarTopPosition(current.startYear, current.endYear);
-              const currentBottom = currentTop + getBarHeight(current.startYear, current.endYear);
-              
-              let shift = 0;
-              for (let i = 0; i < currentIndex; i++) {
-                const prev = certificates[i];
-                const prevTop = getBarTopPosition(prev.startYear, prev.endYear);
-                const prevBottom = prevTop + getBarHeight(prev.startYear, prev.endYear);
-                
-                // Check if they overlap vertically
-                if (!(currentBottom < prevTop || currentTop > prevBottom)) {
-                  // They overlap, apply shift
-                  shift += 20; // 20px shift for each overlap
-                }
-              }
-              return shift;
-            };
+            // Calculate certificate duration for distance from main line
+            const duration = cert.endYear - cert.startYear + 1;
             
-            const horizontalShift = checkOverlap(index);
+            // Get all certificates on the same side and sort by duration (longest first)
+            const sameSideCerts = certificates
+              .map((c, i) => ({ cert: c, index: i, duration: c.endYear - c.startYear + 1 }))
+              .filter((c) => getBarSide(c.index) === isLeft)
+              .sort((a, b) => b.duration - a.duration);
+            
+            // Find the position of current certificate in the sorted order
+            const positionInSameSide = sameSideCerts.findIndex(c => c.index === index);
+            
+            // Calculate horizontal shift based on position (closer to line = less shift)
+            const baseShift = positionInSameSide * 25; // 25px per position away from line
             
             // Simplified card positioning: space cards evenly on each side
             const isLeft = getBarSide(index);
@@ -245,7 +229,7 @@ const CertificatesSection = () => {
                 {isLeft ? (
                   <>
                     {/* Content on left */}
-                    <div className="w-1/2 flex justify-end" style={{ paddingRight: `${32 + horizontalShift}px` }}>
+                    <div className="w-1/2 flex justify-end" style={{ paddingRight: `${32 + baseShift}px` }}>
                       <div className="sketchy-card max-w-md">
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
@@ -307,7 +291,7 @@ const CertificatesSection = () => {
                      </div>
                     
                     {/* Content on right */}
-                    <div className="w-1/2" style={{ paddingLeft: `${32 + horizontalShift}px` }}>
+                    <div className="w-1/2" style={{ paddingLeft: `${32 + baseShift}px` }}>
                       <div className="sketchy-card max-w-md">
                          <div className="flex items-start justify-between mb-3">
                            <div className="flex-1">
