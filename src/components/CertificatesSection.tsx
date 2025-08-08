@@ -285,9 +285,8 @@ const CertificatesSection = () => {
                       </div>
                     </div>
                      
-                     {/* Timeline connector */}
+                     {/* Timeline space */}
                      <div className="w-8 flex justify-center relative">
-                       <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg z-10`}></div>
                      </div>
                     
                     <div className="w-1/2"></div>
@@ -296,9 +295,8 @@ const CertificatesSection = () => {
                   <>
                     <div className="w-1/2"></div>
                      
-                     {/* Timeline connector */}
+                     {/* Timeline space */}
                      <div className="w-8 flex justify-center relative">
-                       <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg z-10`}></div>
                      </div>
                     
                     {/* Content on right */}
