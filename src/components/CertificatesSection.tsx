@@ -213,38 +213,31 @@ const CertificatesSection = () => {
             
             // Check for overlaps with previous certificates and shift if needed
             const checkCardOverlap = (currentIndex) => {
-              const current = certificates[currentIndex];
-              let currentTop = getBarTopPosition(current.startYear, current.endYear) + 10;
-              
               let verticalShift = 0;
+              const isCurrentLeft = getBarSide(currentIndex);
+              const currentBaseTop = getBarTopPosition(certificates[currentIndex].startYear, certificates[currentIndex].endYear) + 10;
               
-              // Check against all previous cards on the same side
+              // Check all previous cards on the same side
               for (let i = 0; i < currentIndex; i++) {
-                const prev = certificates[i];
-                const prevIsLeft = getBarSide(i);
-                const currentIsLeft = getBarSide(currentIndex);
+                const isPrevLeft = getBarSide(i);
                 
-                // Only check overlap if they're on the same side
-                if (prevIsLeft === currentIsLeft) {
-                  let prevTop = getBarTopPosition(prev.startYear, prev.endYear) + 10;
-                  
-                  // Apply any previous vertical shifts to get actual position
+                // Only check if they're on the same side
+                if (isPrevLeft === isCurrentLeft) {
+                  // Calculate previous card's position (including any shifts it might have)
+                  let prevShift = 0;
                   for (let j = 0; j < i; j++) {
-                    const prevPrev = certificates[j];
-                    const prevPrevIsLeft = getBarSide(j);
-                    if (prevPrevIsLeft === prevIsLeft) {
-                      const prevPrevTop = getBarTopPosition(prevPrev.startYear, prevPrev.endYear) + 10;
-                      if (Math.abs(prevTop - prevPrevTop) < 120) {
-                        prevTop += 120;
-                      }
+                    const isPrevPrevLeft = getBarSide(j);
+                    if (isPrevPrevLeft === isPrevLeft) {
+                      prevShift += 150; // 150px spacing between cards
                     }
                   }
                   
-                  const currentActualTop = currentTop + verticalShift;
+                  const prevTop = getBarTopPosition(certificates[i].startYear, certificates[i].endYear) + 10 + prevShift;
+                  const currentTop = currentBaseTop + verticalShift;
                   
-                  // Check if they would overlap (cards are about 120px tall)
-                  if (Math.abs(currentActualTop - prevTop) < 120) {
-                    verticalShift += 120; // Shift down by card height
+                  // If cards would overlap (within 140px of each other), shift current card down
+                  if (Math.abs(currentTop - prevTop) < 140) {
+                    verticalShift = Math.max(verticalShift, prevTop - currentBaseTop + 150);
                   }
                 }
               }
