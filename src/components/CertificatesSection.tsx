@@ -133,6 +133,30 @@ const CertificatesSection = () => {
             const barHeight = getBarHeight(cert.startYear, cert.endYear);
             const barTopPosition = getBarTopPosition(cert.startYear, cert.endYear);
             const barWidth = 12;
+            
+            // Check for overlaps with previous certificates and shift if needed
+            const checkOverlap = (currentIndex) => {
+              const current = certificates[currentIndex];
+              const currentTop = getBarTopPosition(current.startYear, current.endYear);
+              const currentBottom = currentTop + getBarHeight(current.startYear, current.endYear);
+              
+              let shift = 0;
+              for (let i = 0; i < currentIndex; i++) {
+                const prev = certificates[i];
+                const prevTop = getBarTopPosition(prev.startYear, prev.endYear);
+                const prevBottom = prevTop + getBarHeight(prev.startYear, prev.endYear);
+                
+                // Check if they overlap vertically
+                if (!(currentBottom < prevTop || currentTop > prevBottom)) {
+                  // They overlap, apply shift
+                  shift += 20; // 20px shift for each overlap
+                }
+              }
+              return shift;
+            };
+            
+            const horizontalShift = checkOverlap(index);
+            
             // Custom positioning to avoid overlaps
             const getBarSide = (index) => {
               const pattern = [false, true, false, true, true, false, false]; // Custom pattern
@@ -145,7 +169,9 @@ const CertificatesSection = () => {
                 key={index}
                 className={`absolute ${cert.color} opacity-80 rounded`}
                 style={{
-                  left: isLeft ? 'calc(50% - 40px)' : 'calc(50% + 28px)',
+                  left: isLeft 
+                    ? `calc(50% - ${40 + horizontalShift}px)` 
+                    : `calc(50% + ${28 + horizontalShift}px)`,
                   top: `${barTopPosition}px`,
                   width: `${barWidth}px`,
                   height: `${barHeight}px`,
