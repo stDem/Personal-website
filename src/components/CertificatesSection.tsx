@@ -256,7 +256,7 @@ const CertificatesSection = () => {
                               {cert.issuer}
                             </p>
                           </div>
-                          <div className="ml-3 text-2xl">{cert.icon}</div>
+                         
                         </div>
                         
                       
@@ -318,7 +318,7 @@ const CertificatesSection = () => {
                                {cert.issuer}
                              </p>
                            </div>
-                           <div className="ml-3 text-2xl">{cert.icon}</div>
+                           
                          </div>
                 
                         
