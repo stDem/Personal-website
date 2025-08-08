@@ -47,34 +47,34 @@ while(coding) {
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
           <div className="grid md:grid-cols-2 gap-12 w-full p-8">
-            {/* Left Side - Web Developer */}
+            {/* Left Side - AI Engineer */}
             <div className="text-center md:text-left">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-                Web Developer
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Frontend developer who writes clean, elegant and efficient code.
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                {["React", "TypeScript", "Next.js", "Tailwind"].map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            {/* Right Side - AI Engineer */}
-            <div className="text-center md:text-right">
               <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
                 AI Engineer
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
                 AI engineer who builds intelligent systems and machine learning solutions.
               </p>
-              <div className="flex flex-wrap gap-2 justify-center md:justify-end">
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {["Python", "TensorFlow", "PyTorch", "ML/AI"].map((tech) => (
                   <span key={tech} className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            {/* Right Side - Web Developer */}
+            <div className="text-center md:text-right">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+                Web Developer
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Frontend developer who writes clean, elegant and efficient code.
+              </p>
+              <div className="flex flex-wrap gap-2 justify-center md:justify-end">
+                {["React", "TypeScript", "Next.js", "Tailwind"].map((tech) => (
+                  <span key={tech} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
                     {tech}
                   </span>
                 ))}
