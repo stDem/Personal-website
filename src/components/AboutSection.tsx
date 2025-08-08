@@ -3,9 +3,9 @@ import profilePhoto from "@/assets/profile-photo.jpg";
 
 const AboutSection = () => {
   return (
-    <section id="personal" className="max-w-4xl mx-auto">
-      {/* Hero Section with Split Design */}
-      <div className="relative min-h-[60vh] bg-gradient-to-br from-background to-muted rounded-lg overflow-hidden mb-12" style={{backgroundImage: `url('/lovable-uploads/f572ab7b-70d8-4650-9924-634ac527b867.png')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'overlay'}}>
+    <section id="personal">
+      {/* Hero Section with Split Design - Full Width */}
+      <div className="relative min-h-[60vh] w-screen bg-gradient-to-br from-background to-muted overflow-hidden mb-12 -mx-[50vw] left-1/2" style={{backgroundImage: `url('/lovable-uploads/f572ab7b-70d8-4650-9924-634ac527b867.png')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'overlay'}}>
         {/* Coding Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="text-xs font-mono text-foreground/20 leading-relaxed p-8">
@@ -85,7 +85,8 @@ while(coding) {
       </div>
 
       {/* Personal Info Cards */}
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8">
         {/* Profile & Bio */}
         <div className="bg-card rounded-lg p-6 border">
           <div className="flex flex-col items-center text-center mb-6">
@@ -166,6 +167,7 @@ while(coding) {
             </a>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
