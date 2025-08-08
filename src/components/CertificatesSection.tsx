@@ -164,9 +164,9 @@ const CertificatesSection = () => {
             
             const horizontalShift = checkOverlap(index);
             
-            // Custom positioning to avoid overlaps
+            // Custom positioning to avoid overlaps - longer certificates closer to main line
             const getBarSide = (index) => {
-              const pattern = [false, true, false, true, true, false, false]; // Custom pattern
+              const pattern = [true, false, false, true, false, true, false]; // Reordered: orange closer, meta closer, bachelor closer
               return pattern[index];
             };
             const isLeft = getBarSide(index);
@@ -191,7 +191,7 @@ const CertificatesSection = () => {
           {certificates.map((cert, index) => {
             // Define getBarSide function first
             const getBarSide = (index) => {
-              const pattern = [false, true, false, true, true, false, false];
+              const pattern = [true, false, false, true, false, true, false]; // Reordered: orange closer, meta closer, bachelor closer
               return pattern[index];
             };
             
