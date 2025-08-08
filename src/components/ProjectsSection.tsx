@@ -5,72 +5,108 @@ import { useState } from "react";
 const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState("all");
 
-  const webProjects = [
+  const aiProjects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, cart management, order tracking, and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
-      github: "https://github.com/johndoe/ecommerce-platform",
-      live: "https://ecommerce-demo.example.com",
+      title: "Dota2 Draft Prediction",
+      description: "Machine learning model that predicts the outcome of Dota2 matches based on hero drafts. Uses ML algorithms to analyze team compositions and provide win probability predictions.",
+      tech: ["ML", "NLP", "JavaScript", "HTML", "CSS"],
+      github: "https://github.com/stDem/Dota2-draft-prediction",
+      live: null,
       status: "Completed",
-      category: "web"
+      category: "ai"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative project management tool with real-time updates, drag-and-drop functionality, team collaboration features, and deadline tracking.",
-      tech: ["Next.js", "TypeScript", "Supabase", "Socket.io", "Framer Motion"],
-      github: "https://github.com/johndoe/task-manager",
-      live: "https://taskmaster-app.example.com",
+      title: "Fall Detection System",
+      description: "Comprehensive fall detection solution combining machine learning, computer vision, mobile app development, and chatbot integration for elderly care and safety monitoring.",
+      tech: ["ML", "Computer Vision", "Mobile App", "Chatbot"],
+      github: "https://github.com/stDem/Fall-Detection-Project",
+      live: null,
       status: "Completed",
-      category: "web"
+      category: "ai"
     },
     {
-      title: "Weather Dashboard",
-      description: "A beautiful weather application with location-based forecasts, interactive maps, historical data visualization, and severe weather alerts.",
-      tech: ["React", "D3.js", "OpenWeather API", "Chart.js", "PWA"],
-      github: "https://github.com/johndoe/weather-dashboard",
-      live: "https://weather-viz.example.com",
+      title: "Neural Network Image Classification",
+      description: "Deep learning project implementing artificial neural networks from scratch using numpy arrays for image classification tasks without external ML frameworks.",
+      tech: ["Deep Learning", "Python", "NumPy"],
+      github: "https://github.com/stDem/ANN-numpy-array-images",
+      live: null,
       status: "Completed",
-      category: "web"
+      category: "ai"
     },
     {
-      title: "Portfolio Website",
-      description: "A creative portfolio website with sketchy design, smooth animations, responsive layout, and interactive elements showcasing my work and personality.",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
-      github: "https://github.com/johndoe/portfolio-sketchy",
-      live: "https://johndoe-portfolio.example.com",
+      title: "Motion Classification System",
+      description: "Machine learning model designed to classify different types of human motions and activities using sensor data and pattern recognition algorithms.",
+      tech: ["ML", "Python", "Pattern Recognition"],
+      github: "https://github.com/stDem/Motions-classification",
+      live: null,
       status: "Completed",
-      category: "web"
+      category: "ai"
+    },
+    {
+      title: "Onion Dataset Classification",
+      description: "Machine learning project focused on agricultural data analysis, specifically classifying onion varieties using computer vision and ML techniques.",
+      tech: ["ML", "Computer Vision", "Python"],
+      github: "https://github.com/stDem/Classification-of-Onion-dataset",
+      live: null,
+      status: "Completed",
+      category: "ai"
+    },
+    {
+      title: "AI Web Design Analysis",
+      description: "Modern web application that leverages AI APIs to analyze and provide insights on web design patterns, user experience, and design best practices.",
+      tech: ["AI API", "Vite", "TypeScript", "React", "Tailwind CSS"],
+      github: "https://github.com/stDem/AI-Web-Design-Analysis",
+      live: null,
+      status: "Completed",
+      category: "ai"
     }
   ];
 
-  const aiProjects = [
+  const webProjects = [
     {
-      title: "AI Chat Assistant",
-      description: "An intelligent chatbot with natural language processing, context awareness, multi-language support, and integration with various APIs.",
-      tech: ["Python", "FastAPI", "OpenAI API", "Redis", "Docker"],
-      github: "https://github.com/johndoe/ai-assistant",
-      live: null,
-      status: "In Progress",
-      category: "ai"
-    },
-    {
-      title: "Computer Vision System",
-      description: "Advanced image recognition system with object detection, facial recognition, and real-time analysis capabilities for security applications.",
-      tech: ["Python", "OpenCV", "TensorFlow", "YOLO", "Flask"],
-      github: "https://github.com/johndoe/cv-system",
+      title: "Portfolio Website",
+      description: "Modern and responsive portfolio website built with React and Chakra UI, showcasing projects, skills, and professional experience with beautiful animations.",
+      tech: ["React", "Chakra UI", "JavaScript"],
+      github: "https://github.com/stDem/Portfolio-site",
       live: null,
       status: "Completed",
-      category: "ai"
+      category: "web"
     },
     {
-      title: "Predictive Analytics Platform",
-      description: "Machine learning platform for business forecasting, trend analysis, and predictive modeling with interactive dashboards and automated reporting.",
-      tech: ["Python", "Scikit-learn", "Pandas", "Plotly", "PostgreSQL"],
-      github: "https://github.com/johndoe/ml-analytics",
-      live: "https://analytics-demo.example.com",
+      title: "Work Space Website",
+      description: "Professional workspace portfolio site featuring modern design, API integrations, and responsive layout built with vanilla JavaScript and SCSS.",
+      tech: ["JavaScript", "HTML", "SCSS", "API"],
+      github: "https://github.com/stDem/WorkSpace—portfolio-site",
+      live: null,
       status: "Completed",
-      category: "ai"
+      category: "web"
+    },
+    {
+      title: "Little Lemon Restaurant",
+      description: "Restaurant website with table booking system, menu display, and customer reviews. Built with React and SCSS with API integration for dynamic content.",
+      tech: ["React", "SCSS", "API", "JavaScript"],
+      github: "https://github.com/stDem/Little-Lemon-website",
+      live: null,
+      status: "Completed",
+      category: "web"
+    },
+    {
+      title: "Interior Design Portfolio",
+      description: "Elegant interior design showcase website built with Vue.js, featuring project galleries, design services, and client testimonials with smooth animations.",
+      tech: ["Vue.js", "SCSS", "JavaScript"],
+      github: "https://github.com/stDem/InteriorDesign—portfolio-site",
+      live: null,
+      status: "Completed",
+      category: "web"
+    },
+    {
+      title: "Auto Service Website",
+      description: "Professional automotive service website featuring service listings, appointment booking, and customer portal built with modern web technologies.",
+      tech: ["JavaScript", "HTML", "SCSS"],
+      github: "https://github.com/stDem/AutoService—portfolio-site",
+      live: null,
+      status: "Completed",
+      category: "web"
     }
   ];
 
@@ -78,10 +114,10 @@ const ProjectsSection = () => {
 
   const getFilteredProjects = () => {
     switch (activeTab) {
-      case "web":
-        return webProjects;
       case "ai":
         return aiProjects;
+      case "web":
+        return webProjects;
       default:
         return allProjects;
     }
@@ -110,17 +146,6 @@ const ProjectsSection = () => {
               All Projects
             </button>
             <button
-              onClick={() => setActiveTab("web")}
-              className={`px-6 py-2 rounded-md font-medium transition-all duration-200 flex items-center gap-2 ${
-                activeTab === "web"
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <Globe className="w-4 h-4" />
-              Web Development
-            </button>
-            <button
               onClick={() => setActiveTab("ai")}
               className={`px-6 py-2 rounded-md font-medium transition-all duration-200 flex items-center gap-2 ${
                 activeTab === "ai"
@@ -130,6 +155,17 @@ const ProjectsSection = () => {
             >
               <Brain className="w-4 h-4" />
               AI & Machine Learning
+            </button>
+            <button
+              onClick={() => setActiveTab("web")}
+              className={`px-6 py-2 rounded-md font-medium transition-all duration-200 flex items-center gap-2 ${
+                activeTab === "web"
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <Globe className="w-4 h-4" />
+              Web Development
             </button>
           </div>
         </div>
