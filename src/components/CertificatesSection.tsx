@@ -95,7 +95,7 @@ const CertificatesSection = () => {
   // Calculate positions and heights for timeline bars
   const getTimelinePosition = (year) => {
     const yearIndex = years.indexOf(year);
-    return yearIndex * 120; // 120px spacing between years
+    return yearIndex * 160; // 160px spacing between years
   };
   
   const getBarHeight = (startYear, endYear) => {
@@ -122,13 +122,13 @@ const CertificatesSection = () => {
         </p>
         
         {/* Timeline */}
-        <div className="max-w-6xl mx-auto relative" style={{ height: '1200px' }}>
+        <div className="max-w-6xl mx-auto relative" style={{ height: '1600px' }}>
           {/* Central timeline line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/20 h-full"></div>
           
           {/* Year labels */}
           {years.map((year, index) => (
-            <div key={year} className="absolute left-1/2 transform -translate-x-1/2" style={{ top: `${index * 120 + 20}px` }}>
+            <div key={year} className="absolute left-1/2 transform -translate-x-1/2" style={{ top: `${index * 160 + 20}px` }}>
               <div className="bg-background border-2 border-primary px-3 py-1 rounded font-bold text-sm font-handwrite">
                 {year}
               </div>
@@ -220,7 +220,7 @@ const CertificatesSection = () => {
             
             // Simplified card positioning: space cards evenly on each side
             const isLeft = getBarSide(index);
-            const cardSpacing = 180; // Minimum space between cards
+            const cardSpacing = 250; // Minimum space between cards
             
             // Count cards on the same side before this one
             let cardsOnSameSide = 0;
