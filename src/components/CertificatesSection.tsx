@@ -68,51 +68,41 @@ const CertificatesSection = () => {
     }
   ];
 
-  // Create timeline items in reverse chronological order
-  const timelineItems = [
-    { 
-      ...certificates.find(cert => cert.title.includes("Web Programming")), 
-      color: "bg-blue-500",
-      icon: "🌐",
-      duration: "Ongoing"
+  // Group certificates by year in reverse order (most recent first)
+  const timelineData = [
+    {
+      year: "2025",
+      items: [
+        { ...certificates.find(cert => cert.date.includes("Jan 2025")), color: "bg-blue-500" },
+        { ...certificates.find(cert => cert.date.includes("Mar 2025")), color: "bg-green-500" }
+      ]
     },
-    { 
-      ...certificates.find(cert => cert.title.includes("Frontend Development Hands-on")), 
-      color: "bg-green-500",
-      icon: "💻",
-      duration: "2 months"
+    {
+      year: "2024",
+      items: [
+        { ...certificates.find(cert => cert.date.includes("Mar 2024")), color: "bg-purple-500" }
+      ]
     },
-    { 
-      ...certificates.find(cert => cert.title.includes("Master's Degree")), 
-      color: "bg-purple-500",
-      icon: "🤖",
-      duration: "Ongoing"
+    {
+      year: "2023",
+      items: [
+        { ...certificates.find(cert => cert.date.includes("Jun 2023")), color: "bg-orange-500" }
+      ]
     },
-    { 
-      ...certificates.find(cert => cert.title.includes("GeekBrains")), 
-      color: "bg-orange-500",
-      icon: "⚛️",
-      duration: "16 months"
+    {
+      year: "2021", 
+      items: [
+        { ...certificates.find(cert => cert.date.includes("Oct 2021")), color: "bg-teal-500" },
+        { ...certificates.find(cert => cert.date.includes("Nov 2021")), color: "bg-yellow-500" }
+      ]
     },
-    { 
-      ...certificates.find(cert => cert.title.includes("Information Systems")), 
-      color: "bg-yellow-500",
-      icon: "💾",
-      duration: "8 months"
-    },
-    { 
-      ...certificates.find(cert => cert.title.includes("Meta")), 
-      color: "bg-teal-500",
-      icon: "📱",
-      duration: "42 months"
-    },
-    { 
-      ...certificates.find(cert => cert.title.includes("Bachelor's")), 
-      color: "bg-red-500",
-      icon: "🔧",
-      duration: "48 months"
+    {
+      year: "2018",
+      items: [
+        { ...certificates.find(cert => cert.date.includes("Sep 2018")), color: "bg-red-500" }
+      ]
     }
-  ].filter(item => item && item.title);
+  ].filter(yearData => yearData.items.some(item => item && item.title));
 
   return (
     <section id="certificates" className="sketchy-section bg-accent/10">
@@ -128,103 +118,138 @@ const CertificatesSection = () => {
           {/* Central timeline line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/20 h-full"></div>
           
-          {timelineItems.map((item, index) => {
-            const isLeft = index % 2 === 0;
-            const topPosition = index * 200; // Space items vertically
-            
-            return (
-              <div key={index} className="relative mb-16" style={{ paddingTop: `${index === 0 ? 0 : 40}px` }}>
-                {/* Vertical duration block along central line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-                  {/* Duration bar */}
-                  <div className={`${item.color} w-6 rounded-full text-white flex flex-col items-center justify-center py-4 px-2 shadow-lg`} style={{ height: '120px' }}>
-                    <div className="text-xs font-handwrite text-center leading-tight">
-                      {item.duration}
-                    </div>
-                  </div>
-                  
-                  {/* Icon circle */}
-                  <div className="bg-background border-4 border-primary w-12 h-12 rounded-full flex items-center justify-center text-xl -mt-2 shadow-lg">
-                    {item.icon}
-                  </div>
-                </div>
-                
-                {/* Connection line to content */}
-                <div className={`absolute top-12 w-16 h-0.5 bg-primary/40 ${isLeft ? 'right-1/2 mr-6' : 'left-1/2 ml-6'}`}></div>
-                
-                {/* Content card */}
-                <div className={`${isLeft ? 'pr-1/2 mr-24' : 'pl-1/2 ml-24'} flex ${isLeft ? 'justify-end' : 'justify-start'}`}>
-                  <div className="sketchy-card max-w-md">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold text-sketchy-primary font-handwrite mb-1">
-                          {item.title}
-                        </h3>
-                        <p className="text-muted-foreground font-handwrite text-sm">
-                          {item.issuer}
-                        </p>
-                        <p className="text-muted-foreground font-handwrite text-xs">
-                          {item.date}
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <p className="text-muted-foreground mb-3 font-handwrite leading-relaxed text-sm">
-                      {item.description}
-                    </p>
-                    
-                    <div className="mb-3">
-                      <div className="flex flex-wrap gap-1">
-                        {item.skills.slice(0, 3).map((skill, skillIndex) => (
-                          <span 
-                            key={skillIndex}
-                            className="text-xs px-2 py-1 bg-primary/10 text-primary rounded font-handwrite"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div className="flex gap-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="sketchy-border flex-1"
-                        asChild
-                      >
-                        <a 
-                          href={item.certificateUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-1"
-                        >
-                          <Download className="w-3 h-3" />
-                          PDF
-                        </a>
-                      </Button>
-                      <Button
-                        variant="default"
-                        size="sm"
-                        className="sketchy-btn flex-1"
-                        asChild
-                      >
-                        <a 
-                          href={item.verificationUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-1"
-                        >
-                          <ExternalLink className="w-3 h-3" />
-                          Verify
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
+          {timelineData.map((yearData, yearIndex) => (
+            <div key={yearData.year} className="relative mb-8">
+              {/* Year label */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 top-4">
+                <div className="bg-background border-2 border-primary px-3 py-1 rounded font-bold text-sm font-handwrite">
+                  {yearData.year}
                 </div>
               </div>
-            );
-          })}
+              
+              {/* Certificate items */}
+              <div className="pt-12">
+                {yearData.items.filter(Boolean).map((cert, itemIndex) => {
+                  if (!cert || !cert.title) return null;
+                  
+                  const isLeft = itemIndex % 2 === 0;
+                  const duration = cert.date.includes('Ongoing') ? '24+ months' : 
+                                 cert.date.includes('2025') ? '2 months' :
+                                 cert.date.includes('Mar 2024') ? '12+ months' :
+                                 cert.date.includes('Jun 2023') ? '16 months' :
+                                 cert.date.includes('Oct 2021') && cert.title.includes('Meta') ? '42 months' :
+                                 cert.date.includes('Nov 2021') ? '8 months' :
+                                 '48 months';
+                  
+                  return (
+                    <div key={`${yearData.year}-${itemIndex}`} className="relative mb-12 flex items-center">
+                      {isLeft ? (
+                        <>
+                          {/* Duration block on left */}
+                          <div className="w-1/2 pr-8 flex justify-end">
+                            <div className={`${cert.color} text-white p-4 rounded-lg shadow-lg max-w-xs`}>
+                              <div className="text-sm font-handwrite opacity-90">{cert.date}</div>
+                              <div className="font-bold font-handwrite">{duration}</div>
+                              <div className="text-xs font-handwrite opacity-75 mt-1">Duration</div>
+                            </div>
+                          </div>
+                          
+                          {/* Timeline connector */}
+                          <div className="w-8 flex justify-center">
+                            <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg`}></div>
+                          </div>
+                          
+                          {/* Content on right */}
+                          <div className="w-1/2 pl-8">
+                            <div className="sketchy-card max-w-md">
+                              <div className="flex items-start justify-between mb-3">
+                                <div className="flex-1">
+                                  <h3 className="text-lg font-bold text-sketchy-primary font-handwrite mb-1">
+                                    {cert.title}
+                                  </h3>
+                                  <p className="text-muted-foreground font-handwrite text-sm">
+                                    {cert.issuer}
+                                  </p>
+                                </div>
+                                <div className="ml-3 text-2xl">🏆</div>
+                              </div>
+                              
+                              <p className="text-muted-foreground mb-3 font-handwrite leading-relaxed text-sm">
+                                {cert.description}
+                              </p>
+                              
+                              <div className="mb-3">
+                                <div className="flex flex-wrap gap-1">
+                                  {cert.skills.slice(0, 3).map((skill, skillIndex) => (
+                                    <span 
+                                      key={skillIndex}
+                                      className="text-xs px-2 py-1 bg-primary/10 text-primary rounded font-handwrite"
+                                    >
+                                      {skill}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          {/* Content on left */}
+                          <div className="w-1/2 pr-8 flex justify-end">
+                            <div className="sketchy-card max-w-md">
+                              <div className="flex items-start justify-between mb-3">
+                                <div className="flex-1">
+                                  <h3 className="text-lg font-bold text-sketchy-primary font-handwrite mb-1">
+                                    {cert.title}
+                                  </h3>
+                                  <p className="text-muted-foreground font-handwrite text-sm">
+                                    {cert.issuer}
+                                  </p>
+                                </div>
+                                <div className="ml-3 text-2xl">🏆</div>
+                              </div>
+                              
+                              <p className="text-muted-foreground mb-3 font-handwrite leading-relaxed text-sm">
+                                {cert.description}
+                              </p>
+                              
+                              <div className="mb-3">
+                                <div className="flex flex-wrap gap-1">
+                                  {cert.skills.slice(0, 3).map((skill, skillIndex) => (
+                                    <span 
+                                      key={skillIndex}
+                                      className="text-xs px-2 py-1 bg-primary/10 text-primary rounded font-handwrite"
+                                    >
+                                      {skill}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Timeline connector */}
+                          <div className="w-8 flex justify-center">
+                            <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg`}></div>
+                          </div>
+                          
+                          {/* Duration block on right */}
+                          <div className="w-1/2 pl-8">
+                            <div className={`${cert.color} text-white p-4 rounded-lg shadow-lg max-w-xs`}>
+                              <div className="text-sm font-handwrite opacity-90">{cert.date}</div>
+                              <div className="font-bold font-handwrite">{duration}</div>
+                              <div className="text-xs font-handwrite opacity-75 mt-1">Duration</div>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
         
         <div className="sketchy-card max-w-2xl mx-auto mt-12 text-center">
