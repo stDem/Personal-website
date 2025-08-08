@@ -7,7 +7,7 @@ const CertificatesSection = () => {
       title: "Web Programming Certificate",
       issuer: "Julius-Maximilians-Universität Würzburg",
       date: "Mar 2025 – Ongoing",
-      description: "University-level certification program covering advanced web programming concepts, frameworks, and modern development practices.",
+      description: "Advanced web programming concepts & frameworks.",
       skills: ["Web Programming", "Advanced Concepts", "Frameworks", "Development Practices"],
       startYear: 2025,
       endYear: 2025,
@@ -18,7 +18,7 @@ const CertificatesSection = () => {
       title: "Frontend Development Hands-on Training Certificate",
       issuer: "Kreativstorm",
       date: "Jan 2025 – Feb 2025",
-      description: "Intensive hands-on training program focused on practical frontend development skills and real-world project implementation.",
+      description: "Intensive hands-on frontend training with real projects.",
       skills: ["Frontend Development", "Practical Skills", "Project Implementation", "Modern Tools"],
       startYear: 2025,
       endYear: 2025,
@@ -28,11 +28,11 @@ const CertificatesSection = () => {
     {
       title: "Master's Degree in Computer Science: Artificial Intelligence",
       issuer: "Technische Hochschule Würzburg-Schweinfurt",
-      date: "Mar 2024 – Ongoing",
-      description: "Advanced degree program focusing on artificial intelligence, machine learning, deep learning, and modern AI applications.",
+      date: "Mar 2024 – Mar 2026",
+      description: "Advanced AI & ML program with deep learning focus.",
       skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks"],
       startYear: 2024,
-      endYear: 2025,
+      endYear: 2026,
       color: "bg-orange-500",
       icon: "🤖"
     },
@@ -40,7 +40,7 @@ const CertificatesSection = () => {
       title: "Diploma of Professional Retraining: Frontend-developer Specialist",
       issuer: "GeekBrains",
       date: "Jun 2023 – Oct 2024",
-      description: "Intensive professional retraining program for frontend development covering modern frameworks, tools, and industry best practices.",
+      description: "Professional frontend development program with modern frameworks.",
       skills: ["Frontend Development", "JavaScript", "React", "Vue.js"],
       startYear: 2023,
       endYear: 2024,
@@ -51,7 +51,7 @@ const CertificatesSection = () => {
       title: "Meta Front-End Developer Certificate",
       issuer: "Meta",
       date: "Oct 2021 – Apr 2025",
-      description: "Comprehensive front-end development program covering React, JavaScript, responsive design, and modern web development practices.",
+      description: "Comprehensive React & JavaScript development program.",
       skills: ["React", "JavaScript", "HTML/CSS", "Responsive Design"],
       startYear: 2021,
       endYear: 2025,
@@ -62,7 +62,7 @@ const CertificatesSection = () => {
       title: "Diploma of Professional Retraining: Information Systems and Technologies",
       issuer: "Moscow Polytechnic University",
       date: "Nov 2021 – Jun 2022",
-      description: "Professional retraining program covering modern information systems, database management, and technology implementation.",
+      description: "Information systems & database management program.",
       skills: ["Information Systems", "Database Management", "Technology", "Systems Analysis"],
       startYear: 2021,
       endYear: 2022,
@@ -73,7 +73,7 @@ const CertificatesSection = () => {
       title: "Bachelor's Degree with Honors in Engineering",
       issuer: "Moscow Polytechnic University",
       date: "Sep 2018 – Jun 2022",
-      description: "Comprehensive engineering education focused on automation of technological processes and production with specialization in robotics.",
+      description: "Engineering with automation & robotics specialization.",
       skills: ["Robotics", "Automation", "Engineering", "Production Systems"],
       startYear: 2018,
       endYear: 2022,
@@ -82,8 +82,8 @@ const CertificatesSection = () => {
     }
   ];
 
-  // Create timeline years from 2018 to 2025
-  const years = [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018];
+  // Create timeline years from 2018 to 2026
+  const years = [2026, 2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018];
   
   // Calculate positions and heights for timeline bars
   const getTimelinePosition = (year) => {
@@ -107,7 +107,7 @@ const CertificatesSection = () => {
         </p>
         
         {/* Timeline */}
-        <div className="max-w-6xl mx-auto relative" style={{ height: '1000px' }}>
+        <div className="max-w-6xl mx-auto relative" style={{ height: '1200px' }}>
           {/* Central timeline line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/20 h-full"></div>
           
@@ -125,7 +125,12 @@ const CertificatesSection = () => {
             const startPos = getTimelinePosition(cert.startYear);
             const barHeight = getBarHeight(cert.startYear, cert.endYear);
             const barWidth = 12;
-            const isLeft = index % 2 === 0;
+            // Custom positioning to avoid overlaps
+            const getBarSide = (index) => {
+              const pattern = [false, true, false, true, true, false, false]; // Custom pattern
+              return pattern[index];
+            };
+            const isLeft = getBarSide(index);
             
             return (
               <div
