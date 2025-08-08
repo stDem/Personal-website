@@ -5,7 +5,7 @@ const CertificatesSection = () => {
   const certificates = [
     {
       title: "Master's Degree in Computer Science: Artificial Intelligence",
-      issuer: "Technische Hochschule Würzburg-Schweinfurt",
+      issuer: "Technische Hochschule Würzburg-Schweinfurt", 
       date: "Mar 2024 – Mar 2026",
       description: "Advanced AI & ML program with deep learning focus.",
       skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks"],
@@ -14,18 +14,6 @@ const CertificatesSection = () => {
       color: "bg-orange-700",
       textColor: "text-orange-600",
       icon: "🤖"
-    },
-    {
-      title: "Web Programming Certificate",
-      issuer: "Julius-Maximilians-Universität Würzburg",
-      date: "Mar 2025 – Aug 2025",
-      description: "Advanced web programming concepts & frameworks.",
-      skills: ["Web Programming", "Advanced Concepts", "Frameworks", "Development Practices"],
-      startYear: 2025,
-      endYear: 2025,
-      color: "bg-yellow-700",
-      textColor: "text-yellow-600",
-      icon: "⚙️"
     },
     {
       title: "Frontend Development Hands-on Training Certificate",
@@ -38,6 +26,18 @@ const CertificatesSection = () => {
       color: "bg-green-700",
       textColor: "text-green-600",
       icon: "🎯"
+    },
+    {
+      title: "Web Programming Certificate",
+      issuer: "Julius-Maximilians-Universität Würzburg",
+      date: "Mar 2025 – Aug 2025",
+      description: "Advanced web programming concepts & frameworks.",
+      skills: ["Web Programming", "Advanced Concepts", "Frameworks", "Development Practices"],
+      startYear: 2025,
+      endYear: 2025,
+      color: "bg-yellow-700",
+      textColor: "text-yellow-600",
+      icon: "⚙️"
     },
     {
       title: "Diploma of Professional Retraining: Frontend-developer Specialist",
