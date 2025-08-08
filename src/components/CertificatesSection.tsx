@@ -4,6 +4,18 @@ import { Download, ExternalLink } from "lucide-react";
 const CertificatesSection = () => {
   const certificates = [
     {
+      title: "Master's Degree in Computer Science: Artificial Intelligence",
+      issuer: "Technische Hochschule Würzburg-Schweinfurt",
+      date: "Mar 2024 – Mar 2026",
+      description: "Advanced AI & ML program with deep learning focus.",
+      skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks"],
+      startYear: 2024,
+      endYear: 2026,
+      color: "bg-orange-700",
+      textColor: "text-orange-600",
+      icon: "🤖"
+    },
+    {
       title: "Web Programming Certificate",
       issuer: "Julius-Maximilians-Universität Würzburg",
       date: "Mar 2025 – Aug 2025",
@@ -26,18 +38,6 @@ const CertificatesSection = () => {
       color: "bg-green-700",
       textColor: "text-green-600",
       icon: "🎯"
-    },
-    {
-      title: "Master's Degree in Computer Science: Artificial Intelligence",
-      issuer: "Technische Hochschule Würzburg-Schweinfurt",
-      date: "Mar 2024 – Mar 2026",
-      description: "Advanced AI & ML program with deep learning focus.",
-      skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks"],
-      startYear: 2024,
-      endYear: 2026,
-      color: "bg-orange-700",
-      textColor: "text-orange-600",
-      icon: "🤖"
     },
     {
       title: "Diploma of Professional Retraining: Frontend-developer Specialist",
