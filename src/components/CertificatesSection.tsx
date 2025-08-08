@@ -186,6 +186,7 @@ const CertificatesSection = () => {
               const pattern = [false, true, false, true, true, false, false];
               return pattern[index];
             };
+            const isLeft = getBarSide(index);
             
             // Calculate certificate duration for distance from main line
             const duration = cert.endYear - cert.startYear + 1;
@@ -203,7 +204,6 @@ const CertificatesSection = () => {
             const baseShift = positionInSameSide * 25; // 25px per position away from line
             
             // Simplified card positioning: space cards evenly on each side
-            const isLeft = getBarSide(index);
             const cardSpacing = 250; // Minimum space between cards
             
             // Count cards on the same side before this one
