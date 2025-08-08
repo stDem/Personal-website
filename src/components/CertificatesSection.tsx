@@ -2,6 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Download, ExternalLink } from "lucide-react";
 
 const CertificatesSection = () => {
+  // Helper function to calculate duration in months
+  const calculateDuration = (startDate: string, endDate: string) => {
+    const start = new Date(startDate);
+    const end = endDate === 'Ongoing' ? new Date() : new Date(endDate);
+    const months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+    return months;
+  };
+
   const certificates = [
     {
       title: "Bachelor's Degree with Honors in Engineering",
@@ -133,13 +141,39 @@ const CertificatesSection = () => {
                   if (!cert || !cert.title) return null;
                   
                   const isLeft = itemIndex % 2 === 0;
-                  const duration = cert.date.includes('Ongoing') ? '24+ months' : 
-                                 cert.date.includes('2025') ? '2 months' :
-                                 cert.date.includes('Mar 2024') ? '12+ months' :
-                                 cert.date.includes('Jun 2023') ? '16 months' :
-                                 cert.date.includes('Oct 2021') && cert.title.includes('Meta') ? '42 months' :
-                                 cert.date.includes('Nov 2021') ? '8 months' :
-                                 '48 months';
+                  
+                  // Calculate actual duration
+                  let duration;
+                  let colorBlockHeight = 'h-16'; // default height
+                  
+                  if (cert.date.includes('Ongoing')) {
+                    const startDateStr = cert.date.split(' – ')[0];
+                    const startMonth = startDateStr.includes('Mar') ? 'March' : startDateStr.includes('Jan') ? 'January' : startDateStr;
+                    const startYear = cert.date.includes('Mar 2024') ? '2024' : '2025';
+                    const months = calculateDuration(`${startMonth} 1, ${startYear}`, 'Ongoing');
+                    duration = `${months} months`;
+                    colorBlockHeight = months > 12 ? 'h-24' : 'h-16'; // longer blocks for longer durations
+                  } else {
+                    const [startPart, endPart] = cert.date.split(' – ');
+                    const startYear = startPart.includes('2018') ? '2018' : startPart.includes('2021') ? '2021' : startPart.includes('2023') ? '2023' : '2025';
+                    const endYear = endPart.includes('2022') ? '2022' : endPart.includes('2024') ? '2024' : '2025';
+                    
+                    let startMonth, endMonth;
+                    if (startPart.includes('Sep')) startMonth = 'September';
+                    else if (startPart.includes('Nov')) startMonth = 'November';
+                    else if (startPart.includes('Oct')) startMonth = 'October';
+                    else if (startPart.includes('Jun')) startMonth = 'June';
+                    else if (startPart.includes('Jan')) startMonth = 'January';
+                    
+                    if (endPart.includes('Jun')) endMonth = 'June';
+                    else if (endPart.includes('Oct')) endMonth = 'October';
+                    else if (endPart.includes('Apr')) endMonth = 'April';
+                    else if (endPart.includes('Feb')) endMonth = 'February';
+                    
+                    const months = calculateDuration(`${startMonth} 1, ${startYear}`, `${endMonth} 1, ${endYear}`);
+                    duration = `${months} months`;
+                    colorBlockHeight = months > 24 ? 'h-32' : months > 12 ? 'h-24' : 'h-16'; // variable heights based on duration
+                  }
                   
                   return (
                     <div key={`${yearData.year}-${itemIndex}`} className="relative mb-12 flex items-center">
@@ -147,7 +181,7 @@ const CertificatesSection = () => {
                         <>
                           {/* Duration block on left */}
                           <div className="w-1/2 pr-8 flex justify-end">
-                            <div className={`${cert.color} text-white p-4 rounded-lg shadow-lg max-w-xs`}>
+                            <div className={`${cert.color} text-white p-4 rounded-lg shadow-lg max-w-xs ${colorBlockHeight} flex flex-col justify-center`}>
                               <div className="text-sm font-handwrite opacity-90">{cert.date}</div>
                               <div className="font-bold font-handwrite">{duration}</div>
                               <div className="text-xs font-handwrite opacity-75 mt-1">Duration</div>
@@ -236,7 +270,7 @@ const CertificatesSection = () => {
                           
                           {/* Duration block on right */}
                           <div className="w-1/2 pl-8">
-                            <div className={`${cert.color} text-white p-4 rounded-lg shadow-lg max-w-xs`}>
+                            <div className={`${cert.color} text-white p-4 rounded-lg shadow-lg max-w-xs ${colorBlockHeight} flex flex-col justify-center`}>
                               <div className="text-sm font-handwrite opacity-90">{cert.date}</div>
                               <div className="font-bold font-handwrite">{duration}</div>
                               <div className="text-xs font-handwrite opacity-75 mt-1">Duration</div>
