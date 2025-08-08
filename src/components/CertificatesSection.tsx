@@ -211,48 +211,27 @@ const CertificatesSection = () => {
             
             const horizontalShift = checkOverlap(index);
             
-            // Check for overlaps with previous certificates and shift if needed
-            const checkCardOverlap = (currentIndex) => {
-              let verticalShift = 0;
-              const isCurrentLeft = getBarSide(currentIndex);
-              const currentBaseTop = getBarTopPosition(certificates[currentIndex].startYear, certificates[currentIndex].endYear) + 10;
-              
-              // Check all previous cards on the same side
-              for (let i = 0; i < currentIndex; i++) {
-                const isPrevLeft = getBarSide(i);
-                
-                // Only check if they're on the same side
-                if (isPrevLeft === isCurrentLeft) {
-                  // Calculate previous card's position (including any shifts it might have)
-                  let prevShift = 0;
-                  for (let j = 0; j < i; j++) {
-                    const isPrevPrevLeft = getBarSide(j);
-                    if (isPrevPrevLeft === isPrevLeft) {
-                      prevShift += 150; // 150px spacing between cards
-                    }
-                  }
-                  
-                  const prevTop = getBarTopPosition(certificates[i].startYear, certificates[i].endYear) + 10 + prevShift;
-                  const currentTop = currentBaseTop + verticalShift;
-                  
-                  // If cards would overlap (within 140px of each other), shift current card down
-                  if (Math.abs(currentTop - prevTop) < 140) {
-                    verticalShift = Math.max(verticalShift, prevTop - currentBaseTop + 150);
-                  }
-                }
-              }
-              
-              return verticalShift;
-            };
-            
-            const verticalShift = checkCardOverlap(index);
+            // Simplified card positioning: space cards evenly on each side
             const isLeft = getBarSide(index);
-            const topPosition = getBarTopPosition(cert.startYear, cert.endYear) + 10 + verticalShift;
+            const cardSpacing = 180; // Minimum space between cards
             
-            // Calculate the center of the color block for connector line
-            const colorBlockCenter = getBarTopPosition(cert.startYear, cert.endYear) + (getBarHeight(cert.startYear, cert.endYear) / 2);
-            const cardCenter = topPosition + 60; // Approximate center of card
-            const lineOffset = cardCenter - colorBlockCenter;
+            // Count cards on the same side before this one
+            let cardsOnSameSide = 0;
+            for (let i = 0; i < index; i++) {
+              if (getBarSide(i) === isLeft) {
+                cardsOnSameSide++;
+              }
+            }
+            
+            // Position card based on color block center + spacing for same-side cards
+            const colorBlockTop = getBarTopPosition(cert.startYear, cert.endYear);
+            const colorBlockCenter = colorBlockTop + (getBarHeight(cert.startYear, cert.endYear) / 2);
+            const basePosition = Math.max(colorBlockTop - 60, cardsOnSameSide * cardSpacing);
+            const topPosition = basePosition + 20;
+            
+            // Calculate connection line from color block center to card center
+            const cardCenter = topPosition + 80; // Approximate center of card height
+            const verticalConnectorOffset = cardCenter - colorBlockCenter;
             
             return (
               <div key={index} className="absolute flex items-center w-full" style={{ top: `${topPosition}px` }}>
@@ -311,10 +290,10 @@ const CertificatesSection = () => {
                      {/* Timeline connector */}
                      <div className="w-8 flex justify-center relative">
                        <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg z-10`}></div>
-                       <div 
-                         className="absolute w-16 h-0.5 bg-primary/30 left-4" 
-                         style={{ top: `${2 - lineOffset}px` }}
-                       ></div>
+                        <div 
+                          className="absolute w-16 h-0.5 bg-primary/30 left-4" 
+                          style={{ top: `${2 - verticalConnectorOffset}px` }}
+                        ></div>
                      </div>
                     
                     <div className="w-1/2"></div>
@@ -326,10 +305,10 @@ const CertificatesSection = () => {
                      {/* Timeline connector */}
                      <div className="w-8 flex justify-center relative">
                        <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg z-10`}></div>
-                       <div 
-                         className="absolute w-16 h-0.5 bg-primary/30 right-4" 
-                         style={{ top: `${2 - lineOffset}px` }}
-                       ></div>
+                        <div 
+                          className="absolute w-16 h-0.5 bg-primary/30 right-4" 
+                          style={{ top: `${2 - verticalConnectorOffset}px` }}
+                        ></div>
                      </div>
                     
                     {/* Content on right */}
