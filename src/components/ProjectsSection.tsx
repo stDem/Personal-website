@@ -65,7 +65,7 @@ const ProjectsSection = () => {
       tech: ["AI API", "Vite", "TypeScript", "React", "Tailwind CSS"],
       github: "https://github.com/stDem/AI-Web-Design-Analysis",
       live: null,
-      status: "Completed",
+      status: "In Progress",
       category: "ai",
       image: projectPlaceholder
     }
