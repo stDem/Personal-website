@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section id="personal">
       {/* Hero Section with Split Design - Full Width */}
-      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2" style={{backgroundImage: `url('/lovable-uploads/f572ab7b-70d8-4650-9924-634ac527b867.png')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', paddingBottom: '56.25%'}}>
+      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2" style={{backgroundImage: `url('/lovable-uploads/880d6be5-c36b-46a4-a632-d188f6a71b38.png')`, backgroundSize: '60%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', paddingBottom: '30%'}}>
         {/* Coding Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="text-xs font-mono text-foreground/20 leading-relaxed p-8">
