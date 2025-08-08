@@ -46,7 +46,7 @@ while(coding) {
         
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="grid md:grid-cols-2 gap-12 w-full p-8">
+          <div className="grid md:grid-cols-3 gap-8 w-full p-8 items-center">
             {/* Left Side - Web Developer */}
             <div className="text-center md:text-left">
               <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
@@ -62,6 +62,15 @@ while(coding) {
                   </span>
                 ))}
               </div>
+            </div>
+            
+            {/* Center - Creative Portrait */}
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/f572ab7b-70d8-4650-9924-634ac527b867.png" 
+                alt="Creative portrait with artistic elements" 
+                className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-primary/20 shadow-lg"
+              />
             </div>
             
             {/* Right Side - AI Engineer */}
