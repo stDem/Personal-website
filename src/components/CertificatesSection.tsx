@@ -252,9 +252,7 @@ const CertificatesSection = () => {
                           <div className="ml-3 text-2xl">{cert.icon}</div>
                         </div>
                         
-                        <p className="text-muted-foreground mb-3 font-handwrite leading-relaxed text-sm">
-                          {cert.description}
-                        </p>
+                      
                         
                         <div className="mb-3">
                           <div className="flex flex-wrap gap-1">
@@ -325,10 +323,7 @@ const CertificatesSection = () => {
                           </div>
                           <div className="ml-3 text-2xl">{cert.icon}</div>
                         </div>
-                        
-                        <p className="text-muted-foreground mb-3 font-handwrite leading-relaxed text-sm">
-                          {cert.description}
-                        </p>
+                
                         
                         <div className="mb-3">
                           <div className="flex flex-wrap gap-1">
