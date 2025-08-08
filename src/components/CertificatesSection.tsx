@@ -11,8 +11,8 @@ const CertificatesSection = () => {
       skills: ["Web Programming", "Advanced Concepts", "Frameworks", "Development Practices"],
       startYear: 2025,
       endYear: 2025,
-      color: "bg-yellow-500",
-      textColor: "text-yellow-500",
+      color: "bg-yellow-700",
+      textColor: "text-yellow-600",
       icon: "⚙️"
     },
     {
@@ -23,8 +23,8 @@ const CertificatesSection = () => {
       skills: ["Frontend Development", "Practical Skills", "Project Implementation", "Modern Tools"],
       startYear: 2025,
       endYear: 2025,
-      color: "bg-green-500",
-      textColor: "text-green-500",
+      color: "bg-green-700",
+      textColor: "text-green-600",
       icon: "🎯"
     },
     {
@@ -35,8 +35,8 @@ const CertificatesSection = () => {
       skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks"],
       startYear: 2024,
       endYear: 2026,
-      color: "bg-orange-500",
-      textColor: "text-orange-500",
+      color: "bg-orange-700",
+      textColor: "text-orange-600",
       icon: "🤖"
     },
     {
@@ -47,8 +47,8 @@ const CertificatesSection = () => {
       skills: ["Frontend Development", "JavaScript", "React", "Vue.js"],
       startYear: 2023,
       endYear: 2024,
-      color: "bg-red-500",
-      textColor: "text-red-500",
+      color: "bg-red-700",
+      textColor: "text-red-600",
       icon: "📊"
     },
     {
@@ -59,8 +59,8 @@ const CertificatesSection = () => {
       skills: ["React", "JavaScript", "HTML/CSS", "Responsive Design"],
       startYear: 2021,
       endYear: 2025,
-      color: "bg-teal-500",
-      textColor: "text-teal-500",
+      color: "bg-teal-700",
+      textColor: "text-teal-600",
       icon: "🔧"
     },
     {
@@ -71,8 +71,8 @@ const CertificatesSection = () => {
       skills: ["Information Systems", "Database Management", "Technology", "Systems Analysis"],
       startYear: 2021,
       endYear: 2022,
-      color: "bg-gray-500",
-      textColor: "text-gray-500",
+      color: "bg-gray-700",
+      textColor: "text-gray-600",
       icon: "📱"
     },
     {
@@ -83,8 +83,8 @@ const CertificatesSection = () => {
       skills: ["Robotics", "Automation", "Engineering", "Production Systems"],
       startYear: 2018,
       endYear: 2022,
-      color: "bg-blue-500",
-      textColor: "text-blue-500",
+      color: "bg-blue-700",
+      textColor: "text-blue-600",
       icon: "🎓"
     }
   ];
@@ -169,8 +169,8 @@ const CertificatesSection = () => {
                 className={`absolute ${cert.color} opacity-80 rounded`}
                 style={{
                   left: isLeft 
-                    ? `calc(50% - ${40 + baseShift}px)` 
-                    : `calc(50% + ${28 + baseShift}px)`,
+                    ? `calc(50% - ${45 + baseShift}px)` 
+                    : `calc(50% + ${33 + baseShift}px)`,
                   top: `${barTopPosition}px`,
                   width: `${barWidth}px`,
                   height: `${barHeight}px`,
@@ -229,7 +229,7 @@ const CertificatesSection = () => {
                 {isLeft ? (
                   <>
                     {/* Content on left */}
-                    <div className="w-1/2 flex justify-end" style={{ paddingRight: `${32 + baseShift}px` }}>
+                    <div className="w-1/2 flex justify-end" style={{ paddingRight: `${37 + baseShift}px` }}>
                       <div className="sketchy-card max-w-md">
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
@@ -291,7 +291,7 @@ const CertificatesSection = () => {
                      </div>
                     
                     {/* Content on right */}
-                    <div className="w-1/2" style={{ paddingLeft: `${32 + baseShift}px` }}>
+                    <div className="w-1/2" style={{ paddingLeft: `${37 + baseShift}px` }}>
                       <div className="sketchy-card max-w-md">
                          <div className="flex items-start justify-between mb-3">
                            <div className="flex-1">
