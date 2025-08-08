@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Brain, Globe } from "lucide-react";
 import { useState } from "react";
 
+// Import project images - using placeholders for now
+const projectPlaceholder = "/placeholder.svg";
+
 const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState("all");
 
@@ -13,7 +16,8 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/Dota2-draft-prediction",
       live: null,
       status: "Completed",
-      category: "ai"
+      category: "ai",
+      image: projectPlaceholder
     },
     {
       title: "Fall Detection System",
@@ -22,7 +26,8 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/Fall-Detection-Project",
       live: null,
       status: "Completed",
-      category: "ai"
+      category: "ai",
+      image: projectPlaceholder
     },
     {
       title: "Neural Network Image Classification",
@@ -31,7 +36,8 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/ANN-numpy-array-images",
       live: null,
       status: "Completed",
-      category: "ai"
+      category: "ai",
+      image: projectPlaceholder
     },
     {
       title: "Motion Classification System",
@@ -40,7 +46,8 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/Motions-classification",
       live: null,
       status: "Completed",
-      category: "ai"
+      category: "ai",
+      image: projectPlaceholder
     },
     {
       title: "Onion Dataset Classification",
@@ -49,7 +56,8 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/Classification-of-Onion-dataset",
       live: null,
       status: "Completed",
-      category: "ai"
+      category: "ai",
+      image: projectPlaceholder
     },
     {
       title: "AI Web Design Analysis",
@@ -58,7 +66,8 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/AI-Web-Design-Analysis",
       live: null,
       status: "Completed",
-      category: "ai"
+      category: "ai",
+      image: projectPlaceholder
     }
   ];
 
@@ -70,7 +79,8 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/Portfolio-site",
       live: null,
       status: "Completed",
-      category: "web"
+      category: "web",
+      image: projectPlaceholder
     },
     {
       title: "Work Space Website",
@@ -79,7 +89,8 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/WorkSpace—portfolio-site",
       live: null,
       status: "Completed",
-      category: "web"
+      category: "web",
+      image: projectPlaceholder
     },
     {
       title: "Little Lemon Restaurant",
@@ -88,7 +99,8 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/Little-Lemon-website",
       live: null,
       status: "Completed",
-      category: "web"
+      category: "web",
+      image: projectPlaceholder
     },
     {
       title: "Interior Design Portfolio",
@@ -97,7 +109,8 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/InteriorDesign—portfolio-site",
       live: null,
       status: "Completed",
-      category: "web"
+      category: "web",
+      image: projectPlaceholder
     },
     {
       title: "Auto Service Website",
@@ -106,11 +119,12 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/AutoService—portfolio-site",
       live: null,
       status: "Completed",
-      category: "web"
+      category: "web",
+      image: projectPlaceholder
     }
   ];
 
-  const allProjects = [...webProjects, ...aiProjects];
+  const allProjects = [...aiProjects, ...webProjects];
 
   const getFilteredProjects = () => {
     switch (activeTab) {
@@ -186,6 +200,14 @@ const ProjectsSection = () => {
                 </span>
               </div>
               
+              <div className="mb-4 rounded-lg overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              
               <p className="text-muted-foreground mb-4 font-handwrite leading-relaxed flex-grow">
                 {project.description}
               </p>
@@ -221,13 +243,14 @@ const ProjectsSection = () => {
                     Code
                   </a>
                 </Button>
-                {project.live && (
-                  <Button
-                    variant="default"
-                    size="sm"
-                    className="sketchy-btn flex-1"
-                    asChild
-                  >
+                <Button
+                  variant="default"
+                  size="sm"
+                  className="sketchy-btn flex-1"
+                  asChild={!!project.live}
+                  disabled={!project.live}
+                >
+                  {project.live ? (
                     <a 
                       href={project.live} 
                       target="_blank" 
@@ -237,8 +260,12 @@ const ProjectsSection = () => {
                       <ExternalLink className="w-4 h-4" />
                       Live
                     </a>
-                  </Button>
-                )}
+                  ) : (
+                    <span className="inline-flex items-center justify-center gap-2">
+                      <ExternalLink className="w-4 h-4" />
+                      Live
+                    </span>
+                  )}</Button>
               </div>
             </div>
           ))}
