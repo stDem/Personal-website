@@ -182,6 +182,12 @@ const CertificatesSection = () => {
           
           {/* Certificate cards */}
           {certificates.map((cert, index) => {
+            // Define getBarSide function first
+            const getBarSide = (index) => {
+              const pattern = [false, true, false, true, true, false, false];
+              return pattern[index];
+            };
+            
             // Get horizontal shift for color blocks (same logic as above)
             const checkOverlap = (currentIndex) => {
               const current = certificates[currentIndex];
@@ -247,12 +253,6 @@ const CertificatesSection = () => {
             };
             
             const verticalShift = checkCardOverlap(index);
-            
-            // Use same side logic as color blocks
-            const getBarSide = (index) => {
-              const pattern = [false, true, false, true, true, false, false];
-              return pattern[index];
-            };
             const isLeft = getBarSide(index);
             const topPosition = getBarTopPosition(cert.startYear, cert.endYear) + 10 + verticalShift;
             
