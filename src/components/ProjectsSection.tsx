@@ -14,7 +14,7 @@ const ProjectsSection = () => {
       description: "Machine learning model that predicts the outcome of Dota2 matches based on hero drafts. Uses ML algorithms to analyze team compositions and provide win probability predictions.",
       tech: ["ML", "NLP", "JavaScript", "HTML", "CSS"],
       github: "https://github.com/stDem/Dota2-draft-prediction",
-      live: null,
+      live: "https://anst-dem.com/",
       status: "Completed",
       category: "ai",
       image: projectPlaceholder
@@ -24,7 +24,7 @@ const ProjectsSection = () => {
       description: "Comprehensive fall detection solution combining machine learning, computer vision, mobile app development, and chatbot integration for elderly care and safety monitoring.",
       tech: ["ML", "Computer Vision", "Mobile App", "Chatbot"],
       github: "https://github.com/stDem/Fall-Detection-Project",
-      live: null,
+      live: "https://anst-dem.com/",
       status: "Completed",
       category: "ai",
       image: projectPlaceholder
@@ -34,7 +34,7 @@ const ProjectsSection = () => {
       description: "Deep learning project implementing artificial neural networks from scratch using numpy arrays for image classification tasks without external ML frameworks.",
       tech: ["Deep Learning", "Python", "NumPy"],
       github: "https://github.com/stDem/ANN-numpy-array-images",
-      live: null,
+      live: "https://anst-dem.com/",
       status: "Completed",
       category: "ai",
       image: projectPlaceholder
@@ -44,7 +44,7 @@ const ProjectsSection = () => {
       description: "Machine learning model designed to classify different types of human motions and activities using sensor data and pattern recognition algorithms.",
       tech: ["ML", "Python", "Pattern Recognition"],
       github: "https://github.com/stDem/Motions-classification",
-      live: null,
+      live: "https://anst-dem.com/",
       status: "Completed",
       category: "ai",
       image: projectPlaceholder
@@ -54,7 +54,7 @@ const ProjectsSection = () => {
       description: "Machine learning project focused on agricultural data analysis, specifically classifying onion varieties using computer vision and ML techniques.",
       tech: ["ML", "Computer Vision", "Python"],
       github: "https://github.com/stDem/Classification-of-Onion-dataset",
-      live: null,
+      live: "https://anst-dem.com/",
       status: "Completed",
       category: "ai",
       image: projectPlaceholder
@@ -64,7 +64,7 @@ const ProjectsSection = () => {
       description: "Modern web application that leverages AI APIs to analyze and provide insights on web design patterns, user experience, and design best practices.",
       tech: ["AI API", "Vite", "TypeScript", "React", "Tailwind CSS"],
       github: "https://github.com/stDem/AI-Web-Design-Analysis",
-      live: null,
+      live: "https://anst-dem.com/",
       status: "In Progress",
       category: "ai",
       image: projectPlaceholder
@@ -77,50 +77,50 @@ const ProjectsSection = () => {
       description: "Modern and responsive portfolio website built with React and Chakra UI, showcasing projects, skills, and professional experience with beautiful animations.",
       tech: ["React", "Chakra UI", "JavaScript"],
       github: "https://github.com/stDem/Portfolio-site",
-      live: null,
+      live: "https://anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: projectPlaceholder
+      image: "/lovable-uploads/34441cb5-7ee7-44e5-9720-1c4dc2a34957.png"
     },
     {
       title: "Work Space Website",
       description: "Professional workspace portfolio site featuring modern design, API integrations, and responsive layout built with vanilla JavaScript and SCSS.",
       tech: ["JavaScript", "HTML", "SCSS", "API"],
       github: "https://github.com/stDem/WorkSpace—portfolio-site",
-      live: null,
+      live: "https://anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: projectPlaceholder
+      image: "/lovable-uploads/dcc5c4a2-cb63-4fd8-8bed-85a7f7e75cec.png"
     },
     {
       title: "Little Lemon Restaurant",
       description: "Restaurant website with table booking system, menu display, and customer reviews. Built with React and SCSS with API integration for dynamic content.",
       tech: ["React", "SCSS", "API", "JavaScript"],
       github: "https://github.com/stDem/Little-Lemon-website",
-      live: null,
+      live: "https://anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: projectPlaceholder
+      image: "/lovable-uploads/84f5ab7a-4645-4085-b16a-f6a0a14389e6.png"
     },
     {
       title: "Interior Design Portfolio",
       description: "Elegant interior design showcase website built with Vue.js, featuring project galleries, design services, and client testimonials with smooth animations.",
       tech: ["Vue.js", "SCSS", "JavaScript"],
       github: "https://github.com/stDem/InteriorDesign—portfolio-site",
-      live: null,
+      live: "https://anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: projectPlaceholder
+      image: "/lovable-uploads/8fbce848-a219-4aac-be1c-cc135d7aefab.png"
     },
     {
       title: "Auto Service Website",
       description: "Professional automotive service website featuring service listings, appointment booking, and customer portal built with modern web technologies.",
       tech: ["JavaScript", "HTML", "SCSS"],
       github: "https://github.com/stDem/AutoService—portfolio-site",
-      live: null,
+      live: "https://anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: projectPlaceholder
+      image: "/lovable-uploads/f9f1b27a-7857-4e58-87c0-3e4e638adfef.png"
     }
   ];
 
@@ -191,7 +191,7 @@ const ProjectsSection = () => {
                 <h3 className="text-xl font-bold text-sketchy-primary font-handwrite">
                   {project.title}
                 </h3>
-                <span className={`text-xs px-2 py-1 rounded-full font-handwrite ${
+                <span className={`px-3 py-1 rounded-full font-handwrite text-xs whitespace-nowrap ${
                   project.status === 'Completed' 
                     ? 'bg-green-100 text-green-700' 
                     : 'bg-yellow-100 text-yellow-700'
