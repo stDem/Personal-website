@@ -182,7 +182,35 @@ const CertificatesSection = () => {
           
           {/* Certificate cards */}
           {certificates.map((cert, index) => {
-            const isLeft = index % 2 === 0;
+            // Check for overlaps with previous certificates and shift if needed
+            const checkOverlap = (currentIndex) => {
+              const current = certificates[currentIndex];
+              const currentTop = getBarTopPosition(current.startYear, current.endYear);
+              const currentBottom = currentTop + getBarHeight(current.startYear, current.endYear);
+              
+              let shift = 0;
+              for (let i = 0; i < currentIndex; i++) {
+                const prev = certificates[i];
+                const prevTop = getBarTopPosition(prev.startYear, prev.endYear);
+                const prevBottom = prevTop + getBarHeight(prev.startYear, prev.endYear);
+                
+                // Check if they overlap vertically
+                if (!(currentBottom < prevTop || currentTop > prevBottom)) {
+                  // They overlap, apply shift
+                  shift += 80; // Larger shift for card content
+                }
+              }
+              return shift;
+            };
+            
+            const horizontalShift = checkOverlap(index);
+            
+            // Use same side logic as color blocks
+            const getBarSide = (index) => {
+              const pattern = [false, true, false, true, true, false, false];
+              return pattern[index];
+            };
+            const isLeft = getBarSide(index);
             const topPosition = getBarTopPosition(cert.startYear, cert.endYear) + 10;
             
             return (
@@ -190,7 +218,7 @@ const CertificatesSection = () => {
                 {isLeft ? (
                   <>
                     {/* Content on left */}
-                    <div className="w-1/2 pr-8 flex justify-end">
+                    <div className="w-1/2 flex justify-end" style={{ paddingRight: `${32 + horizontalShift}px` }}>
                       <div className="sketchy-card max-w-md">
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
@@ -221,9 +249,21 @@ const CertificatesSection = () => {
                           </div>
                         </div>
                         
-                        <p className="text-xs text-muted-foreground font-handwrite">
-                          {cert.date}
-                        </p>
+                        <div className="flex items-center justify-between mb-2">
+                          <p className="text-xs text-muted-foreground font-handwrite">
+                            {cert.date}
+                          </p>
+                          <div className="flex gap-2">
+                            <Button variant="outline" size="sm" className="font-handwrite text-xs">
+                              <Download className="w-3 h-3 mr-1" />
+                              Download
+                            </Button>
+                            <Button variant="outline" size="sm" className="font-handwrite text-xs">
+                              <ExternalLink className="w-3 h-3 mr-1" />
+                              Verify
+                            </Button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     
@@ -246,7 +286,7 @@ const CertificatesSection = () => {
                     </div>
                     
                     {/* Content on right */}
-                    <div className="w-1/2 pl-8">
+                    <div className="w-1/2" style={{ paddingLeft: `${32 + horizontalShift}px` }}>
                       <div className="sketchy-card max-w-md">
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
@@ -277,9 +317,21 @@ const CertificatesSection = () => {
                           </div>
                         </div>
                         
-                        <p className="text-xs text-muted-foreground font-handwrite">
-                          {cert.date}
-                        </p>
+                        <div className="flex items-center justify-between mb-2">
+                          <p className="text-xs text-muted-foreground font-handwrite">
+                            {cert.date}
+                          </p>
+                          <div className="flex gap-2">
+                            <Button variant="outline" size="sm" className="font-handwrite text-xs">
+                              <Download className="w-3 h-3 mr-1" />
+                              Download
+                            </Button>
+                            <Button variant="outline" size="sm" className="font-handwrite text-xs">
+                              <ExternalLink className="w-3 h-3 mr-1" />
+                              Verify
+                            </Button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </>
