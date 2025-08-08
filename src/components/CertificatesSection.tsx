@@ -242,7 +242,7 @@ const CertificatesSection = () => {
                       <div className="sketchy-card max-w-md">
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
-                            <h3 className="text-lg font-bold text-sketchy-primary font-handwrite mb-1">
+                            <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.color.replace('bg-', 'text-')}`}>
                               {cert.title}
                             </h3>
                             <p className="text-muted-foreground font-handwrite text-sm">
@@ -284,14 +284,10 @@ const CertificatesSection = () => {
                         </div>
                       </div>
                     </div>
-                    
+                     
                      {/* Timeline connector */}
                      <div className="w-8 flex justify-center relative">
                        <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg z-10`}></div>
-                        <div 
-                          className="absolute w-16 h-0.5 bg-primary/30 left-4" 
-                          style={{ top: `${2 - verticalConnectorOffset}px` }}
-                        ></div>
                      </div>
                     
                     <div className="w-1/2"></div>
@@ -299,30 +295,26 @@ const CertificatesSection = () => {
                 ) : (
                   <>
                     <div className="w-1/2"></div>
-                    
+                     
                      {/* Timeline connector */}
                      <div className="w-8 flex justify-center relative">
                        <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg z-10`}></div>
-                        <div 
-                          className="absolute w-16 h-0.5 bg-primary/30 right-4" 
-                          style={{ top: `${2 - verticalConnectorOffset}px` }}
-                        ></div>
                      </div>
                     
                     {/* Content on right */}
                     <div className="w-1/2" style={{ paddingLeft: `${32 + horizontalShift}px` }}>
                       <div className="sketchy-card max-w-md">
-                        <div className="flex items-start justify-between mb-3">
-                          <div className="flex-1">
-                            <h3 className="text-lg font-bold text-sketchy-primary font-handwrite mb-1">
-                              {cert.title}
-                            </h3>
-                            <p className="text-muted-foreground font-handwrite text-sm">
-                              {cert.issuer}
-                            </p>
-                          </div>
-                          <div className="ml-3 text-2xl">{cert.icon}</div>
-                        </div>
+                         <div className="flex items-start justify-between mb-3">
+                           <div className="flex-1">
+                             <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.color.replace('bg-', 'text-')}`}>
+                               {cert.title}
+                             </h3>
+                             <p className="text-muted-foreground font-handwrite text-sm">
+                               {cert.issuer}
+                             </p>
+                           </div>
+                           <div className="ml-3 text-2xl">{cert.icon}</div>
+                         </div>
                 
                         
                         <div className="mb-3">
