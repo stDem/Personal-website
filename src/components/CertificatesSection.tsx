@@ -12,6 +12,7 @@ const CertificatesSection = () => {
       startYear: 2025,
       endYear: 2025,
       color: "bg-yellow-500",
+      textColor: "text-yellow-500",
       icon: "⚙️"
     },
     {
@@ -23,6 +24,7 @@ const CertificatesSection = () => {
       startYear: 2025,
       endYear: 2025,
       color: "bg-green-500",
+      textColor: "text-green-500",
       icon: "🎯"
     },
     {
@@ -34,6 +36,7 @@ const CertificatesSection = () => {
       startYear: 2024,
       endYear: 2026,
       color: "bg-orange-500",
+      textColor: "text-orange-500",
       icon: "🤖"
     },
     {
@@ -45,6 +48,7 @@ const CertificatesSection = () => {
       startYear: 2023,
       endYear: 2024,
       color: "bg-red-500",
+      textColor: "text-red-500",
       icon: "📊"
     },
     {
@@ -56,6 +60,7 @@ const CertificatesSection = () => {
       startYear: 2021,
       endYear: 2025,
       color: "bg-teal-500",
+      textColor: "text-teal-500",
       icon: "🔧"
     },
     {
@@ -67,6 +72,7 @@ const CertificatesSection = () => {
       startYear: 2021,
       endYear: 2022,
       color: "bg-gray-500",
+      textColor: "text-gray-500",
       icon: "📱"
     },
     {
@@ -78,6 +84,7 @@ const CertificatesSection = () => {
       startYear: 2018,
       endYear: 2022,
       color: "bg-blue-500",
+      textColor: "text-blue-500",
       icon: "🎓"
     }
   ];
@@ -242,7 +249,7 @@ const CertificatesSection = () => {
                       <div className="sketchy-card max-w-md">
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
-                            <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.color.replace('bg-', 'text-')}`}>
+                            <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.textColor}`}>
                               {cert.title}
                             </h3>
                             <p className="text-muted-foreground font-handwrite text-sm">
@@ -304,9 +311,9 @@ const CertificatesSection = () => {
                       <div className="sketchy-card max-w-md">
                          <div className="flex items-start justify-between mb-3">
                            <div className="flex-1">
-                             <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.color.replace('bg-', 'text-')}`}>
-                               {cert.title}
-                             </h3>
+                              <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.textColor}`}>
+                                {cert.title}
+                              </h3>
                              <p className="text-muted-foreground font-handwrite text-sm">
                                {cert.issuer}
                              </p>
