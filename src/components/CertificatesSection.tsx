@@ -92,9 +92,13 @@ const CertificatesSection = () => {
   };
   
   const getBarHeight = (startYear, endYear) => {
-    const startPos = getTimelinePosition(startYear);
-    const endPos = getTimelinePosition(endYear);
-    return Math.abs(startPos - endPos) + 60; // Add base height
+    // Calculate duration properly - each year is 120px apart
+    const duration = endYear - startYear;
+    return Math.max(duration * 120, 60); // Minimum 60px height
+  };
+  
+  const getBarTopPosition = (startYear) => {
+    return getTimelinePosition(startYear) + 50;
   };
 
   return (
@@ -122,8 +126,8 @@ const CertificatesSection = () => {
           
           {/* Duration bars */}
           {certificates.map((cert, index) => {
-            const startPos = getTimelinePosition(cert.startYear);
             const barHeight = getBarHeight(cert.startYear, cert.endYear);
+            const barTopPosition = getBarTopPosition(cert.startYear);
             const barWidth = 12;
             // Custom positioning to avoid overlaps
             const getBarSide = (index) => {
@@ -138,7 +142,7 @@ const CertificatesSection = () => {
                 className={`absolute ${cert.color} opacity-80 rounded`}
                 style={{
                   left: isLeft ? 'calc(50% - 40px)' : 'calc(50% + 28px)',
-                  top: `${startPos + 50}px`,
+                  top: `${barTopPosition}px`,
                   width: `${barWidth}px`,
                   height: `${barHeight}px`,
                 }}
@@ -149,7 +153,7 @@ const CertificatesSection = () => {
           {/* Certificate cards */}
           {certificates.map((cert, index) => {
             const isLeft = index % 2 === 0;
-            const topPosition = getTimelinePosition(cert.startYear) + 60;
+            const topPosition = getBarTopPosition(cert.startYear) + 10;
             
             return (
               <div key={index} className="absolute flex items-center w-full" style={{ top: `${topPosition}px` }}>
