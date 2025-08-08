@@ -182,7 +182,7 @@ const CertificatesSection = () => {
           
           {/* Certificate cards */}
           {certificates.map((cert, index) => {
-            // Check for overlaps with previous certificates and shift if needed
+            // Get horizontal shift for color blocks (same logic as above)
             const checkOverlap = (currentIndex) => {
               const current = certificates[currentIndex];
               const currentTop = getBarTopPosition(current.startYear, current.endYear);
@@ -197,7 +197,7 @@ const CertificatesSection = () => {
                 // Check if they overlap vertically
                 if (!(currentBottom < prevTop || currentTop > prevBottom)) {
                   // They overlap, apply shift
-                  shift += 80; // Larger shift for card content
+                  shift += 20; // 20px shift for each overlap
                 }
               }
               return shift;
@@ -205,13 +205,61 @@ const CertificatesSection = () => {
             
             const horizontalShift = checkOverlap(index);
             
+            // Check for overlaps with previous certificates and shift if needed
+            const checkCardOverlap = (currentIndex) => {
+              const current = certificates[currentIndex];
+              let currentTop = getBarTopPosition(current.startYear, current.endYear) + 10;
+              
+              let verticalShift = 0;
+              
+              // Check against all previous cards on the same side
+              for (let i = 0; i < currentIndex; i++) {
+                const prev = certificates[i];
+                const prevIsLeft = getBarSide(i);
+                const currentIsLeft = getBarSide(currentIndex);
+                
+                // Only check overlap if they're on the same side
+                if (prevIsLeft === currentIsLeft) {
+                  let prevTop = getBarTopPosition(prev.startYear, prev.endYear) + 10;
+                  
+                  // Apply any previous vertical shifts to get actual position
+                  for (let j = 0; j < i; j++) {
+                    const prevPrev = certificates[j];
+                    const prevPrevIsLeft = getBarSide(j);
+                    if (prevPrevIsLeft === prevIsLeft) {
+                      const prevPrevTop = getBarTopPosition(prevPrev.startYear, prevPrev.endYear) + 10;
+                      if (Math.abs(prevTop - prevPrevTop) < 120) {
+                        prevTop += 120;
+                      }
+                    }
+                  }
+                  
+                  const currentActualTop = currentTop + verticalShift;
+                  
+                  // Check if they would overlap (cards are about 120px tall)
+                  if (Math.abs(currentActualTop - prevTop) < 120) {
+                    verticalShift += 120; // Shift down by card height
+                  }
+                }
+              }
+              
+              return verticalShift;
+            };
+            
+            const verticalShift = checkCardOverlap(index);
+            
             // Use same side logic as color blocks
             const getBarSide = (index) => {
               const pattern = [false, true, false, true, true, false, false];
               return pattern[index];
             };
             const isLeft = getBarSide(index);
-            const topPosition = getBarTopPosition(cert.startYear, cert.endYear) + 10;
+            const topPosition = getBarTopPosition(cert.startYear, cert.endYear) + 10 + verticalShift;
+            
+            // Calculate the center of the color block for connector line
+            const colorBlockCenter = getBarTopPosition(cert.startYear, cert.endYear) + (getBarHeight(cert.startYear, cert.endYear) / 2);
+            const cardCenter = topPosition + 60; // Approximate center of card
+            const lineOffset = cardCenter - colorBlockCenter;
             
             return (
               <div key={index} className="absolute flex items-center w-full" style={{ top: `${topPosition}px` }}>
@@ -267,11 +315,14 @@ const CertificatesSection = () => {
                       </div>
                     </div>
                     
-                    {/* Timeline connector */}
-                    <div className="w-8 flex justify-center relative">
-                      <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg z-10`}></div>
-                      <div className="absolute w-16 h-0.5 bg-primary/30 left-4 top-2"></div>
-                    </div>
+                     {/* Timeline connector */}
+                     <div className="w-8 flex justify-center relative">
+                       <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg z-10`}></div>
+                       <div 
+                         className="absolute w-16 h-0.5 bg-primary/30 left-4" 
+                         style={{ top: `${2 - lineOffset}px` }}
+                       ></div>
+                     </div>
                     
                     <div className="w-1/2"></div>
                   </>
@@ -279,11 +330,14 @@ const CertificatesSection = () => {
                   <>
                     <div className="w-1/2"></div>
                     
-                    {/* Timeline connector */}
-                    <div className="w-8 flex justify-center relative">
-                      <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg z-10`}></div>
-                      <div className="absolute w-16 h-0.5 bg-primary/30 right-4 top-2"></div>
-                    </div>
+                     {/* Timeline connector */}
+                     <div className="w-8 flex justify-center relative">
+                       <div className={`w-4 h-4 ${cert.color} rounded-full border-4 border-background shadow-lg z-10`}></div>
+                       <div 
+                         className="absolute w-16 h-0.5 bg-primary/30 right-4" 
+                         style={{ top: `${2 - lineOffset}px` }}
+                       ></div>
+                     </div>
                     
                     {/* Content on right */}
                     <div className="w-1/2" style={{ paddingLeft: `${32 + horizontalShift}px` }}>
