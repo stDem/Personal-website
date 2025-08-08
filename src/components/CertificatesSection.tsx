@@ -125,14 +125,14 @@ const CertificatesSection = () => {
             const startPos = getTimelinePosition(cert.startYear);
             const barHeight = getBarHeight(cert.startYear, cert.endYear);
             const barWidth = 12;
+            const isLeft = index % 2 === 0;
             
             return (
               <div
                 key={index}
                 className={`absolute ${cert.color} opacity-80 rounded`}
                 style={{
-                  left: '50%',
-                  transform: 'translateX(-50%)',
+                  left: isLeft ? 'calc(50% - 40px)' : 'calc(50% + 28px)',
                   top: `${startPos + 50}px`,
                   width: `${barWidth}px`,
                   height: `${barHeight}px`,
