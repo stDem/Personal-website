@@ -125,12 +125,8 @@ const CertificatesSection = () => {
             const startPos = getTimelinePosition(cert.startYear);
             const barHeight = getBarHeight(cert.startYear, cert.endYear);
             const barWidth = 12;
-            // Custom positioning to avoid overlaps
-            const getBarSide = (index) => {
-              const pattern = [false, true, false, true, true, false, false]; // Custom pattern
-              return pattern[index];
-            };
-            const isLeft = getBarSide(index);
+            // Match the card positioning logic
+            const isLeft = index % 2 === 0;
             
             return (
               <div
