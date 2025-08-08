@@ -4,58 +4,67 @@ import { Download, ExternalLink } from "lucide-react";
 const CertificatesSection = () => {
   const certificates = [
     {
-      title: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "March 2023",
-      description: "Comprehensive certification covering AWS cloud architecture, security, and best practices for designing scalable and cost-effective solutions.",
-      skills: ["AWS", "Cloud Architecture", "Security", "Scalability"],
+      title: "Bachelor's Degree with Honors in Engineering",
+      issuer: "Moscow Polytechnic University",
+      date: "Sep 2018 – Jun 2022",
+      description: "Comprehensive engineering education focused on automation of technological processes and production with specialization in robotics.",
+      skills: ["Robotics", "Automation", "Engineering", "Production Systems"],
       certificateUrl: "#",
-      verificationUrl: "https://aws.amazon.com/verification/XXX123"
+      verificationUrl: "#"
     },
     {
-      title: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      date: "January 2023",
-      description: "Professional-level certification demonstrating expertise in developing applications and managing data on Google Cloud Platform.",
-      skills: ["GCP", "App Development", "Data Management", "Kubernetes"],
+      title: "Diploma of Professional Retraining: Information Systems and Technologies",
+      issuer: "Moscow Polytechnic University",
+      date: "Nov 2021 – Jun 2022",
+      description: "Professional retraining program covering modern information systems, database management, and technology implementation.",
+      skills: ["Information Systems", "Database Management", "Technology", "Systems Analysis"],
       certificateUrl: "#",
-      verificationUrl: "https://cloud.google.com/certification/verify/XXX456"
+      verificationUrl: "#"
     },
     {
-      title: "React Developer Certification",
-      issuer: "Meta (Facebook)",
-      date: "November 2022",
-      description: "Advanced certification covering React fundamentals, hooks, state management, testing, and modern development practices.",
-      skills: ["React", "JavaScript", "State Management", "Testing"],
+      title: "Meta Front-End Developer Certificate",
+      issuer: "Meta",
+      date: "Oct 2021 – Apr 2025",
+      description: "Comprehensive front-end development program covering React, JavaScript, responsive design, and modern web development practices.",
+      skills: ["React", "JavaScript", "HTML/CSS", "Responsive Design"],
       certificateUrl: "#",
-      verificationUrl: "https://developers.facebook.com/certification/verify/XXX789"
+      verificationUrl: "#"
     },
     {
-      title: "Certified Kubernetes Administrator",
-      issuer: "Cloud Native Computing Foundation",
-      date: "September 2022",
-      description: "Hands-on certification demonstrating skills in Kubernetes cluster administration, networking, security, and troubleshooting.",
-      skills: ["Kubernetes", "Container Orchestration", "DevOps", "Networking"],
+      title: "Diploma of Professional Retraining: Frontend-developer Specialist",
+      issuer: "GeekBrains",
+      date: "Jun 2023 – Oct 2024",
+      description: "Intensive professional retraining program for frontend development covering modern frameworks, tools, and industry best practices.",
+      skills: ["Frontend Development", "JavaScript", "React", "Vue.js"],
       certificateUrl: "#",
-      verificationUrl: "https://training.linuxfoundation.org/certification/verify/XXX101"
+      verificationUrl: "#"
     },
     {
-      title: "MongoDB Certified Developer",
-      issuer: "MongoDB University",
-      date: "July 2022",
-      description: "Certification covering MongoDB database design, queries, indexing, aggregation framework, and performance optimization.",
-      skills: ["MongoDB", "Database Design", "NoSQL", "Performance Tuning"],
+      title: "Master's Degree in Computer Science: Artificial Intelligence",
+      issuer: "Technische Hochschule Würzburg-Schweinfurt",
+      date: "Mar 2024 – Ongoing",
+      description: "Advanced degree program focusing on artificial intelligence, machine learning, deep learning, and modern AI applications.",
+      skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks"],
       certificateUrl: "#",
-      verificationUrl: "https://university.mongodb.com/certification/verify/XXX112"
+      verificationUrl: "#"
     },
     {
-      title: "Agile Certified Practitioner",
-      issuer: "Project Management Institute",
-      date: "May 2022",
-      description: "Certification demonstrating knowledge of agile principles, practices, tools, and techniques across various agile methodologies.",
-      skills: ["Agile", "Scrum", "Project Management", "Team Leadership"],
+      title: "Frontend Development Hands-on Training Certificate",
+      issuer: "Kreativstorm",
+      date: "Jan 2025 – Feb 2025",
+      description: "Intensive hands-on training program focused on practical frontend development skills and real-world project implementation.",
+      skills: ["Frontend Development", "Practical Skills", "Project Implementation", "Modern Tools"],
       certificateUrl: "#",
-      verificationUrl: "https://pmi.org/certification/verify/XXX131"
+      verificationUrl: "#"
+    },
+    {
+      title: "Web Programming Certificate",
+      issuer: "Julius-Maximilians-Universität Würzburg",
+      date: "Mar 2025 – Ongoing",
+      description: "University-level certification program covering advanced web programming concepts, frameworks, and modern development practices.",
+      skills: ["Web Programming", "Advanced Concepts", "Frameworks", "Development Practices"],
+      certificateUrl: "#",
+      verificationUrl: "#"
     }
   ];
 
