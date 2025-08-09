@@ -90,11 +90,14 @@ while(coding) {
         {/* Profile & Bio */}
         <div className="bg-card rounded-lg p-6 border">
           <div className="flex flex-col items-center text-center mb-6">
-            <img 
-              src={profilePhoto} 
-              alt="Anastasiia Demidova" 
-              className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary/20"
-            />
+            <div className="relative">
+              <img 
+                src={profilePhoto} 
+                alt="Anastasiia Demidova" 
+                className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary/20 relative z-10"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/80 via-transparent to-white/80 pointer-events-none"></div>
+            </div>
             <h3 className="text-2xl font-bold mb-2">Anastasiia Demidova</h3>
             <p className="text-muted-foreground">Full Stack Developer & AI Engineer</p>
           </div>
