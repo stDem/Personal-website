@@ -138,7 +138,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="sketchy-section paper-texture">
+    <section id="projects" className="sketchy-section">
       <div className="container mx-auto px-4">
         <h2 className="sketchy-title text-center">My Projects</h2>
         <p className="text-xl text-center font-handwrite text-muted-foreground mb-8 max-w-2xl mx-auto">

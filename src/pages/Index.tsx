@@ -38,7 +38,7 @@ const Index = () => {
           <h1 className="text-6xl text-foreground mb-4 font-serif font-normal text-right">
             Anastasiia Demidova
           </h1>
-          <div className="w-24 h-1 bg-foreground ml-auto mb-4 rounded-full"></div>
+          <div className="w-72 h-0.5 bg-foreground ml-auto mb-4 rounded-full"></div>
         </header>
         
         <SectionSelector 
