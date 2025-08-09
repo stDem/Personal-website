@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 // Import hobby images
-import photographyImg from "@/assets/hobbies/photography.jpg";
 import swimmingImg from "@/assets/hobbies/swimming.jpg";
 import tennisImg from "@/assets/hobbies/tennis.jpg";
 import joggingImg from "@/assets/hobbies/jogging.jpg";
@@ -13,8 +12,6 @@ import musicImg from "@/assets/hobbies/music.jpg";
 import travelingImg from "@/assets/hobbies/traveling.jpg";
 import yogaImg from "@/assets/hobbies/yoga.jpg";
 import gamingImg from "@/assets/hobbies/gaming.jpg";
-import readingImg from "@/assets/hobbies/reading.jpg";
-import cookingImg from "@/assets/hobbies/cooking.jpg";
 import rockClimbingImg from "@/assets/hobbies/rock-climbing.jpg";
 import waterSportsImg from "@/assets/hobbies/water-sports.jpg";
 import divingImg from "@/assets/hobbies/diving.jpg";
@@ -69,11 +66,11 @@ const HobbiesSection = () => {
       image: crossCountrySkiingImg
     },
     {
-      title: "Downhill Skiing",
-      icon: "🎿",
-      description: "The thrill of skiing down mountain slopes - pure adrenaline and excitement.",
-      detailedDescription: "Downhill skiing provides the perfect adrenaline rush. There's nothing quite like the feeling of carving down a mountain slope, feeling the wind and snow, and challenging yourself on different terrains. It's exhilarating and requires complete focus and skill.",
-      highlights: ["Mountain slope skiing", "Different terrain challenges", "Adrenaline sport", "Winter vacation activity"],
+      title: "Ice Skating",
+      icon: "⛸️",
+      description: "Graceful movement on ice - a beautiful combination of balance, skill, and artistry.",
+      detailedDescription: "Ice skating is an elegant sport that combines grace, balance, and athleticism. Whether it's figure skating or just recreational skating, there's something magical about gliding across the ice. It's a great way to enjoy winter and develop coordination and balance skills.",
+      highlights: ["Figure skating elements", "Ice rink regular", "Balance and coordination", "Winter sport enjoyment"],
       color: "text-blue-500",
       image: skiingImg
     },
@@ -112,33 +109,6 @@ const HobbiesSection = () => {
       highlights: ["Strategy & RPG games", "Competitive online player", "Game development interest", "Problem-solving skills"],
       color: "text-red-600",
       image: gamingImg
-    },
-    {
-      title: "Reading",
-      icon: "📚",
-      description: "Constantly learning through books about technology, philosophy, and science fiction.",
-      detailedDescription: "Reading is my gateway to continuous learning and imagination. I devour books about technology to stay current with industry trends, explore philosophy to understand deeper questions about life, and escape into science fiction for pure enjoyment. Knowledge truly is the best investment, and books are my preferred teachers.",
-      highlights: ["50+ books per year", "Tech & sci-fi focus", "Philosophy exploration", "Active in book clubs"],
-      color: "text-indigo-600",
-      image: readingImg
-    },
-    {
-      title: "Cooking & Baking",
-      icon: "👨‍🍳",
-      description: "Experimenting with flavors and techniques from around the world.",
-      detailedDescription: "Cooking and baking are like coding for me - you follow recipes (like algorithms), then you improvise and optimize! I love experimenting with flavors and techniques from different cuisines around the world. There's something deeply satisfying about creating delicious meals and sharing them with friends and family.",
-      highlights: ["Italian cuisine specialist", "Sourdough bread master", "Weekly dinner parties", "International recipes"],
-      color: "text-green-600",
-      image: cookingImg
-    },
-    {
-      title: "Photography",
-      icon: "📸",
-      description: "Capturing life's beautiful moments through the lens, specializing in landscape and street photography.",
-      detailedDescription: "Photography allows me to capture and share the beauty I see in the world. I specialize in landscape and street photography, always looking for interesting stories in everyday scenes. Whether it's a stunning sunset or an authentic moment on the street, photography teaches me to see the world differently and appreciate small details.",
-      highlights: ["500+ photos on Unsplash", "Featured in local gallery", "Nature & urban exploration", "Street photography"],
-      color: "text-blue-600",
-      image: photographyImg
     },
     {
       title: "Rock Climbing",
