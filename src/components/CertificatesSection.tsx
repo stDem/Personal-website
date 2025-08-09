@@ -252,7 +252,7 @@ const CertificatesSection = () => {
             const baseShift = positionInSameSide * 25; // 25px per position away from line
             
             // Simplified card positioning: space cards evenly on each side
-            const cardSpacing = 450; // Increased spacing between cards
+            const cardSpacing = 460; // Increased spacing between cards
             
             // Count cards on the same side before this one
             let cardsOnSameSide = 0;
