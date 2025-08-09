@@ -15,7 +15,7 @@ const SectionSelector = ({ onSectionChange, currentSection }: SectionSelectorPro
 
   return (
     <nav className="mb-16 max-w-4xl mx-auto">
-      <div className="flex justify-center items-center gap-8">
+      <div className="flex justify-end items-center gap-8">
         {sections.map((section) => (
           <button
             key={section.id}
