@@ -20,7 +20,7 @@ const SectionSelector = ({ onSectionChange, currentSection }: SectionSelectorPro
           <button
             key={section.id}
             onClick={() => onSectionChange(section.id)}
-            className={`text-lg transition-colors duration-200 relative ${
+            className={`text-lg transition-colors duration-200 relative px-4 py-2 ${
               currentSection === section.id 
                 ? 'text-foreground font-medium' 
                 : 'text-muted-foreground hover:text-foreground'
@@ -28,7 +28,7 @@ const SectionSelector = ({ onSectionChange, currentSection }: SectionSelectorPro
           >
             {section.name}
             {currentSection === section.id && (
-              <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-foreground"></div>
+              <div className="absolute top-0 right-0 w-0.5 h-full bg-foreground"></div>
             )}
           </button>
         ))}

@@ -119,18 +119,42 @@ All colors MUST be HSL.
   
   .sketchy-card {
     @apply bg-white/90 backdrop-blur-sm p-8 rounded-2xl relative;
-    border: 2px solid hsl(var(--foreground));
+    border: 1px solid hsl(var(--foreground));
     box-shadow: 4px 4px 0px hsl(var(--muted-foreground) / 0.3);
     transition: all 0.3s ease;
+  }
+  
+  .sketchy-card::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: -1px;
+    width: 1px;
+    height: 30%;
+    background: hsl(var(--foreground));
+    transform: rotate(-2deg);
   }
   
   .sketchy-card::after {
     content: '★';
     position: absolute;
-    top: -6px;
-    right: 12px;
-    font-size: 12px;
+    font-size: 10px;
     color: hsl(var(--muted-foreground) / 0.5);
+  }
+  
+  .sketchy-card:nth-child(odd)::after {
+    top: -5px;
+    right: 10px;
+  }
+  
+  .sketchy-card:nth-child(even)::after {
+    top: 8px;
+    right: -8px;
+  }
+  
+  .sketchy-card:nth-child(3n)::after {
+    bottom: 5px;
+    left: 12px;
   }
   
   .sketchy-card:hover {

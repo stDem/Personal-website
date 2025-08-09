@@ -35,10 +35,10 @@ const Index = () => {
     <div className="min-h-screen">
       <div className="container mx-auto px-4 py-12">
         <header className="text-center mb-12 max-w-4xl mx-auto">
-          <h1 className="text-6xl text-foreground mb-4 font-serif font-normal">
+          <h1 className="text-6xl text-foreground mb-4 font-serif font-normal text-right">
             Anastasiia Demidova
           </h1>
-          <div className="w-24 h-1 bg-foreground mx-auto mb-4 rounded-full"></div>
+          <div className="w-24 h-1 bg-foreground ml-auto mb-4 rounded-full"></div>
         </header>
         
         <SectionSelector 
