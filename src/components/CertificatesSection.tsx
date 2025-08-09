@@ -4,88 +4,74 @@ import { Download, ExternalLink } from "lucide-react";
 const CertificatesSection = () => {
   const certificates = [
     {
-      title: "Web Programming Certificate",
+      title: "Certificate: Web Programming",
       issuer: "Julius-Maximilians-Universität Würzburg",
       date: "Mar 2025 – Aug 2025",
-      description: "Advanced web programming concepts & frameworks.",
       skills: ["Web Programming", "Advanced Concepts", "Frameworks", "Development Practices"],
       startYear: 2025,
       endYear: 2025,
       color: "bg-yellow-700",
-      textColor: "text-yellow-600",
-      icon: "⚙️"
+      textColor: "text-yellow-600"
     },
     {
-      title: "Frontend Development Hands-on Training Certificate",
+      title: "Certificate: Frontend Development Hands-on Training",
       issuer: "Kreativstorm",
       date: "Jan 2025 – Feb 2025",
-      description: "Intensive hands-on frontend training with real projects.",
       skills: ["Frontend Development", "Practical Skills", "Project Implementation", "Modern Tools"],
       startYear: 2025,
       endYear: 2025,
       color: "bg-green-700",
-      textColor: "text-green-600",
-      icon: "🎯"
+      textColor: "text-green-600"
     },
     {
       title: "Master's Degree in Computer Science: Artificial Intelligence",
       issuer: "Technische Hochschule Würzburg-Schweinfurt",
       date: "Mar 2024 – Mar 2026",
-      description: "Advanced AI & ML program with deep learning focus.",
       skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks"],
       startYear: 2024,
       endYear: 2026,
       color: "bg-orange-700",
-      textColor: "text-orange-600",
-      icon: "🤖"
+      textColor: "text-orange-600"
     },
     {
       title: "Diploma of Professional Retraining: Frontend-developer Specialist",
       issuer: "GeekBrains",
       date: "Jun 2023 – Oct 2024",
-      description: "Professional frontend development program with modern frameworks.",
       skills: ["Frontend Development", "JavaScript", "React", "Vue.js"],
       startYear: 2023,
       endYear: 2024,
       color: "bg-red-700",
-      textColor: "text-red-600",
-      icon: "📊"
+      textColor: "text-red-600"
     },
     {
-      title: "Meta Front-End Developer Certificate",
+      title: "Certificate: Meta Front-End Developer",
       issuer: "Meta",
       date: "Oct 2021 – Apr 2025",
-      description: "Comprehensive React & JavaScript development program.",
       skills: ["React", "JavaScript", "HTML/CSS", "Responsive Design"],
       startYear: 2021,
       endYear: 2025,
       color: "bg-teal-700",
-      textColor: "text-teal-600",
-      icon: "🔧"
+      textColor: "text-teal-600"
     },
     {
       title: "Diploma of Professional Retraining: Information Systems and Technologies",
       issuer: "Moscow Polytechnic University",
       date: "Nov 2021 – Jun 2022",
-      description: "Information systems & database management program.",
       skills: ["Information Systems", "Database Management", "Technology", "Systems Analysis"],
       startYear: 2021,
       endYear: 2022,
       color: "bg-gray-700",
-      textColor: "text-gray-600",
-      icon: "📱"
+      textColor: "text-gray-600"
     },
     {
-      title: "Bachelor's Degree with Honors in Engineering",
+      title: "Bachelor's Degree with Honors in Engineering: Automation of technological processes and production (Robotics)",
       issuer: "Moscow Polytechnic University",
       date: "Sep 2018 – Jun 2022",
-      description: "Engineering with automation & robotics specialization.",
       skills: ["Robotics", "Automation", "Engineering", "Production Systems"],
       startYear: 2018,
       endYear: 2022,
       color: "bg-blue-700",
-      textColor: "text-blue-600",
-      icon: "🎓"
+      textColor: "text-blue-600"
     }
   ];
 
