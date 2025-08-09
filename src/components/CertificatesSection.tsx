@@ -214,11 +214,10 @@ const CertificatesSection = () => {
               }
             }
             
-            // Position card based on color block center + spacing for same-side cards
+            // Position card directly near its color block center
             const colorBlockTop = getBarTopPosition(cert.startYear, cert.endYear);
             const colorBlockCenter = colorBlockTop + (getBarHeight(cert.startYear, cert.endYear) / 2);
-            const basePosition = Math.max(colorBlockTop - 60, cardsOnSameSide * cardSpacing);
-            const topPosition = basePosition + 20;
+            const topPosition = colorBlockCenter - 80; // Center the card around the color block center
             
             // Calculate connection line from color block center to card center
             const cardCenter = topPosition + 80; // Approximate center of card height
