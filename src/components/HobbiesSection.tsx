@@ -1,46 +1,171 @@
+import { useState } from "react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+
+// Import hobby images
+import photographyImg from "@/assets/hobbies/photography.jpg";
+import swimmingImg from "@/assets/hobbies/swimming.jpg";
+import tennisImg from "@/assets/hobbies/tennis.jpg";
+import joggingImg from "@/assets/hobbies/jogging.jpg";
+import cyclingImg from "@/assets/hobbies/cycling.jpg";
+import crossCountrySkiingImg from "@/assets/hobbies/cross-country-skiing.jpg";
+import skiingImg from "@/assets/hobbies/skiing.jpg";
+import musicImg from "@/assets/hobbies/music.jpg";
+import travelingImg from "@/assets/hobbies/traveling.jpg";
+import yogaImg from "@/assets/hobbies/yoga.jpg";
+import gamingImg from "@/assets/hobbies/gaming.jpg";
+import readingImg from "@/assets/hobbies/reading.jpg";
+import cookingImg from "@/assets/hobbies/cooking.jpg";
+import rockClimbingImg from "@/assets/hobbies/rock-climbing.jpg";
+import waterSportsImg from "@/assets/hobbies/water-sports.jpg";
+import divingImg from "@/assets/hobbies/diving.jpg";
+
 const HobbiesSection = () => {
+  const [selectedHobby, setSelectedHobby] = useState(null);
+
   const hobbies = [
     {
-      title: "Photography",
-      icon: "📸",
-      description: "Capturing life's beautiful moments through the lens. I specialize in landscape and street photography, finding stories in everyday scenes.",
-      highlights: ["500+ photos on Unsplash", "Featured in local gallery", "Nature & urban exploration"],
-      color: "text-blue-600"
+      title: "Swimming",
+      icon: "🏊‍♀️",
+      description: "Started swimming 3 years ago and absolutely love the feeling of being in water.",
+      detailedDescription: "Swimming has become one of my favorite activities. I've been swimming for 3 years now, and I had 5 years of professional training during my childhood. There's something incredibly peaceful about being in the water - it's both a great workout and a form of meditation for me.",
+      highlights: ["3 years current practice", "5 years professional childhood training", "Pool and open water swimming"],
+      color: "text-blue-600",
+      image: swimmingImg
     },
     {
-      title: "Rock Climbing",
-      icon: "🧗‍♂️",
-      description: "Pushing physical and mental limits on rock faces. This hobby teaches me problem-solving, patience, and the importance of trust.",
-      highlights: ["5.10c grade climber", "Weekend mountain trips", "Indoor & outdoor climbing"],
-      color: "text-orange-600"
+      title: "Tennis",
+      icon: "🎾",
+      description: "Playing tennis for more than 8 years - it's my go-to sport for staying active and competitive.",
+      detailedDescription: "Tennis has been a constant in my life for over 8 years. I love the strategic aspect of the game, the quick decision-making, and the physical challenge. Whether it's a casual game with friends or a more competitive match, tennis always keeps me engaged and helps me stay in great shape.",
+      highlights: ["8+ years experience", "Regular tournament participation", "Both singles and doubles play"],
+      color: "text-green-600",
+      image: tennisImg
     },
     {
-      title: "Playing Guitar",
-      icon: "🎸",
-      description: "Creating melodies and expressing emotions through music. From acoustic folk to electric rock, music is my creative outlet.",
-      highlights: ["15+ years playing", "Performed at local venues", "Fingerstyle & electric"],
-      color: "text-purple-600"
+      title: "Jogging",
+      icon: "🏃‍♀️",
+      description: "Jogging is my constant habit - there's nothing like a good run to clear the mind and energize the body.",
+      detailedDescription: "Jogging has become an essential part of my daily routine. It's my time to think, to process the day, and to maintain my physical and mental health. Whether it's a quick morning run or a longer evening jog, running helps me stay centered and focused.",
+      highlights: ["Daily running habit", "5-10km regular distances", "Morning and evening runs"],
+      color: "text-orange-600",
+      image: joggingImg
     },
     {
-      title: "Cooking & Baking",
-      icon: "👨‍🍳",
-      description: "Experimenting with flavors and techniques from around the world. Cooking is like coding - following recipes, then improvising!",
-      highlights: ["Italian cuisine specialist", "Sourdough bread master", "Weekly dinner parties"],
-      color: "text-green-600"
+      title: "Cycling",
+      icon: "🚴‍♀️",
+      description: "I prefer long cycling trips with music, sometimes covering up to 130 km per day.",
+      detailedDescription: "Cycling long distances is one of my greatest pleasures. With my headphones on and good music playing, I can cycle for hours, covering up to 130 km in a single day. These long rides are perfect for exploring new areas, getting great exercise, and having time to think and enjoy nature.",
+      highlights: ["Long distance cycling", "Up to 130km per day", "Music-accompanied rides", "Scenic route exploration"],
+      color: "text-purple-600",
+      image: cyclingImg
+    },
+    {
+      title: "Cross Country Skiing",
+      icon: "⛷️",
+      description: "My favorite winter sport - there's something magical about gliding through snowy forests.",
+      detailedDescription: "Cross country skiing is definitely my favorite winter activity. The combination of the peaceful winter landscape, the rhythmic motion of skiing, and the full-body workout makes it incredibly satisfying. I love exploring snowy trails and the meditative quality of this sport.",
+      highlights: ["Favorite winter sport", "Forest trail exploration", "Full-body workout", "Winter landscape photography"],
+      color: "text-cyan-600",
+      image: crossCountrySkiingImg
+    },
+    {
+      title: "Downhill Skiing",
+      icon: "🎿",
+      description: "The thrill of skiing down mountain slopes - pure adrenaline and excitement.",
+      detailedDescription: "Downhill skiing provides the perfect adrenaline rush. There's nothing quite like the feeling of carving down a mountain slope, feeling the wind and snow, and challenging yourself on different terrains. It's exhilarating and requires complete focus and skill.",
+      highlights: ["Mountain slope skiing", "Different terrain challenges", "Adrenaline sport", "Winter vacation activity"],
+      color: "text-blue-500",
+      image: skiingImg
+    },
+    {
+      title: "Music",
+      icon: "🎵",
+      description: "Rock music lover who played clarinet in elementary school orchestra, now exploring kalimba, piano, and guitar.",
+      detailedDescription: "Music has always been a huge part of my life. I'm a dedicated rock music listener and have a rich musical background. I played clarinet in my elementary school symphony orchestra, which gave me a strong foundation in music theory. Now I enjoy playing kalimba, piano, and I'm learning guitar. Music is my creative outlet and emotional expression.",
+      highlights: ["Rock music enthusiast", "Former clarinet player in orchestra", "Current: kalimba, piano, guitar", "Music theory background"],
+      color: "text-purple-600",
+      image: musicImg
+    },
+    {
+      title: "Traveling",
+      icon: "✈️",
+      description: "Always ready to explore new places - traveling feeds my curiosity and love for adventure.",
+      detailedDescription: "Traveling is more than just a hobby for me - it's a passion. I'm always ready to explore new places, experience different cultures, try new foods, and meet interesting people. Each trip teaches me something new about the world and about myself. I love both spontaneous adventures and carefully planned explorations.",
+      highlights: ["Cultural exploration", "Adventure seeking", "Photography while traveling", "Local cuisine tasting"],
+      color: "text-emerald-600",
+      image: travelingImg
+    },
+    {
+      title: "Yoga",
+      icon: "🧘‍♀️",
+      description: "A nice way to relax and stretch - yoga helps me maintain balance in both body and mind.",
+      detailedDescription: "Yoga is my sanctuary for relaxation and mindfulness. It's the perfect way to stretch my body, calm my mind, and find inner balance. Whether it's a gentle morning flow or a more challenging evening practice, yoga helps me stay flexible, both physically and mentally, and provides a peaceful break from busy days.",
+      highlights: ["Daily practice", "Flexibility and strength", "Mindfulness meditation", "Stress relief"],
+      color: "text-pink-600",
+      image: yogaImg
     },
     {
       title: "Gaming",
       icon: "🎮",
-      description: "Strategy games and RPGs fuel my competitive spirit and love for immersive storytelling. Great for unwinding after coding sessions!",
-      highlights: ["Strategy & RPG games", "Competitive online player", "Game development hobby"],
-      color: "text-red-600"
+      description: "Strategy games and RPGs fuel my competitive spirit and love for immersive storytelling.",
+      detailedDescription: "Gaming is my way to unwind and challenge my strategic thinking. I particularly enjoy strategy games and RPGs that offer deep storytelling and complex decision-making. Gaming helps me relax after coding sessions while still keeping my mind engaged with puzzles and strategic challenges.",
+      highlights: ["Strategy & RPG games", "Competitive online player", "Game development interest", "Problem-solving skills"],
+      color: "text-red-600",
+      image: gamingImg
     },
     {
       title: "Reading",
       icon: "📚",
-      description: "Constantly learning through books about technology, philosophy, and science fiction. Knowledge is the best investment!",
-      highlights: ["50+ books per year", "Tech & sci-fi focus", "Active in book clubs"],
-      color: "text-indigo-600"
+      description: "Constantly learning through books about technology, philosophy, and science fiction.",
+      detailedDescription: "Reading is my gateway to continuous learning and imagination. I devour books about technology to stay current with industry trends, explore philosophy to understand deeper questions about life, and escape into science fiction for pure enjoyment. Knowledge truly is the best investment, and books are my preferred teachers.",
+      highlights: ["50+ books per year", "Tech & sci-fi focus", "Philosophy exploration", "Active in book clubs"],
+      color: "text-indigo-600",
+      image: readingImg
+    },
+    {
+      title: "Cooking & Baking",
+      icon: "👨‍🍳",
+      description: "Experimenting with flavors and techniques from around the world.",
+      detailedDescription: "Cooking and baking are like coding for me - you follow recipes (like algorithms), then you improvise and optimize! I love experimenting with flavors and techniques from different cuisines around the world. There's something deeply satisfying about creating delicious meals and sharing them with friends and family.",
+      highlights: ["Italian cuisine specialist", "Sourdough bread master", "Weekly dinner parties", "International recipes"],
+      color: "text-green-600",
+      image: cookingImg
+    },
+    {
+      title: "Photography",
+      icon: "📸",
+      description: "Capturing life's beautiful moments through the lens, specializing in landscape and street photography.",
+      detailedDescription: "Photography allows me to capture and share the beauty I see in the world. I specialize in landscape and street photography, always looking for interesting stories in everyday scenes. Whether it's a stunning sunset or an authentic moment on the street, photography teaches me to see the world differently and appreciate small details.",
+      highlights: ["500+ photos on Unsplash", "Featured in local gallery", "Nature & urban exploration", "Street photography"],
+      color: "text-blue-600",
+      image: photographyImg
+    },
+    {
+      title: "Rock Climbing",
+      icon: "🧗‍♂️",
+      description: "Pushing physical and mental limits on rock faces - problem-solving meets athleticism.",
+      detailedDescription: "Rock climbing combines physical strength, mental focus, and problem-solving in the most exciting way. Each route is like a puzzle that requires patience, trust, and determination to solve. Whether I'm climbing indoors or exploring outdoor crags, this sport teaches me valuable lessons about perseverance and trusting both my abilities and my climbing partners.",
+      highlights: ["5.10c grade climber", "Weekend mountain trips", "Indoor & outdoor climbing", "Problem-solving skills"],
+      color: "text-orange-600",
+      image: rockClimbingImg
+    },
+    {
+      title: "Water Sports",
+      icon: "🏄‍♀️",
+      description: "Exploring paddleboarding and kayaking - enjoying peaceful moments on the water.",
+      detailedDescription: "I have some experience with various water sports, particularly paddleboarding and kayaking. These activities offer a perfect combination of gentle exercise and peaceful meditation while being surrounded by water. There's something incredibly calming about being on the water, whether it's a quiet lake or a gentle river.",
+      highlights: ["Paddleboarding experience", "Kayaking adventures", "Water meditation", "Nature exploration"],
+      color: "text-teal-600",
+      image: waterSportsImg
+    },
+    {
+      title: "Diving",
+      icon: "🤿",
+      description: "Exploring the underwater world - a little experience that opened up amazing new perspectives.",
+      detailedDescription: "My diving experience might be limited, but it has opened up an entirely new world for me. The underwater environment is fascinating and peaceful in a way that's completely different from any other activity. Even with just a little experience, I've fallen in love with the marine life and the unique perspective diving provides.",
+      highlights: ["Beginner level experience", "Marine life fascination", "Underwater photography interest", "New world exploration"],
+      color: "text-blue-500",
+      image: divingImg
     }
   ];
 
@@ -87,29 +212,77 @@ const HobbiesSection = () => {
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {hobbies.map((hobby, index) => (
-              <div key={index} className="sketchy-card group hover:scale-105 transition-transform">
-                <div className="flex items-center mb-4">
-                  <div className="text-4xl mr-4">{hobby.icon}</div>
-                  <h4 className={`text-xl font-bold font-handwrite ${hobby.color}`}>
-                    {hobby.title}
-                  </h4>
-                </div>
-                
-                <p className="text-muted-foreground font-handwrite leading-relaxed mb-4">
-                  {hobby.description}
-                </p>
-                
-                <div>
-                  <h5 className="font-semibold mb-2 text-sm">Highlights:</h5>
-                  <ul className="space-y-1">
-                    {hobby.highlights.map((highlight, highlightIndex) => (
-                      <li key={highlightIndex} className="text-sm font-handwrite text-muted-foreground">
-                        • {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              <Dialog key={index}>
+                <DialogTrigger asChild>
+                  <div className="sketchy-card group hover:scale-105 transition-transform cursor-pointer">
+                    <div className="flex items-center mb-4">
+                      <div className="text-4xl mr-4">{hobby.icon}</div>
+                      <h4 className={`text-xl font-bold font-handwrite ${hobby.color}`}>
+                        {hobby.title}
+                      </h4>
+                    </div>
+                    
+                    <p className="text-muted-foreground font-handwrite leading-relaxed mb-4">
+                      {hobby.description}
+                    </p>
+                    
+                    <div>
+                      <h5 className="font-semibold mb-2 text-sm">Highlights:</h5>
+                      <ul className="space-y-1">
+                        {hobby.highlights.map((highlight, highlightIndex) => (
+                          <li key={highlightIndex} className="text-sm font-handwrite text-muted-foreground">
+                            • {highlight}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="mt-4 text-center">
+                      <span className="text-sm font-handwrite text-primary hover:underline">
+                        Click to learn more →
+                      </span>
+                    </div>
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="text-5xl">{hobby.icon}</div>
+                      <div>
+                        <h2 className={`text-3xl font-bold font-handwrite ${hobby.color}`}>
+                          {hobby.title}
+                        </h2>
+                      </div>
+                    </div>
+                    
+                    <div className="aspect-video w-full overflow-hidden rounded-lg">
+                      <img 
+                        src={hobby.image} 
+                        alt={`${hobby.title} activity`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <p className="text-lg font-handwrite leading-relaxed text-muted-foreground">
+                        {hobby.detailedDescription}
+                      </p>
+                      
+                      <div>
+                        <h3 className="text-xl font-bold mb-3 font-handwrite">Highlights & Experience:</h3>
+                        <ul className="space-y-2">
+                          {hobby.highlights.map((highlight, highlightIndex) => (
+                            <li key={highlightIndex} className="font-handwrite text-muted-foreground flex items-start">
+                              <span className="text-primary mr-2">•</span>
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             ))}
           </div>
         </div>
