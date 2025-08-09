@@ -14,7 +14,10 @@ const CertificatesSection = () => {
       textColor: "text-yellow-600",
       verifyUrl: null,
       showVerify: true,
-      verifyDisabled: true
+      verifyDisabled: true,
+      downloadUrl: null,
+      showDownload: true,
+      downloadDisabled: true
     },
     {
       title: "Certificate: Frontend Development Hands-on Training",
@@ -27,7 +30,10 @@ const CertificatesSection = () => {
       textColor: "text-green-600",
       verifyUrl: "https://credsverse.com/credentials/16a7cabf-f028-4bcb-82a1-d900f88b12d5",
       showVerify: true,
-      verifyDisabled: false
+      verifyDisabled: false,
+      downloadUrl: "https://drive.google.com/file/d/1uyCQ9A6x5pnyHTb0Dx1wNXey3FIVC9uI/view?usp=sharing",
+      showDownload: true,
+      downloadDisabled: false
     },
     {
       title: "Master's Degree in Computer Science: Artificial Intelligence",
@@ -40,7 +46,10 @@ const CertificatesSection = () => {
       textColor: "text-orange-600",
       verifyUrl: null,
       showVerify: true,
-      verifyDisabled: true
+      verifyDisabled: true,
+      downloadUrl: null,
+      showDownload: true,
+      downloadDisabled: true
     },
     {
       title: "Diploma of Professional Retraining: Frontend-developer Specialist",
@@ -51,7 +60,10 @@ const CertificatesSection = () => {
       endYear: 2024,
       color: "bg-red-700",
       textColor: "text-red-600",
-      showVerify: false
+      showVerify: false,
+      downloadUrl: "https://drive.google.com/file/d/1dcFE8WqWGWexKwEB987_o0jeaspga_hf/view?usp=sharing",
+      showDownload: true,
+      downloadDisabled: false
     },
     {
       title: "Certificate: Meta Front-End Developer",
@@ -64,7 +76,10 @@ const CertificatesSection = () => {
       textColor: "text-teal-600",
       verifyUrl: "https://www.coursera.org/account/accomplishments/professional-cert/KXNH226INRL4",
       showVerify: true,
-      verifyDisabled: false
+      verifyDisabled: false,
+      downloadUrl: "https://drive.google.com/file/d/1GIpA_uCZyhsH4huttw5uWQC2KzVD4V5g/view?usp=sharing",
+      showDownload: true,
+      downloadDisabled: false
     },
     {
       title: "Diploma of Professional Retraining: Information Systems and Technologies",
@@ -75,7 +90,10 @@ const CertificatesSection = () => {
       endYear: 2022,
       color: "bg-gray-700",
       textColor: "text-gray-600",
-      showVerify: false
+      showVerify: false,
+      downloadUrl: "https://drive.google.com/file/d/1_4J6MJJI2BhkTevdrlkInwBgzPaSOrTP/view?usp=sharing",
+      showDownload: true,
+      downloadDisabled: false
     },
     {
       title: "Bachelor's Degree with Honors in Engineering: Automation of technological processes and production (Robotics)",
@@ -86,7 +104,10 @@ const CertificatesSection = () => {
       endYear: 2022,
       color: "bg-blue-700",
       textColor: "text-blue-600",
-      showVerify: false
+      showVerify: false,
+      downloadUrl: "https://drive.google.com/file/d/1wRo6ll5qoHGhMtaxyD6zUprTS4F_mO8t/view?usp=sharing",
+      showDownload: true,
+      downloadDisabled: false
     }
   ];
 
@@ -264,9 +285,15 @@ const CertificatesSection = () => {
                             {cert.date}
                           </p>
                            <div className="flex gap-2">
-                             <Button variant="outline" size="sm" className="font-handwrite text-xs">
+                             <Button 
+                               variant="outline" 
+                               size="sm" 
+                               className="font-handwrite text-xs"
+                               disabled={cert.downloadDisabled}
+                               onClick={() => cert.downloadUrl && window.open(cert.downloadUrl, '_blank')}
+                             >
                                <Download className="w-3 h-3 mr-1" />
-                               Download
+                               Show
                              </Button>
                              {cert.showVerify && (
                                <Button 
@@ -333,9 +360,15 @@ const CertificatesSection = () => {
                             {cert.date}
                           </p>
                            <div className="flex gap-2">
-                             <Button variant="outline" size="sm" className="font-handwrite text-xs">
+                             <Button 
+                               variant="outline" 
+                               size="sm" 
+                               className="font-handwrite text-xs"
+                               disabled={cert.downloadDisabled}
+                               onClick={() => cert.downloadUrl && window.open(cert.downloadUrl, '_blank')}
+                             >
                                <Download className="w-3 h-3 mr-1" />
-                               Download
+                               Show
                              </Button>
                              {cert.showVerify && (
                                <Button 
