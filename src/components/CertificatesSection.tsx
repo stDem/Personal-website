@@ -8,6 +8,8 @@ const CertificatesSection = () => {
       issuer: "Julius-Maximilians-Universität Würzburg",
       date: "Mar 2025 – Aug 2025",
       skills: ["Web Programming", "Advanced Concepts", "Frameworks", "Development Practices"],
+      startDate: new Date(2025, 2, 1), // March 2025
+      endDate: new Date(2025, 7, 31), // August 2025
       startYear: 2025,
       endYear: 2025,
       color: "bg-yellow-700",
@@ -24,6 +26,8 @@ const CertificatesSection = () => {
       issuer: "Kreativstorm",
       date: "Jan 2025 – Feb 2025",
       skills: ["Frontend Development", "Practical Skills", "Project Implementation", "Modern Tools"],
+      startDate: new Date(2025, 0, 1), // January 2025
+      endDate: new Date(2025, 1, 28), // February 2025
       startYear: 2025,
       endYear: 2025,
       color: "bg-green-700",
@@ -40,6 +44,8 @@ const CertificatesSection = () => {
       issuer: "Technische Hochschule Würzburg-Schweinfurt",
       date: "Mar 2024 – Mar 2026",
       skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks"],
+      startDate: new Date(2024, 2, 1), // March 2024
+      endDate: new Date(2026, 2, 31), // March 2026
       startYear: 2024,
       endYear: 2026,
       color: "bg-orange-700",
@@ -56,6 +62,8 @@ const CertificatesSection = () => {
       issuer: "GeekBrains",
       date: "Jun 2023 – Oct 2024",
       skills: ["Frontend Development", "JavaScript", "React", "Vue.js"],
+      startDate: new Date(2023, 5, 1), // June 2023
+      endDate: new Date(2024, 9, 31), // October 2024
       startYear: 2023,
       endYear: 2024,
       color: "bg-red-700",
@@ -70,6 +78,8 @@ const CertificatesSection = () => {
       issuer: "Meta",
       date: "Oct 2021 – Apr 2025",
       skills: ["React", "JavaScript", "HTML/CSS", "Responsive Design"],
+      startDate: new Date(2021, 9, 1), // October 2021
+      endDate: new Date(2025, 3, 30), // April 2025
       startYear: 2021,
       endYear: 2025,
       color: "bg-teal-700",
@@ -86,6 +96,8 @@ const CertificatesSection = () => {
       issuer: "Moscow Polytechnic University",
       date: "Nov 2021 – Jun 2022",
       skills: ["Information Systems", "Database Management", "Technology", "Systems Analysis"],
+      startDate: new Date(2021, 10, 1), // November 2021
+      endDate: new Date(2022, 5, 30), // June 2022
       startYear: 2021,
       endYear: 2022,
       color: "bg-gray-700",
@@ -100,6 +112,8 @@ const CertificatesSection = () => {
       issuer: "Moscow Polytechnic University",
       date: "Sep 2018 – Jun 2022",
       skills: ["Robotics", "Automation", "Engineering", "Production Systems"],
+      startDate: new Date(2018, 8, 1), // September 2018
+      endDate: new Date(2022, 5, 30), // June 2022
       startYear: 2018,
       endYear: 2022,
       color: "bg-blue-700",
@@ -114,24 +128,36 @@ const CertificatesSection = () => {
   // Create timeline years from 2018 to 2026
   const years = [2026, 2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018];
   
-  // Calculate positions and heights for timeline bars
+  // Base timeline reference dates
+  const timelineStart = new Date(2018, 0, 1); // January 1, 2018
+  const timelineEnd = new Date(2026, 11, 31); // December 31, 2026
+  const timelineHeight = 1800; // Total timeline height in pixels
+  
+  // Calculate position based on actual date
+  const getDatePosition = (date) => {
+    const totalTimespan = timelineEnd.getTime() - timelineStart.getTime();
+    const dateOffset = date.getTime() - timelineStart.getTime();
+    return (dateOffset / totalTimespan) * timelineHeight;
+  };
+  
+  // Calculate positions and heights for timeline bars using actual dates
   const getTimelinePosition = (year) => {
     const yearIndex = years.indexOf(year);
     return yearIndex * 200; // 200px spacing between years
   };
   
-  const getBarHeight = (startYear, endYear) => {
-    // Calculate the actual distance between start and end positions
-    const startPos = getTimelinePosition(startYear);
-    const endPos = getTimelinePosition(endYear);
-    // Since years go from top (2026) to bottom (2018), we need absolute difference
-    return Math.abs(startPos - endPos) + 60; // Add base height for visibility
+  const getBarHeight = (cert) => {
+    // Calculate height based on actual duration
+    const startPos = getDatePosition(cert.startDate);
+    const endPos = getDatePosition(cert.endDate);
+    return Math.abs(endPos - startPos) + 30; // Add minimum height for visibility
   };
   
-  const getBarTopPosition = (startYear, endYear) => {
-    // For multi-year certificates, start from the end year (higher on timeline)
-    // For single year, position at that year
-    return Math.min(getTimelinePosition(startYear), getTimelinePosition(endYear));
+  const getBarTopPosition = (cert) => {
+    // Position at the start date (most recent date appears at top)
+    const startPos = getDatePosition(cert.startDate);
+    const endPos = getDatePosition(cert.endDate);
+    return Math.min(startPos, endPos);
   };
 
   return (
@@ -159,8 +185,8 @@ const CertificatesSection = () => {
           
           {/* Duration bars */}
           {certificates.map((cert, index) => {
-            const barHeight = getBarHeight(cert.startYear, cert.endYear);
-            const barTopPosition = getBarTopPosition(cert.startYear, cert.endYear);
+            const barHeight = getBarHeight(cert);
+            const barTopPosition = getBarTopPosition(cert);
             const barWidth = 12;
             
             // Custom positioning to avoid overlaps
@@ -237,8 +263,8 @@ const CertificatesSection = () => {
             }
             
             // Position card based on color block center + spacing for same-side cards
-            const colorBlockTop = getBarTopPosition(cert.startYear, cert.endYear);
-            const colorBlockCenter = colorBlockTop + (getBarHeight(cert.startYear, cert.endYear) / 2);
+            const colorBlockTop = getBarTopPosition(cert);
+            const colorBlockCenter = colorBlockTop + (getBarHeight(cert) / 2);
             const basePosition = Math.max(colorBlockTop - 60, cardsOnSameSide * cardSpacing);
             const topPosition = basePosition + 20;
             
