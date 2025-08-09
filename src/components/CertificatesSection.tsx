@@ -4,16 +4,16 @@ import { Download, ExternalLink } from "lucide-react";
 const CertificatesSection = () => {
   const certificates = [
     {
-      title: "Master's Degree in Computer Science: Artificial Intelligence",
-      issuer: "Technische Hochschule Würzburg-Schweinfurt", 
-      date: "Mar 2024 – Mar 2026",
-      description: "Advanced AI & ML program with deep learning focus.",
-      skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks"],
-      startYear: 2024,
-      endYear: 2026,
-      color: "bg-orange-700",
-      textColor: "text-orange-600",
-      icon: "🤖"
+      title: "Web Programming Certificate",
+      issuer: "Julius-Maximilians-Universität Würzburg",
+      date: "Mar 2025 – Aug 2025",
+      description: "Advanced web programming concepts & frameworks.",
+      skills: ["Web Programming", "Advanced Concepts", "Frameworks", "Development Practices"],
+      startYear: 2025,
+      endYear: 2025,
+      color: "bg-yellow-700",
+      textColor: "text-yellow-600",
+      icon: "⚙️"
     },
     {
       title: "Frontend Development Hands-on Training Certificate",
@@ -28,16 +28,16 @@ const CertificatesSection = () => {
       icon: "🎯"
     },
     {
-      title: "Web Programming Certificate",
-      issuer: "Julius-Maximilians-Universität Würzburg",
-      date: "Mar 2025 – Aug 2025",
-      description: "Advanced web programming concepts & frameworks.",
-      skills: ["Web Programming", "Advanced Concepts", "Frameworks", "Development Practices"],
-      startYear: 2025,
-      endYear: 2025,
-      color: "bg-yellow-700",
-      textColor: "text-yellow-600",
-      icon: "⚙️"
+      title: "Master's Degree in Computer Science: Artificial Intelligence",
+      issuer: "Technische Hochschule Würzburg-Schweinfurt",
+      date: "Mar 2024 – Mar 2026",
+      description: "Advanced AI & ML program with deep learning focus.",
+      skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks"],
+      startYear: 2024,
+      endYear: 2026,
+      color: "bg-orange-700",
+      textColor: "text-orange-600",
+      icon: "🤖"
     },
     {
       title: "Diploma of Professional Retraining: Frontend-developer Specialist",
@@ -214,22 +214,11 @@ const CertificatesSection = () => {
               }
             }
             
-            // Position card near its color block but with spacing to prevent overlaps
+            // Position card based on color block center + spacing for same-side cards
             const colorBlockTop = getBarTopPosition(cert.startYear, cert.endYear);
             const colorBlockCenter = colorBlockTop + (getBarHeight(cert.startYear, cert.endYear) / 2);
-            
-            // Calculate minimum spacing to prevent overlaps
-            const minCardSpacing = 160; // Minimum space between cards
-            const preferredPosition = colorBlockCenter - 80; // Preferred position near color block
-            
-            // For cards on the same side, ensure they don't overlap
-            let adjustedPosition = preferredPosition;
-            if (cardsOnSameSide > 0) {
-              const prevCardBottom = cardsOnSameSide * minCardSpacing;
-              adjustedPosition = Math.max(preferredPosition, prevCardBottom);
-            }
-            
-            const topPosition = adjustedPosition;
+            const basePosition = Math.max(colorBlockTop - 60, cardsOnSameSide * cardSpacing);
+            const topPosition = basePosition + 20;
             
             // Calculate connection line from color block center to card center
             const cardCenter = topPosition + 80; // Approximate center of card height
