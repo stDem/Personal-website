@@ -113,19 +113,19 @@ while(coding) {
           
           <div className="space-y-4">
             <a 
-              href="mailto:anastasiia.demidova@example.com"
+              href="mailto:stxdem@gmail.com"
               className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
             >
               <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
                 <Mail className="w-5 h-5 text-primary" />
               </div>
               <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                anastasiia.demidova@example.com
+                stxdem@gmail.com
               </span>
             </a>
             
             <a 
-              href="https://github.com/anastasiiademidova"
+              href="https://github.com/stDem"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
@@ -134,12 +134,12 @@ while(coding) {
                 <Github className="w-5 h-5 text-secondary" />
               </div>
               <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                github.com/anastasiiademidova
+                github.com/stDem
               </span>
             </a>
             
             <a 
-              href="https://linkedin.com/in/anastasiiademidova"
+              href="https://www.linkedin.com/in/anst-dem/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
@@ -148,12 +148,12 @@ while(coding) {
                 <Linkedin className="w-5 h-5 text-accent" />
               </div>
               <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                linkedin.com/in/anastasiiademidova
+                linkedin.com/in/anst-dem/
               </span>
             </a>
             
             <a 
-              href="https://wa.me/1234567890"
+              href="https://wa.me/491628645712"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
@@ -162,7 +162,7 @@ while(coding) {
                 <Phone className="w-5 h-5 text-muted-foreground" />
               </div>
               <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                +1 (234) 567-8890
+                +491628645712
               </span>
             </a>
           </div>

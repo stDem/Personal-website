@@ -12,20 +12,20 @@ const Footer = () => {
             </h3>
             <div className="space-y-3">
               <a 
-                href="mailto:john.doe@example.com"
+                href="mailto:stxdem@gmail.com"
                 className="flex items-center gap-3 text-white/80 hover:text-white transition-colors font-code"
               >
                 <Mail className="w-5 h-5" />
-                john.doe@example.com
+                stxdem@gmail.com
               </a>
               <a 
-                href="https://wa.me/1234567890"
+                href="https://wa.me/491628645712"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-white/80 hover:text-white transition-colors font-code"
               >
                 <Phone className="w-5 h-5" />
-                +1 (234) 567-8890
+                +491628645712
               </a>
             </div>
           </div>
@@ -37,7 +37,7 @@ const Footer = () => {
             </h3>
             <div className="flex gap-4">
               <a
-                href="https://github.com/johndoe"
+                href="https://github.com/stDem"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
@@ -45,7 +45,7 @@ const Footer = () => {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="https://linkedin.com/in/johndoe"
+                href="https://www.linkedin.com/in/anst-dem/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"

@@ -45,14 +45,14 @@ const HeroSection = () => {
           {/* Contact Links */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <a
-              href="mailto:john.doe@example.com"
+              href="mailto:stxdem@gmail.com"
               className="sketchy-btn inline-flex items-center gap-2"
             >
               <Mail className="w-5 h-5" />
               Email Me
             </a>
             <a
-              href="https://github.com/johndoe"
+              href="https://github.com/stDem"
               target="_blank"
               rel="noopener noreferrer"
               className="sketchy-btn inline-flex items-center gap-2"
@@ -61,7 +61,7 @@ const HeroSection = () => {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/johndoe"
+              href="https://www.linkedin.com/in/anst-dem/"
               target="_blank"
               rel="noopener noreferrer"
               className="sketchy-btn inline-flex items-center gap-2"
@@ -70,7 +70,7 @@ const HeroSection = () => {
               LinkedIn
             </a>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/491628645712"
               target="_blank"
               rel="noopener noreferrer"
               className="sketchy-btn inline-flex items-center gap-2"
