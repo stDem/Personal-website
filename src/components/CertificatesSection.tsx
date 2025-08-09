@@ -265,8 +265,8 @@ const CertificatesSection = () => {
             // Position card based on color block center + spacing for same-side cards
             const colorBlockTop = getBarTopPosition(cert);
             const colorBlockCenter = colorBlockTop + (getBarHeight(cert) / 2);
-            const basePosition = Math.max(colorBlockTop - 90, cardsOnSameSide * cardSpacing); // Even more offset
-            const topPosition = basePosition + 40; // More margin
+            const basePosition = Math.max(colorBlockTop - 80, cardsOnSameSide * cardSpacing); // Even more offset
+            const topPosition = basePosition + 35; // More margin
             
             // Calculate connection line from color block center to card center
             const cardCenter = topPosition + 80; // Approximate center of card height
