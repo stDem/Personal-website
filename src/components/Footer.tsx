@@ -1,6 +1,11 @@
 import { Github, Linkedin, Mail, Phone, Heart } from "lucide-react";
 
-const Footer = () => {
+interface FooterProps {
+  currentSection: string;
+  onSectionChange: (section: string) => void;
+}
+
+const Footer = ({ currentSection, onSectionChange }: FooterProps) => {
   return (
     <footer className="sketchy-section bg-sketchy-neutral text-white">
       <div className="container mx-auto px-4">
@@ -61,18 +66,23 @@ const Footer = () => {
               // Navigation
             </h3>
             <div className="space-y-2">
-              {['About', 'Projects', 'Certificates', 'Achievements', 'Hobbies'].map((item) => (
+              {[
+                { id: 'personal', name: 'About' },
+                { id: 'projects', name: 'Projects' },
+                { id: 'certificates', name: 'Certificates' },
+                { id: 'achievements', name: 'Achievements' },
+                { id: 'hobbies', name: 'Hobbies' }
+              ].map((item) => (
                 <button
-                  key={item}
-                  onClick={() => {
-                    const element = document.getElementById(item.toLowerCase());
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                  className="block text-white/80 hover:text-white transition-colors font-code"
+                  key={item.id}
+                  onClick={() => onSectionChange(item.id)}
+                  className={`block text-left w-full transition-colors font-code ${
+                    currentSection === item.id 
+                      ? 'text-white' 
+                      : 'text-white/80 hover:text-white'
+                  }`}
                 >
-                  {item}
+                  {item.name}
                 </button>
               ))}
             </div>

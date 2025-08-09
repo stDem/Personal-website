@@ -51,7 +51,7 @@ const Index = () => {
         </main>
       </div>
       
-      <Footer />
+      <Footer currentSection={currentSection} onSectionChange={setCurrentSection} />
     </div>
   );
 };
