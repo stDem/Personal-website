@@ -15,14 +15,21 @@ const SectionSelector = ({ onSectionChange, currentSection }: SectionSelectorPro
 
   return (
     <nav className="mb-16 max-w-4xl mx-auto">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-center items-center gap-8">
         {sections.map((section) => (
           <button
             key={section.id}
             onClick={() => onSectionChange(section.id)}
-            className={`academic-tab ${currentSection === section.id ? 'active' : ''}`}
+            className={`text-lg transition-colors duration-200 relative ${
+              currentSection === section.id 
+                ? 'text-foreground font-medium' 
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
           >
             {section.name}
+            {currentSection === section.id && (
+              <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-foreground"></div>
+            )}
           </button>
         ))}
       </div>

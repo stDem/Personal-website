@@ -119,15 +119,13 @@ All colors MUST be HSL.
   
   .sketchy-card {
     @apply bg-white/90 backdrop-blur-sm p-8 rounded-3xl relative;
-    border: 2px solid hsl(var(--foreground));
-    box-shadow: 4px 4px 0px hsl(var(--foreground));
-    transform: rotate(-0.5deg);
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 2px 8px -2px hsl(var(--foreground) / 0.1);
     transition: all 0.3s ease;
   }
   
   .sketchy-card:hover {
-    transform: rotate(0deg) translateY(-2px);
-    box-shadow: 6px 6px 0px hsl(var(--foreground));
+    box-shadow: 0 4px 16px -4px hsl(var(--foreground) / 0.15);
   }
   
   .sketchy-card:nth-child(even) {

@@ -278,7 +278,7 @@ const CertificatesSection = () => {
                   <>
                     {/* Content on left */}
                     <div className="w-1/2 flex justify-end" style={{ paddingRight: `${37 + baseShift}px` }}>
-                      <div className="bg-white/90 backdrop-blur-sm p-8 rounded-3xl relative max-w-md">
+                      <div className="p-6 max-w-md">
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
                             <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.textColor} ${cert.title.includes('Degree') ? 'underline' : ''}`}>
@@ -356,7 +356,7 @@ const CertificatesSection = () => {
                     
                     {/* Content on right */}
                     <div className="w-1/2" style={{ paddingLeft: `${37 + baseShift}px` }}>
-                      <div className="bg-white/90 backdrop-blur-sm p-8 rounded-3xl relative max-w-md">
+                      <div className="p-6 max-w-md">
                          <div className="flex items-start justify-between mb-3">
                            <div className="flex-1">
                                <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.textColor} ${cert.title.includes('Degree') ? 'underline' : ''}`}>
