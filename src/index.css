@@ -124,17 +124,6 @@ All colors MUST be HSL.
     transition: all 0.3s ease;
   }
   
-  .sketchy-card::before {
-    content: '';
-    position: absolute;
-    top: 15%;
-    left: -1px;
-    width: 1px;
-    height: 30%;
-    background: hsl(var(--foreground));
-    transform: rotate(-2deg);
-  }
-  
   .sketchy-card::after {
     content: '★';
     position: absolute;
