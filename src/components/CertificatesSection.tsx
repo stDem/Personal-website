@@ -285,16 +285,18 @@ const CertificatesSection = () => {
                             {cert.date}
                           </p>
                            <div className="flex gap-2">
-                             <Button 
-                               variant="outline" 
-                               size="sm" 
-                               className="font-handwrite text-xs"
-                               disabled={cert.downloadDisabled}
-                               onClick={() => cert.downloadUrl && window.open(cert.downloadUrl, '_blank')}
-                             >
-                               <Download className="w-3 h-3 mr-1" />
-                               Show
-                             </Button>
+                             {cert.showDownload && (
+                               <Button 
+                                 variant="outline" 
+                                 size="sm" 
+                                 className="font-handwrite text-xs"
+                                 disabled={cert.downloadDisabled}
+                                 onClick={() => cert.downloadUrl && window.open(cert.downloadUrl, '_blank')}
+                               >
+                                 <Download className="w-3 h-3 mr-1" />
+                                 Show
+                               </Button>
+                             )}
                              {cert.showVerify && (
                                <Button 
                                  variant="outline" 
@@ -360,16 +362,18 @@ const CertificatesSection = () => {
                             {cert.date}
                           </p>
                            <div className="flex gap-2">
-                             <Button 
-                               variant="outline" 
-                               size="sm" 
-                               className="font-handwrite text-xs"
-                               disabled={cert.downloadDisabled}
-                               onClick={() => cert.downloadUrl && window.open(cert.downloadUrl, '_blank')}
-                             >
-                               <Download className="w-3 h-3 mr-1" />
-                               Show
-                             </Button>
+                             {cert.showDownload && (
+                               <Button 
+                                 variant="outline" 
+                                 size="sm" 
+                                 className="font-handwrite text-xs"
+                                 disabled={cert.downloadDisabled}
+                                 onClick={() => cert.downloadUrl && window.open(cert.downloadUrl, '_blank')}
+                               >
+                                 <Download className="w-3 h-3 mr-1" />
+                                 Show
+                               </Button>
+                             )}
                              {cert.showVerify && (
                                <Button 
                                  variant="outline" 
