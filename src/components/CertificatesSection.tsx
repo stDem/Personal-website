@@ -214,10 +214,22 @@ const CertificatesSection = () => {
               }
             }
             
-            // Position card directly near its color block center
+            // Position card near its color block but with spacing to prevent overlaps
             const colorBlockTop = getBarTopPosition(cert.startYear, cert.endYear);
             const colorBlockCenter = colorBlockTop + (getBarHeight(cert.startYear, cert.endYear) / 2);
-            const topPosition = colorBlockCenter - 80; // Center the card around the color block center
+            
+            // Calculate minimum spacing to prevent overlaps
+            const minCardSpacing = 160; // Minimum space between cards
+            const preferredPosition = colorBlockCenter - 80; // Preferred position near color block
+            
+            // For cards on the same side, ensure they don't overlap
+            let adjustedPosition = preferredPosition;
+            if (cardsOnSameSide > 0) {
+              const prevCardBottom = cardsOnSameSide * minCardSpacing;
+              adjustedPosition = Math.max(preferredPosition, prevCardBottom);
+            }
+            
+            const topPosition = adjustedPosition;
             
             // Calculate connection line from color block center to card center
             const cardCenter = topPosition + 80; // Approximate center of card height
