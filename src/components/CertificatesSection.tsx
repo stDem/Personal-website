@@ -233,7 +233,7 @@ const CertificatesSection = () => {
                       <div className="sketchy-card max-w-md">
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
-                            <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.textColor}`}>
+                            <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.textColor} ${cert.title.includes('Degree') ? 'underline' : ''}`}>
                               {cert.title}
                             </h3>
                             <p className="text-muted-foreground font-handwrite text-sm">
@@ -295,9 +295,9 @@ const CertificatesSection = () => {
                       <div className="sketchy-card max-w-md">
                          <div className="flex items-start justify-between mb-3">
                            <div className="flex-1">
-                              <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.textColor}`}>
-                                {cert.title}
-                              </h3>
+                               <h3 className={`text-lg font-bold font-handwrite mb-1 ${cert.textColor} ${cert.title.includes('Degree') ? 'underline' : ''}`}>
+                                 {cert.title}
+                               </h3>
                              <p className="text-muted-foreground font-handwrite text-sm">
                                {cert.issuer}
                              </p>
