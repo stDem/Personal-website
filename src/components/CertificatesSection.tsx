@@ -11,7 +11,10 @@ const CertificatesSection = () => {
       startYear: 2025,
       endYear: 2025,
       color: "bg-yellow-700",
-      textColor: "text-yellow-600"
+      textColor: "text-yellow-600",
+      verifyUrl: null,
+      showVerify: true,
+      verifyDisabled: true
     },
     {
       title: "Certificate: Frontend Development Hands-on Training",
@@ -21,7 +24,10 @@ const CertificatesSection = () => {
       startYear: 2025,
       endYear: 2025,
       color: "bg-green-700",
-      textColor: "text-green-600"
+      textColor: "text-green-600",
+      verifyUrl: "https://credsverse.com/credentials/16a7cabf-f028-4bcb-82a1-d900f88b12d5",
+      showVerify: true,
+      verifyDisabled: false
     },
     {
       title: "Master's Degree in Computer Science: Artificial Intelligence",
@@ -31,7 +37,10 @@ const CertificatesSection = () => {
       startYear: 2024,
       endYear: 2026,
       color: "bg-orange-700",
-      textColor: "text-orange-600"
+      textColor: "text-orange-600",
+      verifyUrl: null,
+      showVerify: true,
+      verifyDisabled: true
     },
     {
       title: "Diploma of Professional Retraining: Frontend-developer Specialist",
@@ -41,7 +50,8 @@ const CertificatesSection = () => {
       startYear: 2023,
       endYear: 2024,
       color: "bg-red-700",
-      textColor: "text-red-600"
+      textColor: "text-red-600",
+      showVerify: false
     },
     {
       title: "Certificate: Meta Front-End Developer",
@@ -51,7 +61,10 @@ const CertificatesSection = () => {
       startYear: 2021,
       endYear: 2025,
       color: "bg-teal-700",
-      textColor: "text-teal-600"
+      textColor: "text-teal-600",
+      verifyUrl: "https://www.coursera.org/account/accomplishments/professional-cert/KXNH226INRL4",
+      showVerify: true,
+      verifyDisabled: false
     },
     {
       title: "Diploma of Professional Retraining: Information Systems and Technologies",
@@ -61,7 +74,8 @@ const CertificatesSection = () => {
       startYear: 2021,
       endYear: 2022,
       color: "bg-gray-700",
-      textColor: "text-gray-600"
+      textColor: "text-gray-600",
+      showVerify: false
     },
     {
       title: "Bachelor's Degree with Honors in Engineering: Automation of technological processes and production (Robotics)",
@@ -71,7 +85,8 @@ const CertificatesSection = () => {
       startYear: 2018,
       endYear: 2022,
       color: "bg-blue-700",
-      textColor: "text-blue-600"
+      textColor: "text-blue-600",
+      showVerify: false
     }
   ];
 
@@ -248,16 +263,24 @@ const CertificatesSection = () => {
                           <p className="text-xs text-muted-foreground font-handwrite">
                             {cert.date}
                           </p>
-                          <div className="flex gap-2">
-                            <Button variant="outline" size="sm" className="font-handwrite text-xs">
-                              <Download className="w-3 h-3 mr-1" />
-                              Download
-                            </Button>
-                            <Button variant="outline" size="sm" className="font-handwrite text-xs">
-                              <ExternalLink className="w-3 h-3 mr-1" />
-                              Verify
-                            </Button>
-                          </div>
+                           <div className="flex gap-2">
+                             <Button variant="outline" size="sm" className="font-handwrite text-xs">
+                               <Download className="w-3 h-3 mr-1" />
+                               Download
+                             </Button>
+                             {cert.showVerify && (
+                               <Button 
+                                 variant="outline" 
+                                 size="sm" 
+                                 className="font-handwrite text-xs"
+                                 disabled={cert.verifyDisabled}
+                                 onClick={() => cert.verifyUrl && window.open(cert.verifyUrl, '_blank')}
+                               >
+                                 <ExternalLink className="w-3 h-3 mr-1" />
+                                 Verify
+                               </Button>
+                             )}
+                           </div>
                         </div>
                       </div>
                     </div>
@@ -309,16 +332,24 @@ const CertificatesSection = () => {
                           <p className="text-xs text-muted-foreground font-handwrite">
                             {cert.date}
                           </p>
-                          <div className="flex gap-2">
-                            <Button variant="outline" size="sm" className="font-handwrite text-xs">
-                              <Download className="w-3 h-3 mr-1" />
-                              Download
-                            </Button>
-                            <Button variant="outline" size="sm" className="font-handwrite text-xs">
-                              <ExternalLink className="w-3 h-3 mr-1" />
-                              Verify
-                            </Button>
-                          </div>
+                           <div className="flex gap-2">
+                             <Button variant="outline" size="sm" className="font-handwrite text-xs">
+                               <Download className="w-3 h-3 mr-1" />
+                               Download
+                             </Button>
+                             {cert.showVerify && (
+                               <Button 
+                                 variant="outline" 
+                                 size="sm" 
+                                 className="font-handwrite text-xs"
+                                 disabled={cert.verifyDisabled}
+                                 onClick={() => cert.verifyUrl && window.open(cert.verifyUrl, '_blank')}
+                               >
+                                 <ExternalLink className="w-3 h-3 mr-1" />
+                                 Verify
+                               </Button>
+                             )}
+                           </div>
                         </div>
                       </div>
                     </div>
