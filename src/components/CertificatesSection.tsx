@@ -128,22 +128,22 @@ const CertificatesSection = () => {
   // Create timeline years from 2018 to 2026
   const years = [2026, 2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018];
   
-  // Base timeline reference dates
-  const timelineStart = new Date(2018, 0, 1); // January 1, 2018
-  const timelineEnd = new Date(2026, 11, 31); // December 31, 2026
+  // Base timeline reference dates (reversed: 2026 at top, 2018 at bottom)
+  const timelineStart = new Date(2026, 11, 31); // December 31, 2026 (top)
+  const timelineEnd = new Date(2018, 0, 1); // January 1, 2018 (bottom)
   const timelineHeight = 1800; // Total timeline height in pixels
   
-  // Calculate position based on actual date
+  // Calculate position based on actual date (reversed timeline)
   const getDatePosition = (date) => {
-    const totalTimespan = timelineEnd.getTime() - timelineStart.getTime();
-    const dateOffset = date.getTime() - timelineStart.getTime();
+    const totalTimespan = timelineStart.getTime() - timelineEnd.getTime();
+    const dateOffset = timelineStart.getTime() - date.getTime();
     return (dateOffset / totalTimespan) * timelineHeight;
   };
   
-  // Calculate positions and heights for timeline bars using actual dates
-  const getTimelinePosition = (year) => {
-    const yearIndex = years.indexOf(year);
-    return yearIndex * 200; // 200px spacing between years
+  // Calculate year position based on actual date
+  const getYearPosition = (year) => {
+    const yearDate = new Date(year, 0, 1); // January 1st of the year
+    return getDatePosition(yearDate);
   };
   
   const getBarHeight = (cert) => {
@@ -175,8 +175,8 @@ const CertificatesSection = () => {
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/20 h-full"></div>
           
           {/* Year labels */}
-          {years.map((year, index) => (
-            <div key={year} className="absolute left-1/2 transform -translate-x-1/2" style={{ top: `${index * 200 + 20}px` }}>
+          {years.map((year) => (
+            <div key={year} className="absolute left-1/2 transform -translate-x-1/2" style={{ top: `${getYearPosition(year) + 20}px` }}>
               <div className="bg-background border-2 border-primary px-3 py-1 rounded font-bold text-sm font-handwrite">
                 {year}
               </div>
