@@ -1,12 +1,11 @@
 import { Github, Linkedin, Mail, Phone, Heart } from "lucide-react";
 
-const Footer = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+interface FooterProps {
+  currentSection: string;
+  onSectionChange: (section: string) => void;
+}
+
+const Footer = ({ currentSection, onSectionChange }: FooterProps) => {
   return (
     <footer className="sketchy-section bg-sketchy-neutral text-white">
       <div className="container mx-auto px-4">
@@ -68,7 +67,7 @@ const Footer = () => {
             </h3>
             <div className="space-y-2">
               {[
-                { id: 'about', name: 'About' },
+                { id: 'personal', name: 'About' },
                 { id: 'projects', name: 'Projects' },
                 { id: 'certificates', name: 'Certificates' },
                 { id: 'achievements', name: 'Achievements' },
@@ -76,8 +75,12 @@ const Footer = () => {
               ].map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block text-left w-full transition-colors font-code text-white/80 hover:text-white"
+                  onClick={() => onSectionChange(item.id)}
+                  className={`block text-left w-full transition-colors font-code ${
+                    currentSection === item.id 
+                      ? 'text-white' 
+                      : 'text-white/80 hover:text-white'
+                  }`}
                 >
                   {item.name}
                 </button>
@@ -99,7 +102,7 @@ const Footer = () => {
               <span className="font-code">& caffeine.exec()</span>
             </div>
             <p className="text-sm text-white/50 font-code mt-4">
-              © 2024 Anastasiia Demidova. All rights reserved. | Built with React & TypeScript
+              © 2024 John Doe. All rights reserved. | Built with React & TypeScript
             </p>
           </div>
         </div>

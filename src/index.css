@@ -119,15 +119,15 @@ All colors MUST be HSL.
   
   .sketchy-card {
     @apply bg-white/90 backdrop-blur-sm p-8 rounded-3xl relative;
-    border: 2px solid hsl(var(--foreground));
-    box-shadow: 4px 4px 0px hsl(var(--foreground));
+    border: 3px solid hsl(var(--foreground));
+    box-shadow: 8px 8px 0px hsl(var(--foreground));
     transform: rotate(-0.5deg);
     transition: all 0.3s ease;
   }
   
   .sketchy-card:hover {
     transform: rotate(0deg) translateY(-4px);
-    box-shadow: 6px 6px 0px hsl(var(--foreground));
+    box-shadow: 12px 12px 0px hsl(var(--foreground));
   }
   
   .sketchy-card:nth-child(even) {
@@ -146,31 +146,31 @@ All colors MUST be HSL.
   .sketchy-btn {
     @apply px-6 py-3 bg-primary text-primary-foreground rounded-2xl font-medium relative transition-all;
     border: 2px solid hsl(var(--foreground));
-    box-shadow: 3px 3px 0px hsl(var(--foreground));
+    box-shadow: 4px 4px 0px hsl(var(--foreground));
     transform: rotate(-1deg);
   }
   
   .sketchy-btn:hover {
     transform: rotate(0deg) translateY(-2px);
-    box-shadow: 4px 4px 0px hsl(var(--foreground));
+    box-shadow: 6px 6px 0px hsl(var(--foreground));
   }
   
   .academic-tab {
     @apply text-lg text-foreground relative pr-3 bg-white/80 backdrop-blur-sm border-2 border-foreground rounded-2xl px-4 py-2 cursor-pointer transition-all duration-200;
-    box-shadow: 2px 2px 0px hsl(var(--foreground));
+    box-shadow: 3px 3px 0px hsl(var(--foreground));
     transform: rotate(-0.5deg);
   }
   
   .academic-tab:hover {
     @apply text-foreground;
     transform: rotate(0deg) translateY(-2px);
-    box-shadow: 3px 3px 0px hsl(var(--foreground));
+    box-shadow: 5px 5px 0px hsl(var(--foreground));
   }
   
   .academic-tab.active {
     @apply text-white bg-primary;
     transform: rotate(0deg);
-    box-shadow: 3px 3px 0px hsl(var(--foreground));
+    box-shadow: 5px 5px 0px hsl(var(--foreground));
   }
   
   .paper-texture {
