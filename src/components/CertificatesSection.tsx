@@ -25,7 +25,7 @@ const CertificatesSection = () => {
       title: "Certificate: Frontend Development Hands-on Training",
       issuer: "Kreativstorm",
       date: "Jan 2025 – Feb 2025",
-      skills: ["Frontend Development", "Practical Skills", "Project Implementation", "Modern Tools"],
+      skills: ["JS", "HTML", "CSS", "Git"],
       startDate: new Date(2025, 0, 1), // January 2025
       endDate: new Date(2025, 1, 28), // February 2025
       startYear: 2025,
