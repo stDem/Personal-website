@@ -112,7 +112,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'Zilla Slab', serif;
   }
 }
 

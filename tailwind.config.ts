@@ -19,10 +19,12 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'sketchy': ['Kalam', 'cursive'],
-				'robotic': ['Orbitron', 'monospace'],
-				'code': ['JetBrains Mono', 'monospace'],
-				'handwrite': ['Kalam', 'cursive'],
+				'sans': ['Zilla Slab', 'serif'],
+				'sketchy': ['Zilla Slab', 'serif'],
+				'robotic': ['Zilla Slab', 'serif'],
+				'code': ['Zilla Slab', 'serif'],
+				'handwrite': ['Zilla Slab', 'serif'],
+				'serif': ['Zilla Slab', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
