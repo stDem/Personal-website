@@ -35,7 +35,7 @@ const Index = () => {
     <div className="min-h-screen">
       <div className="container mx-auto px-4 py-12">
         <header className="text-center mb-12 max-w-4xl mx-auto relative">
-          <h1 className="text-6xl text-foreground mb-4 font-serif font-normal text-right">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-4 font-serif font-normal text-right">
             Anastasiia Demidova
           </h1>
           <div className="absolute left-0 right-0 h-px bg-foreground mb-4" style={{left: 'calc(-50vw + 50%)'}}>

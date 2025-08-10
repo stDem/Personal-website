@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section id="personal">
       {/* Hero Section with Split Design - Full Width */}
-      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2" style={{backgroundImage: `url('/lovable-uploads/880d6be5-c36b-46a4-a632-d188f6a71b38.png')`, backgroundSize: '60%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', paddingBottom: '30%'}}>
+      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2" style={{backgroundImage: `url('/lovable-uploads/880d6be5-c36b-46a4-a632-d188f6a71b38.png')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', minHeight: '60vh', paddingTop: '10vh', paddingBottom: '10vh'}}>
         {/* Coding Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="text-xs font-mono text-foreground/20 leading-relaxed p-8">
@@ -46,38 +46,45 @@ while(coding) {
         
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="grid md:grid-cols-2 gap-12 w-full p-8">
-            {/* Left Side - AI Engineer */}
-            <div className="text-center md:text-left">
-              <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
-                AI Engineer
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                AI engineer who builds intelligent systems and machine learning solutions.
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                {["Python", "TensorFlow", "PyTorch", "ML/AI"].map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">
-                    {tech}
-                  </span>
-                ))}
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-center">
+              {/* Left Side - AI Engineer */}
+              <div className="text-center lg:text-left">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-3 lg:mb-4">
+                  AI Engineer
+                </h2>
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6">
+                  AI engineer who builds intelligent systems and machine learning solutions.
+                </p>
+                <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                  {["Python", "TensorFlow", "PyTorch", "ML/AI"].map((tech) => (
+                    <span key={tech} className="px-2 sm:px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs sm:text-sm">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-            
-            {/* Right Side - Web Developer */}
-            <div className="text-center md:text-right">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-                Web Developer
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Frontend developer who writes clean, elegant and efficient code.
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center md:justify-end">
-                {["React", "TypeScript", "Next.js", "Tailwind"].map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
-                    {tech}
-                  </span>
-                ))}
+              
+              {/* Center - Photo placeholder */}
+              <div className="flex justify-center lg:order-none order-first">
+                <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72"></div>
+              </div>
+              
+              {/* Right Side - Web Developer */}
+              <div className="text-center lg:text-right">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 lg:mb-4">
+                  Web Developer
+                </h2>
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6">
+                  Frontend developer who writes clean, elegant and efficient code.
+                </p>
+                <div className="flex flex-wrap gap-2 justify-center lg:justify-end">
+                  {["React", "TypeScript", "Next.js", "Tailwind"].map((tech) => (
+                    <span key={tech} className="px-2 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
