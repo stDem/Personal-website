@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section id="personal">
       {/* Hero Section with Split Design - Full Width */}
-      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2" , backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', minHeight: '40vh', paddingTop: '5vh', paddingBottom: '5vh'}}>
+      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2" style={{backgroundImage: `url('/lovable-uploads/880d6be5-c36b-46a4-a632-d188f6a71b38.png')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', minHeight: '40vh', paddingTop: '5vh', paddingBottom: '5vh'}}>
         <style>
           {`
             @media (max-width: 768px) {
