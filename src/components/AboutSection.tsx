@@ -5,7 +5,8 @@ const AboutSection = () => {
   return (
     <section id="personal">
       {/* Hero Section with Split Design - Full Width */}
-      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2" style={{backgroundImage: `url('/lovable-uploads/880d6be5-c36b-46a4-a632-d188f6a71b38.png')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', minHeight: '60vh', paddingTop: '10vh', paddingBottom: '10vh'}}>
+      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2 bg-center bg-no-repeat bg-contain min-h-[40vh] sm:min-h-[50vh] lg:min-h-[60vh] py-[5vh] sm:py-[8vh] lg:py-[10vh]" 
+           style={{backgroundImage: `url('/lovable-uploads/304209bf-e169-482d-b6de-1ab710078e9e.png')`, backgroundSize: 'clamp(50%, 70%, contain)'}}>
         {/* Coding Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="text-xs font-mono text-foreground/20 leading-relaxed p-8">
@@ -53,7 +54,7 @@ while(coding) {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-3 lg:mb-4">
                   AI Engineer
                 </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6">
+                <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-4 lg:mb-6">
                   AI engineer who builds intelligent systems and machine learning solutions.
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
@@ -75,7 +76,7 @@ while(coding) {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 lg:mb-4">
                   Web Developer
                 </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6">
+                <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-4 lg:mb-6">
                   Frontend developer who writes clean, elegant and efficient code.
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center lg:justify-end">
