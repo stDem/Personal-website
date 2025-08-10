@@ -161,7 +161,7 @@ const CertificatesSection = () => {
   };
 
   return (
-    <section id="certificates" className="sketchy-section bg-accent/10">
+    <section id="certificates" className="sketchy-section">
       <div className="container mx-auto px-4">
         <h2 className="sketchy-title text-center">Certificates & Qualifications</h2>
         <p className="text-xl text-center font-handwrite text-muted-foreground mb-12 max-w-3xl mx-auto">
@@ -281,12 +281,12 @@ const CertificatesSection = () => {
                       <div className="p-6 max-w-md">
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
-                            <h3 className={`text-sm sm:text-base md:text-lg font-bold font-handwrite mb-1 ${cert.textColor} ${cert.title.includes('Degree') ? 'underline' : ''}`}>
-                              {cert.title}
-                            </h3>
-                            <p className="text-muted-foreground font-handwrite text-sm">
-                              {cert.issuer}
-                            </p>
+                             <h3 className={`text-xs sm:text-sm md:text-base lg:text-lg font-bold font-handwrite mb-1 ${cert.textColor} ${cert.title.includes('Degree') ? 'underline' : ''}`}>
+                               {cert.title}
+                             </h3>
+                             <p className="text-muted-foreground font-handwrite text-xs sm:text-sm">
+                               {cert.issuer}
+                             </p>
                           </div>
                          
                         </div>
@@ -296,46 +296,46 @@ const CertificatesSection = () => {
                         <div className="mb-3">
                           <div className="flex flex-wrap gap-1">
                             {cert.skills.slice(0, 3).map((skill, skillIndex) => (
-                              <span 
-                                key={skillIndex}
-                                className="text-xs px-2 py-1 bg-primary/10 text-primary rounded font-handwrite"
-                              >
-                                {skill}
-                              </span>
+                               <span 
+                                 key={skillIndex}
+                                 className="text-xs px-1 sm:px-2 py-1 bg-primary/10 text-primary rounded font-handwrite"
+                               >
+                                 {skill}
+                               </span>
                             ))}
                           </div>
                         </div>
                         
                         <div className="flex items-center justify-between mb-2">
-                          <p className="text-xs text-muted-foreground font-handwrite">
-                            {cert.date}
-                          </p>
-                           <div className="flex gap-2">
-                             {cert.showDownload && (
-                               <Button 
-                                 variant="outline" 
-                                 size="sm" 
-                                 className="font-handwrite text-xs"
-                                 disabled={cert.downloadDisabled}
-                                 onClick={() => cert.downloadUrl && window.open(cert.downloadUrl, '_blank')}
-                               >
-                                 <Download className="w-3 h-3 mr-1" />
-                                 Show
-                               </Button>
-                             )}
-                             {cert.showVerify && (
-                               <Button 
-                                 variant="outline" 
-                                 size="sm" 
-                                 className="font-handwrite text-xs"
-                                 disabled={cert.verifyDisabled}
-                                 onClick={() => cert.verifyUrl && window.open(cert.verifyUrl, '_blank')}
-                               >
-                                 <ExternalLink className="w-3 h-3 mr-1" />
-                                 Verify
-                               </Button>
-                             )}
-                           </div>
+                           <p className="text-xs text-muted-foreground font-handwrite">
+                             {cert.date}
+                           </p>
+                            <div className="flex gap-1 sm:gap-2">
+                              {cert.showDownload && (
+                                <Button 
+                                  variant="outline" 
+                                  size="sm" 
+                                  className="font-handwrite text-xs h-6 sm:h-8 px-1 sm:px-2"
+                                  disabled={cert.downloadDisabled}
+                                  onClick={() => cert.downloadUrl && window.open(cert.downloadUrl, '_blank')}
+                                >
+                                  <Download className="w-2 h-2 sm:w-3 sm:h-3 mr-0 sm:mr-1" />
+                                  <span className="hidden sm:inline">Show</span>
+                                </Button>
+                              )}
+                              {cert.showVerify && (
+                                <Button 
+                                  variant="outline" 
+                                  size="sm" 
+                                  className="font-handwrite text-xs h-6 sm:h-8 px-1 sm:px-2"
+                                  disabled={cert.verifyDisabled}
+                                  onClick={() => cert.verifyUrl && window.open(cert.verifyUrl, '_blank')}
+                                >
+                                  <ExternalLink className="w-2 h-2 sm:w-3 sm:h-3 mr-0 sm:mr-1" />
+                                  <span className="hidden sm:inline">Verify</span>
+                                </Button>
+                              )}
+                            </div>
                         </div>
                       </div>
                     </div>
@@ -359,12 +359,12 @@ const CertificatesSection = () => {
                       <div className="p-6 max-w-md">
                          <div className="flex items-start justify-between mb-3">
                            <div className="flex-1">
-                                <h3 className={`text-sm sm:text-base md:text-lg font-bold font-handwrite mb-1 ${cert.textColor} ${cert.title.includes('Degree') ? 'underline' : ''}`}>
-                                  {cert.title}
-                                </h3>
-                             <p className="text-muted-foreground font-handwrite text-sm">
-                               {cert.issuer}
-                             </p>
+                                 <h3 className={`text-xs sm:text-sm md:text-base lg:text-lg font-bold font-handwrite mb-1 ${cert.textColor} ${cert.title.includes('Degree') ? 'underline' : ''}`}>
+                                   {cert.title}
+                                 </h3>
+                              <p className="text-muted-foreground font-handwrite text-xs sm:text-sm">
+                                {cert.issuer}
+                              </p>
                            </div>
                            
                          </div>
@@ -373,12 +373,12 @@ const CertificatesSection = () => {
                         <div className="mb-3">
                           <div className="flex flex-wrap gap-1">
                             {cert.skills.slice(0, 3).map((skill, skillIndex) => (
-                              <span 
-                                key={skillIndex}
-                                className="text-xs px-2 py-1 bg-primary/10 text-primary rounded font-handwrite"
-                              >
-                                {skill}
-                              </span>
+                               <span 
+                                 key={skillIndex}
+                                 className="text-xs px-1 sm:px-2 py-1 bg-primary/10 text-primary rounded font-handwrite"
+                               >
+                                 {skill}
+                               </span>
                             ))}
                           </div>
                         </div>

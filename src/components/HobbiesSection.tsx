@@ -167,7 +167,7 @@ const HobbiesSection = () => {
   ];
 
   return (
-    <section id="hobbies" className="sketchy-section bg-secondary/20">
+    <section id="hobbies" className="sketchy-section">
       <div className="container mx-auto px-4">
         <h2 className="sketchy-title text-center">Hobbies & Activities</h2>
         <p className="text-xl text-center font-handwrite text-muted-foreground mb-12 max-w-3xl mx-auto">
