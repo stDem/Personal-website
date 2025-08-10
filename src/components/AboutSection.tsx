@@ -50,11 +50,10 @@ while(coding) {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-center">
               {/* Left Side - AI Engineer */}
               <div className="text-center lg:text-left">
-                <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-secondary mb-2 lg:mb-4">
-                  <span className="block sm:hidden">AI</span>
-                  <span className="hidden sm:block">AI Engineer</span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-3 lg:mb-4">
+                  AI Engineer
                 </h2>
-                <p className="text-xs sm:text-sm lg:text-lg text-muted-foreground mb-3 lg:mb-6 hidden sm:block">
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6">
                   AI engineer who builds intelligent systems and machine learning solutions.
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
@@ -68,16 +67,15 @@ while(coding) {
               
               {/* Center - Photo placeholder */}
               <div className="flex justify-center lg:order-none order-first">
-                <div className="w-32 h-32 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72"></div>
+                <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72"></div>
               </div>
               
               {/* Right Side - Web Developer */}
               <div className="text-center lg:text-right">
-                <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-primary mb-2 lg:mb-4">
-                  <span className="block sm:hidden">Web</span>
-                  <span className="hidden sm:block">Web Developer</span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 lg:mb-4">
+                  Web Developer
                 </h2>
-                <p className="text-xs sm:text-sm lg:text-lg text-muted-foreground mb-3 lg:mb-6 hidden sm:block">
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6">
                   Frontend developer who writes clean, elegant and efficient code.
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center lg:justify-end">

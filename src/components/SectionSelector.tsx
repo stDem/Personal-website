@@ -20,7 +20,7 @@ const SectionSelector = ({ onSectionChange, currentSection }: SectionSelectorPro
           <button
             key={section.id}
             onClick={() => onSectionChange(section.id)}
-            className={`text-xs sm:text-sm md:text-base lg:text-lg transition-colors duration-200 relative px-2 sm:px-3 md:px-4 py-2 ${
+            className={`text-sm sm:text-base md:text-lg transition-colors duration-200 relative px-2 sm:px-3 md:px-4 py-2 ${
               currentSection === section.id 
                 ? 'text-foreground font-medium' 
                 : 'text-muted-foreground hover:text-foreground'
