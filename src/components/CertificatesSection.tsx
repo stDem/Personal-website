@@ -4,6 +4,24 @@ import { Download, ExternalLink } from "lucide-react";
 const CertificatesSection = () => {
   const certificates = [
     {
+      title: "Advanced Computer Vision with TensorFlow",
+      issuer: "DeepLearning.AI",
+      date: "Aug 2025 – Sep 2025",
+      skills: ["Computer Vision", "TensorFlow", "Deep Learning", "Image Processing"],
+      startDate: new Date(2025, 7, 1), // August 2025
+      endDate: new Date(2025, 8, 30), // September 2025
+      startYear: 2025,
+      endYear: 2025,
+      color: "bg-purple-700",
+      textColor: "text-purple-600",
+      verifyUrl: null,
+      showVerify: true,
+      verifyDisabled: true,
+      downloadUrl: null,
+      showDownload: true,
+      downloadDisabled: true
+    },
+    {
       title: "Certificate: Web Programming",
       issuer: "Julius-Maximilians-Universität Würzburg",
       date: "Mar 2025 – Aug 2025",
@@ -191,7 +209,7 @@ const CertificatesSection = () => {
             
             // Custom positioning to avoid overlaps
             const getBarSide = (index) => {
-              const pattern = [false, true, false, true, true, false, false]; // Custom pattern
+              const pattern = [true, false, true, false, true, true, false, false]; // Custom pattern
               return pattern[index];
             };
             const isLeft = getBarSide(index);
@@ -231,7 +249,7 @@ const CertificatesSection = () => {
           {certificates.map((cert, index) => {
             // Define getBarSide function first
             const getBarSide = (index) => {
-              const pattern = [false, true, false, true, true, false, false];
+              const pattern = [true, false, true, false, true, true, false, false];
               return pattern[index];
             };
             const isLeft = getBarSide(index);
