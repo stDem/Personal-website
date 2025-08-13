@@ -209,7 +209,7 @@ const CertificatesSection = () => {
             
             // Custom positioning to avoid overlaps
             const getBarSide = (index) => {
-              const pattern = [true, false, true, false, true, false, true, false]; // Custom pattern
+              const pattern = [true, false, false, true, false, true, true, false]; // Custom pattern
               return pattern[index];
             };
             const isLeft = getBarSide(index);
@@ -249,7 +249,7 @@ const CertificatesSection = () => {
           {certificates.map((cert, index) => {
             // Define getBarSide function first
             const getBarSide = (index) => {
-              const pattern = [true, false, true, false, true, false, true, false];
+              const pattern = [true, false, false, true, false, true, true, false];
               return pattern[index];
             };
             const isLeft = getBarSide(index);
