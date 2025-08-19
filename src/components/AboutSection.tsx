@@ -115,7 +115,7 @@ while(coding) {
             <img 
               src={profilePhoto} 
               alt="Anastasiia Demidova" 
-              className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary/20"
+              className="w-32 h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 2xl:w-56 2xl:h-56 rounded-full object-cover mb-4 border-4 border-primary/20"
             />
             <h3 className="text-2xl font-bold mb-2">Anastasiia Demidova</h3>
             <p className="text-muted-foreground">Full Stack Developer & AI Engineer</p>
