@@ -62,44 +62,44 @@ while(coding) {
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-center">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 items-center relative">
               {/* Left Side - AI Engineer */}
-              <div className="text-center lg:text-left">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-3 lg:mb-4">
+              <div className="text-left pr-2 lg:pr-0">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-secondary mb-2 lg:mb-4">
                   AI Engineer
                 </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6">
+                <p className="text-xs sm:text-sm lg:text-lg text-muted-foreground mb-2 lg:mb-6">
                   AI engineer who builds intelligent systems and machine learning solutions.
                 </p>
-                <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                <div className="flex flex-wrap gap-1 lg:gap-2 justify-start">
                   {["Python", "TensorFlow", "PyTorch", "ML/AI"].map((tech) => (
-                    <span key={tech} className="px-2 sm:px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs sm:text-sm">
+                    <span key={tech} className="px-1 sm:px-2 lg:px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs sm:text-sm">
                       {tech}
                     </span>
                   ))}
                 </div>
-              </div>
-              
-              {/* Center - Photo placeholder */}
-              <div className="flex justify-center lg:order-none order-first">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-72 lg:h-72"></div>
               </div>
               
               {/* Right Side - Web Developer */}
-              <div className="text-center lg:text-right">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 lg:mb-4">
+              <div className="text-right pl-2 lg:pl-0">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-primary mb-2 lg:mb-4">
                   Web Developer
                 </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground mb-4 lg:mb-6">
+                <p className="text-xs sm:text-sm lg:text-lg text-muted-foreground mb-2 lg:mb-6">
                   Frontend developer who writes clean, elegant and efficient code.
                 </p>
-                <div className="flex flex-wrap gap-2 justify-center lg:justify-end">
+                <div className="flex flex-wrap gap-1 lg:gap-2 justify-end">
                   {["React", "TypeScript", "Next.js", "Tailwind"].map((tech) => (
-                    <span key={tech} className="px-2 sm:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">
+                    <span key={tech} className="px-1 sm:px-2 lg:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs sm:text-sm">
                       {tech}
                     </span>
                   ))}
                 </div>
+              </div>
+              
+              {/* Center - Photo placeholder - Hidden on small screens, shown on lg+ */}
+              <div className="hidden lg:flex justify-center lg:order-none">
+                <div className="w-72 h-72"></div>
               </div>
             </div>
           </div>
