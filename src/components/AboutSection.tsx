@@ -20,7 +20,7 @@ const AboutSection = () => {
             }
           `}
         </style>
-        <div className="hero-bg absolute inset-0" style={{backgroundImage: `url('/lovable-uploads/4dabc63f-8167-4093-9d1d-16a32f1b53ae.png')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
+        <div className="hero-bg absolute inset-0" style={{backgroundImage: `url('/lovable-uploads/880d6be5-c36b-46a4-a632-d188f6a71b38.png')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
         {/* Coding Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="text-xs font-mono text-foreground/20 leading-relaxed p-8">
