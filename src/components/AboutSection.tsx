@@ -18,6 +18,11 @@ const AboutSection = () => {
                 background-size: 70% !important;
               }
             }
+            @media (min-width: 1024px) {
+              .hero-bg {
+                background-size: 85% !important;
+              }
+            }
           `}
         </style>
         <div className="hero-bg absolute inset-0" style={{backgroundImage: `url('/lovable-uploads/880d6be5-c36b-46a4-a632-d188f6a71b38.png')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
