@@ -82,7 +82,7 @@ while(coding) {
               
               {/* Center - Photo placeholder */}
               <div className="flex justify-center lg:order-none order-first">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-72 lg:h-72"></div>
+                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-72 lg:h-72 xl:w-80 xl:h-80 2xl:w-96 2xl:h-96"></div>
               </div>
               
               {/* Right Side - Web Developer */}
