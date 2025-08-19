@@ -270,7 +270,7 @@ const CertificatesSection = () => {
             const baseShift = positionInSameSide * 25; // 25px per position away from line
             
             // Simplified card positioning: space cards evenly on each side
-            const cardSpacing = 460; // Increased spacing between cards
+            const cardSpacing = 320; // Reduced spacing between cards
             
             // Count cards on the same side before this one
             let cardsOnSameSide = 0;
@@ -311,7 +311,7 @@ const CertificatesSection = () => {
                         
                       
                         
-                        <div className="mb-3">
+                        {/* <div className="mb-3">
                           <div className="flex flex-wrap gap-1">
                             {cert.skills.slice(0, 3).map((skill, skillIndex) => (
                                <span 
@@ -322,7 +322,7 @@ const CertificatesSection = () => {
                                </span>
                             ))}
                           </div>
-                        </div>
+                        </div> */}
                         
                         <div className="flex items-center justify-between mb-2">
                            <p className="text-xs text-muted-foreground font-handwrite">
@@ -388,7 +388,7 @@ const CertificatesSection = () => {
                          </div>
                 
                         
-                        <div className="mb-3">
+                        {/* <div className="mb-3">
                           <div className="flex flex-wrap gap-1">
                             {cert.skills.slice(0, 3).map((skill, skillIndex) => (
                                <span 
@@ -399,7 +399,7 @@ const CertificatesSection = () => {
                                </span>
                             ))}
                           </div>
-                        </div>
+                        </div> */}
                         
                         <div className="flex items-center justify-between mb-2">
                           <p className="text-xs text-muted-foreground font-handwrite">
