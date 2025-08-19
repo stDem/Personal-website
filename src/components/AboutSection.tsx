@@ -69,14 +69,14 @@ while(coding) {
             
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 items-center">
               {/* Left Side - AI Engineer */}
-              <div className="text-left">
+              <div className="text-center lg:text-left">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-secondary mb-2 lg:mb-4">
                   AI Engineer
                 </h2>
                 <p className="text-xs sm:text-sm lg:text-lg text-muted-foreground mb-3 lg:mb-6">
                   AI engineer who builds intelligent systems and machine learning solutions.
                 </p>
-                <div className="flex flex-wrap gap-1 lg:gap-2">
+                <div className="flex flex-wrap gap-1 lg:gap-2 justify-center lg:justify-start">
                   {["Python", "TensorFlow", "PyTorch", "ML/AI"].map((tech) => (
                     <span key={tech} className="px-1 sm:px-2 lg:px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs lg:text-sm">
                       {tech}
@@ -91,14 +91,14 @@ while(coding) {
               </div>
               
               {/* Right Side - Web Developer */}
-              <div className="text-right">
+              <div className="text-center lg:text-right">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-primary mb-2 lg:mb-4">
                   Web Developer
                 </h2>
                 <p className="text-xs sm:text-sm lg:text-lg text-muted-foreground mb-3 lg:mb-6">
                   Frontend developer who writes clean, elegant and efficient code.
                 </p>
-                <div className="flex flex-wrap gap-1 lg:gap-2 justify-end">
+                <div className="flex flex-wrap gap-1 lg:gap-2 justify-center lg:justify-end">
                   {["React", "TypeScript", "Next.js", "Tailwind"].map((tech) => (
                     <span key={tech} className="px-1 sm:px-2 lg:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs lg:text-sm">
                       {tech}
