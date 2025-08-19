@@ -9,7 +9,7 @@ const SectionSelector = ({ onSectionChange, currentSection }: SectionSelectorPro
     { id: 'cv', name: 'CV' },
     { id: 'projects', name: 'Projects' },
     { id: 'certificates', name: 'Certificates' },
-    { id: 'achievements', name: 'Achievements' },
+    // { id: 'achievements', name: 'Achievements' },
     { id: 'hobbies', name: 'Hobbies' },
   ];
 

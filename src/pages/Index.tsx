@@ -5,7 +5,7 @@ import AboutSection from "@/components/AboutSection";
 import CVSection from "@/components/CVSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import CertificatesSection from "@/components/CertificatesSection";
-import AchievementsSection from "@/components/AchievementsSection";
+// import AchievementsSection from "@/components/AchievementsSection";
 import HobbiesSection from "@/components/HobbiesSection";
 import Footer from "@/components/Footer";
 
@@ -22,8 +22,8 @@ const Index = () => {
         return <ProjectsSection />;
       case 'certificates':
         return <CertificatesSection />;
-      case 'achievements':
-        return <AchievementsSection />;
+      // case 'achievements':
+        // return <AchievementsSection />;
       case 'hobbies':
         return <HobbiesSection />;
       default:
