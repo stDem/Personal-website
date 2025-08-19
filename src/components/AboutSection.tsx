@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section id="personal">
       {/* Hero Section with Split Design - Full Width */}
-      <div className="relative w-screen bg-white overflow-visible mb-12 -mx-[50vw] left-1/2 hero-section">
+      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2 hero-section">
         <style>
           {`
             .hero-section {
