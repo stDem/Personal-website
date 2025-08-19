@@ -60,14 +60,9 @@ while(coding) {
         </div>
         
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center">
+        <div className="relative z-10 h-full flex items-center justify-center">
           <div className="container mx-auto px-4">
-            {/* Photo placeholder - centered */}
-            <div className="flex justify-center mb-6 lg:hidden">
-              <div className="w-32 h-32 sm:w-40 sm:h-40"></div>
-            </div>
-            
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 items-center">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 items-center justify-items-center">
               {/* Left Side - AI Engineer */}
               <div className="text-center lg:text-left">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-secondary mb-2 lg:mb-4">
