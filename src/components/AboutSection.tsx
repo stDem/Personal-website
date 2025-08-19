@@ -5,9 +5,14 @@ const AboutSection = () => {
   return (
     <section id="personal">
       {/* Hero Section with Split Design - Full Width */}
-      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2" style={{minHeight: '40vh', paddingTop: '5vh', paddingBottom: '5vh'}}>
+      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2 hero-section">
         <style>
           {`
+            .hero-section {
+              min-height: 40vh;
+              padding-top: 5vh;
+              padding-bottom: 5vh;
+            }
             @media (max-width: 768px) {
               .hero-bg {
                 background-size: 60% !important;
@@ -21,6 +26,11 @@ const AboutSection = () => {
             @media (min-width: 1024px) {
               .hero-bg {
                 background-size: 85% !important;
+              }
+              .hero-section {
+                min-height: 60vh;
+                padding-top: 8vh;
+                padding-bottom: 8vh;
               }
             }
           `}
