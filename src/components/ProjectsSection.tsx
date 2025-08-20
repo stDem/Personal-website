@@ -76,7 +76,7 @@ const ProjectsSection = () => {
       title: "Personal Website",
       description: "Modern and responsive personal website built with React, TypeScript, and Tailwind CSS, showcasing Personal info, CV, projects, certificates, and hobbies.",
       tech: ["React", "TypeScript", "Tailwind CSS"],
-      github: "https://github.com/stDem/Portfolio-site",
+      github: "https://github.com/stDem/Personal-website",
       live: "https://anst-dem.com/",
       status: "In Progress",
       category: "web",
