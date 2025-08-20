@@ -70,7 +70,7 @@ const Footer = ({ currentSection, onSectionChange }: FooterProps) => {
                 { id: 'personal', name: 'About' },
                 { id: 'projects', name: 'Projects' },
                 { id: 'certificates', name: 'Certificates' },
-                { id: 'achievements', name: 'Achievements' },
+                // { id: 'achievements', name: 'Achievements' },
                 { id: 'hobbies', name: 'Hobbies' }
               ].map((item) => (
                 <button
@@ -102,7 +102,7 @@ const Footer = ({ currentSection, onSectionChange }: FooterProps) => {
               <span className="font-code">& caffeine.exec()</span>
             </div>
             <p className="text-sm text-white/50 font-code mt-4">
-              © 2024 John Doe. All rights reserved. | Built with React & TypeScript
+              © {new Date().getFullYear()} Anastasiia Demidova | Built with React & TypeScript
             </p>
           </div>
         </div>

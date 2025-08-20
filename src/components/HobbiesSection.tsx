@@ -2,19 +2,17 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 // Import hobby images
-import swimmingImg from "@/assets/hobbies/swimming.jpg";
-import tennisImg from "@/assets/hobbies/tennis.jpg";
+import swimmingImg from "@/assets/hobbies/swim.png";
+import tennisImg from "@/assets/hobbies/tennis.jpeg";
 import joggingImg from "@/assets/hobbies/jogging.jpg";
-import cyclingImg from "@/assets/hobbies/cycling.jpg";
-import crossCountrySkiingImg from "@/assets/hobbies/cross-country-skiing.jpg";
-import skiingImg from "@/assets/hobbies/skiing.jpg";
-import musicImg from "@/assets/hobbies/music.jpg";
-import travelingImg from "@/assets/hobbies/traveling.jpg";
+import cyclingImg from "@/assets/hobbies/cycling.jpeg";
+import crossCountrySkiingImg from "@/assets/hobbies/skii.jpg";
+import skiingImg from "@/assets/hobbies/skating.webp";
+import musicImg from "@/assets/hobbies/kalimba.jpeg";
+import travelingImg from "@/assets/hobbies/traveling.jpeg";
 import yogaImg from "@/assets/hobbies/yoga.jpg";
-import gamingImg from "@/assets/hobbies/gaming.jpg";
-import rockClimbingImg from "@/assets/hobbies/rock-climbing.jpg";
-import waterSportsImg from "@/assets/hobbies/water-sports.jpg";
-import divingImg from "@/assets/hobbies/diving.jpg";
+import gamingImg from "@/assets/hobbies/game.jpg";
+import waterSportsImg from "@/assets/hobbies/kayaking.jpeg";
 
 const HobbiesSection = () => {
   const [selectedHobby, setSelectedHobby] = useState(null);
@@ -22,120 +20,102 @@ const HobbiesSection = () => {
   const hobbies = [
     {
       title: "Swimming",
-      icon: "🏊‍♀️",
-      description: "Started swimming 3 years ago and absolutely love the feeling of being in water.",
-      detailedDescription: "Swimming has become one of my favorite activities. I've been swimming for 3 years now, and I had 5 years of professional training during my childhood. There's something incredibly peaceful about being in the water - it's both a great workout and a form of meditation for me.",
-      highlights: ["3 years current practice", "5 years professional childhood training", "Pool and open water swimming"],
-      color: "text-blue-600",
+      icon: "𓆝",
+      description: "I have been sweemming since I was 3 years old and absolutely love the feeling of being in water.",
+      detailedDescription: "Swimming has become one of my favorite activities. I've been swimming since I was 3 years old, and until middle school I did it professionaly, which developed my resilience and determination. Now I do this sport to maintain my health and activity. There's something incredibly peaceful about being in the water - it's both a great workout and a form of meditation for me.",
+      highlights: ["more than 21 years current practice", "8 years professional childhood training", "Pool and open water swimming"],
+      color: "text-blue-90",
       image: swimmingImg
     },
     {
       title: "Tennis",
-      icon: "🎾",
+      icon: "⚾︎",
       description: "Playing tennis for more than 8 years - it's my go-to sport for staying active and competitive.",
       detailedDescription: "Tennis has been a constant in my life for over 8 years. I love the strategic aspect of the game, the quick decision-making, and the physical challenge. Whether it's a casual game with friends or a more competitive match, tennis always keeps me engaged and helps me stay in great shape.",
-      highlights: ["8+ years experience", "Regular tournament participation", "Both singles and doubles play"],
-      color: "text-green-600",
+      highlights: ["8+ years experience", "The most frequent sport in summer", "Both singles and doubles play"],
+      color: "text-green-900",
       image: tennisImg
     },
     {
       title: "Jogging",
-      icon: "🏃‍♀️",
+      icon: "lᯓ",
       description: "Jogging is my constant habit - there's nothing like a good run to clear the mind and energize the body.",
       detailedDescription: "Jogging has become an essential part of my daily routine. It's my time to think, to process the day, and to maintain my physical and mental health. Whether it's a quick morning run or a longer evening jog, running helps me stay centered and focused.",
       highlights: ["Daily running habit", "5-10km regular distances", "Morning and evening runs"],
-      color: "text-orange-600",
+      color: "text-orange-900",
       image: joggingImg
     },
     {
       title: "Cycling",
-      icon: "🚴‍♀️",
+      icon: "🚲",
       description: "I prefer long cycling trips with music, sometimes covering up to 130 km per day.",
       detailedDescription: "Cycling long distances is one of my greatest pleasures. With my headphones on and good music playing, I can cycle for hours, covering up to 130 km in a single day. These long rides are perfect for exploring new areas, getting great exercise, and having time to think and enjoy nature.",
       highlights: ["Long distance cycling", "Up to 130km per day", "Music-accompanied rides", "Scenic route exploration"],
-      color: "text-purple-600",
+      color: "text-purple-900",
       image: cyclingImg
     },
     {
       title: "Cross Country Skiing",
-      icon: "⛷️",
+      icon: "⛷",
       description: "My favorite winter sport - there's something magical about gliding through snowy forests.",
       detailedDescription: "Cross country skiing is definitely my favorite winter activity. The combination of the peaceful winter landscape, the rhythmic motion of skiing, and the full-body workout makes it incredibly satisfying. I love exploring snowy trails and the meditative quality of this sport.",
-      highlights: ["Favorite winter sport", "Forest trail exploration", "Full-body workout", "Winter landscape photography"],
-      color: "text-cyan-600",
+      highlights: ["Favorite winter sport", "Forest trail exploration", "Full-body workout", "Winter landscape enjoyment"],
+      color: "text-cyan-900",
       image: crossCountrySkiingImg
     },
     {
       title: "Ice Skating",
-      icon: "⛸️",
+      icon: "⛸",
       description: "Graceful movement on ice - a beautiful combination of balance, skill, and artistry.",
       detailedDescription: "Ice skating is an elegant sport that combines grace, balance, and athleticism. Whether it's figure skating or just recreational skating, there's something magical about gliding across the ice. It's a great way to enjoy winter and develop coordination and balance skills.",
-      highlights: ["Figure skating elements", "Ice rink regular", "Balance and coordination", "Winter sport enjoyment"],
-      color: "text-blue-500",
+      highlights: ["Ice rink regular", "Balance and coordination", "Winter sport enjoyment"],
+      color: "text-blue-900",
       image: skiingImg
     },
     {
       title: "Music",
-      icon: "🎵",
-      description: "Rock music lover who played clarinet in elementary school orchestra, now exploring kalimba, piano, and guitar.",
-      detailedDescription: "Music has always been a huge part of my life. I'm a dedicated rock music listener and have a rich musical background. I played clarinet in my elementary school symphony orchestra, which gave me a strong foundation in music theory. Now I enjoy playing kalimba, piano, and I'm learning guitar. Music is my creative outlet and emotional expression.",
+      icon: "𝄞",
+      description: "Big fan of music who played clarinet in childhood, now exploring kalimba, piano, and guitar.",
+      detailedDescription: "Music has always been a huge part of my life. I'm a dedicated rock music listener and have a rich musical background. I played clarinet in my elementary school symphony orchestra, which gave me a strong foundation in music theory. Now I enjoy playing kalimba, piano, and guitar. Music is my creative outlet and emotional expression.",
       highlights: ["Rock music enthusiast", "Former clarinet player in orchestra", "Current: kalimba, piano, guitar", "Music theory background"],
-      color: "text-purple-600",
+      color: "text-purple-900",
       image: musicImg
     },
     {
       title: "Traveling",
-      icon: "✈️",
+      icon: "𓊝",
       description: "Always ready to explore new places - traveling feeds my curiosity and love for adventure.",
       detailedDescription: "Traveling is more than just a hobby for me - it's a passion. I'm always ready to explore new places, experience different cultures, try new foods, and meet interesting people. Each trip teaches me something new about the world and about myself. I love both spontaneous adventures and carefully planned explorations.",
       highlights: ["Cultural exploration", "Adventure seeking", "Photography while traveling", "Local cuisine tasting"],
-      color: "text-emerald-600",
+      color: "text-emerald-900",
       image: travelingImg
     },
     {
       title: "Yoga",
-      icon: "🧘‍♀️",
+      icon: "··𖥸··",
       description: "A nice way to relax and stretch - yoga helps me maintain balance in both body and mind.",
       detailedDescription: "Yoga is my sanctuary for relaxation and mindfulness. It's the perfect way to stretch my body, calm my mind, and find inner balance. Whether it's a gentle morning flow or a more challenging evening practice, yoga helps me stay flexible, both physically and mentally, and provides a peaceful break from busy days.",
       highlights: ["Daily practice", "Flexibility and strength", "Mindfulness meditation", "Stress relief"],
-      color: "text-pink-600",
+      color: "text-pink-900",
       image: yogaImg
     },
     {
       title: "Gaming",
-      icon: "🎮",
+      icon: "⌖",
       description: "Strategy games and RPGs fuel my competitive spirit and love for immersive storytelling.",
       detailedDescription: "Gaming is my way to unwind and challenge my strategic thinking. I particularly enjoy strategy games and RPGs that offer deep storytelling and complex decision-making. Gaming helps me relax after coding sessions while still keeping my mind engaged with puzzles and strategic challenges.",
       highlights: ["Strategy & RPG games", "Competitive online player", "Game development interest", "Problem-solving skills"],
-      color: "text-red-600",
+      color: "text-red-900",
       image: gamingImg
     },
     {
-      title: "Rock Climbing",
-      icon: "🧗‍♂️",
-      description: "Pushing physical and mental limits on rock faces - problem-solving meets athleticism.",
-      detailedDescription: "Rock climbing combines physical strength, mental focus, and problem-solving in the most exciting way. Each route is like a puzzle that requires patience, trust, and determination to solve. Whether I'm climbing indoors or exploring outdoor crags, this sport teaches me valuable lessons about perseverance and trusting both my abilities and my climbing partners.",
-      highlights: ["5.10c grade climber", "Weekend mountain trips", "Indoor & outdoor climbing", "Problem-solving skills"],
-      color: "text-orange-600",
-      image: rockClimbingImg
-    },
-    {
-      title: "Water Sports",
-      icon: "🏄‍♀️",
-      description: "Exploring paddleboarding and kayaking - enjoying peaceful moments on the water.",
-      detailedDescription: "I have some experience with various water sports, particularly paddleboarding and kayaking. These activities offer a perfect combination of gentle exercise and peaceful meditation while being surrounded by water. There's something incredibly calming about being on the water, whether it's a quiet lake or a gentle river.",
-      highlights: ["Paddleboarding experience", "Kayaking adventures", "Water meditation", "Nature exploration"],
-      color: "text-teal-600",
+      title: "Never Stand Still!",
+      icon: "𓂀",
+      description: "Exploring smth mew - that's how to learn this life!",
+      detailedDescription: "I have some experience with very different sports, particularly paddleboarding, kayaking, rock climbing,diving. I'm always open to trying new sports, including extreme ones. In this life we have to try everything. Some sports I discovered alone, some I tried with my family - activity is in our blood!",
+      highlights: ["Paddleboarding", "Kayaking", "Rock Climbing", "Diving"],
+      color: "text-teal-900",
       image: waterSportsImg
-    },
-    {
-      title: "Diving",
-      icon: "🤿",
-      description: "Exploring the underwater world - a little experience that opened up amazing new perspectives.",
-      detailedDescription: "My diving experience might be limited, but it has opened up an entirely new world for me. The underwater environment is fascinating and peaceful in a way that's completely different from any other activity. Even with just a little experience, I've fallen in love with the marine life and the unique perspective diving provides.",
-      highlights: ["Beginner level experience", "Marine life fascination", "Underwater photography interest", "New world exploration"],
-      color: "text-blue-500",
-      image: divingImg
     }
   ];
 
@@ -178,7 +158,7 @@ const HobbiesSection = () => {
         {/* Hobbies Grid */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-center font-handwrite mb-8 text-sketchy-primary">
-            🎨 Personal Interests
+            Personal Interests
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {hobbies.map((hobby, index) => (
@@ -258,7 +238,7 @@ const HobbiesSection = () => {
         </div>
         
         {/* Activities Grid */}
-        <div>
+        {/* <div>
           <h3 className="text-3xl font-bold text-center font-handwrite mb-8 text-sketchy-secondary">
             🤝 Community Activities
           </h3>
@@ -286,10 +266,10 @@ const HobbiesSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
         
         {/* Fun Quotes Section */}
-        <div className="sketchy-card max-w-3xl mx-auto mt-12 text-center">
+        {/* <div className="sketchy-card max-w-3xl mx-auto mt-12 text-center">
           <h3 className="text-2xl font-bold mb-6 text-sketchy-neutral font-handwrite">
             💭 Life Philosophy
           </h3>
@@ -304,7 +284,7 @@ const HobbiesSection = () => {
               "The best developers are those who never stop being curious about the world."
             </blockquote>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

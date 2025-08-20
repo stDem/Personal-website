@@ -146,13 +146,24 @@ const CVSection = () => {
       <div className="bg-card rounded-lg p-8 border mb-8">
         <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Additional Diplomas and Certificates</h2>
         <div className="space-y-6">
+
+          <div className="border-l-4 border-accent/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <div>
+                <h3 className="text-lg font-bold text-foreground">DeepLearning.AI</h3>
+                <p className="font-semibold text-secondary">Certificate: Advanced Computer Vision with TensorFlow</p>
+              </div>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Aug 2025 – Sep 2025 / Online, DE</span>
+            </div>
+          </div>
+
           <div className="border-l-4 border-primary/30 pl-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
               <div>
                 <h3 className="text-lg font-bold text-foreground">Julius-Maximilians-Universität Würzburg</h3>
                 <p className="font-semibold text-secondary">Certificate: Web Programming</p>
               </div>
-              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Mar 2025 – Ongoing / Würzburg, DE</span>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Mar 2025 – Aug 2025 / Würzburg, DE</span>
             </div>
           </div>
           
@@ -162,7 +173,7 @@ const CVSection = () => {
                 <h3 className="text-lg font-bold text-foreground">Meta</h3>
                 <p className="font-semibold text-secondary">Certificate: Meta Front-End Developer</p>
               </div>
-              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Okt 2021 – Apr 2025 / Online</span>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Okt 2021 – Apr 2025 / Online, DE</span>
             </div>
           </div>
           
@@ -172,7 +183,7 @@ const CVSection = () => {
                 <h3 className="text-lg font-bold text-foreground">Kreativstorm</h3>
                 <p className="font-semibold text-secondary">Certificate: Frontend Development Hands-on Training</p>
               </div>
-              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Jan 2025 – Feb 2025 / Online, Germany</span>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Jan 2025 – Feb 2025 / Online, DE</span>
             </div>
           </div>
           
@@ -223,8 +234,16 @@ const CVSection = () => {
               </div>
               <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-accent/30">
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-accent">Deep Learning:</span> Numpy array images classification (
+                  <span className="font-semibold text-accent">Deep Learning:</span> Handwritten Japanese characters classification (
                   <a href="https://github.com/stDem/ANN-numpy-array-images" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                  </a>)
+                </p>
+              </div>
+              <div className="p-4 bg-muted/30 rounded-lg border-l-4 border-accent/30">
+                <p className="text-muted-foreground">
+                  <span className="font-semibold text-secondary">Computer Vision:</span> All computer vision projects (
+                  <a href="https://github.com/stDem/Computer-vision--DeepLearning.AI-" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">
                     GitHub
                   </a>)
                 </p>

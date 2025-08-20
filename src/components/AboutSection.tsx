@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section id="personal">
       {/* Hero Section with Split Design - Full Width */}
-      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2" style={{minHeight: '40vh', paddingTop: '5vh', paddingBottom: '5vh'}}>
+      <div className="relative w-screen bg-white overflow-hidden mb-12 -mx-[50vw] left-1/2" style={{minHeight: '60vh', paddingTop: '5vh', paddingBottom: '5vh'}}>
         <style>
           {`
             @media (max-width: 768px) {
@@ -69,7 +69,7 @@ while(coding) {
                   AI Engineer
                 </h2>
                 <p className="text-xs sm:text-sm lg:text-lg text-muted-foreground mb-3 lg:mb-6">
-                  AI engineer who builds intelligent systems and machine learning solutions.
+                  {/* AI engineer who builds intelligent systems and machine learning solutions. */}
                 </p>
                 <div className="flex flex-wrap gap-1 lg:gap-2 justify-center lg:justify-start">
                   {["Python", "TensorFlow", "PyTorch", "ML/AI"].map((tech) => (
@@ -88,13 +88,13 @@ while(coding) {
               {/* Right Side - Web Developer */}
               <div className="text-center lg:text-right">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-primary mb-2 lg:mb-4">
-                  Web Developer
+                  {"</Web>"} Developer
                 </h2>
                 <p className="text-xs sm:text-sm lg:text-lg text-muted-foreground mb-3 lg:mb-6">
-                  Frontend developer who writes clean, elegant and efficient code.
+                  {/* Frontend developer who writes clean, elegant and efficient code. */}
                 </p>
                 <div className="flex flex-wrap gap-1 lg:gap-2 justify-center lg:justify-end">
-                  {["React", "TypeScript", "Next.js", "Tailwind"].map((tech) => (
+                  {["React", "TypeScript", "SCSS"].map((tech) => (
                     <span key={tech} className="px-1 sm:px-2 lg:px-3 py-1 bg-primary/10 text-primary rounded-full text-xs lg:text-sm">
                       {tech}
                     </span>
@@ -118,7 +118,7 @@ while(coding) {
               className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary/20"
             />
             <h3 className="text-2xl font-bold mb-2">Anastasiia Demidova</h3>
-            <p className="text-muted-foreground">Full Stack Developer & AI Engineer</p>
+            <p className="text-muted-foreground">AI Engineer & Web Developer</p>
           </div>
           
           <p className="text-muted-foreground leading-relaxed">

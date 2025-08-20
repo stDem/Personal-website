@@ -17,16 +17,16 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 15%;
 
-    --primary: 220 100% 35%;
+    --primary: 47 100% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 80% 25%;
+    --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 14% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 220 14% 96%;
+    --accent: 220 14% 60%;
     --accent-foreground: 0 0% 15%;
 
     --destructive: 0 84% 60%;
@@ -36,7 +36,7 @@ All colors MUST be HSL.
     --input: 220 13% 91%;
     --ring: 220 100% 50%;
 
-    --sketchy-primary: 220 100% 50%;
+    --sketchy-primary: 0 0% 25  %;;
     --sketchy-secondary: 280 100% 70%;
     --sketchy-accent: 50 100% 60%;
     --sketchy-neutral: 20 14% 4%;
@@ -115,7 +115,7 @@ All colors MUST be HSL.
 
 @layer components {
   .sketchy-section {
-    @apply py-20 relative;
+    @apply py-5 relative;
   }
   
   .sketchy-card {
@@ -142,10 +142,10 @@ All colors MUST be HSL.
     right: -8px;
   }
   
-  .sketchy-card:nth-child(3n)::after {
+  /* .sketchy-card:nth-child(3n)::after {
     bottom: 5px;
     left: 12px;
-  }
+  } */
   
   .sketchy-card:hover {
     transform: translateY(-2px);
