@@ -4,7 +4,7 @@ import { Download, ExternalLink } from "lucide-react";
 const CertificatesSection = () => {
   const certificates = [
     {
-      title: "Advanced Computer Vision with TensorFlow",
+      title: "Certificate: Advanced Computer Vision with TensorFlow",
       issuer: "DeepLearning.AI",
       date: "Aug 2025 – Sep 2025",
       skills: ["Computer Vision", "TensorFlow", "Deep Learning", "Image Processing"],
