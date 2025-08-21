@@ -14,7 +14,8 @@ const ProjectsSection = () => {
       description: "Modern web application that leverages AI APIs to analyze and provide insights on web design patterns, user experience, and design best practices.",
       tech: ["AI API", "React", "TypeScript", "Tailwind CSS"],
       github: "https://github.com/stDem/AI-Web-Design-Analysis",
-      live: "https://uxray.anst-dem.com/",
+      live: "https://web-design-oracle.lovable.app/",
+      // live: "https://uxray.anst-dem.com/",
       status: "In Progress",
       category: "ai",
       image: "/lovable-uploads/uxray.png"
