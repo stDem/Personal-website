@@ -184,7 +184,7 @@ const CertificatesSection = () => {
         <h2 className="sketchy-title text-center">Certificates & Qualifications</h2>
         <p className="text-xl text-center font-handwrite text-muted-foreground mb-12 max-w-3xl mx-auto">
           Continuous learning is my passion! Here are some certifications that validate 
-          my skills and commitment to staying current with industry standards.
+          my skills and commitment to stay up to date with the latest technology.
         </p>
         
         {/* Timeline */}
@@ -441,7 +441,7 @@ const CertificatesSection = () => {
           })}
         </div>
         
-        <div className="sketchy-card max-w-2xl mx-auto mt-12 text-center">
+        {/* <div className="sketchy-card max-w-2xl mx-auto mt-12 text-center">
           <h3 className="text-2xl font-bold mb-4 text-sketchy-secondary font-handwrite">
             📚 Continuous Learning
           </h3>
@@ -451,7 +451,7 @@ const CertificatesSection = () => {
           <p className="font-handwrite text-sm text-muted-foreground">
             Next goal: Advanced AI & Machine Learning specialization
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );
