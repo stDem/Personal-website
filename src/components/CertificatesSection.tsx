@@ -405,29 +405,29 @@ const CertificatesSection = () => {
                           <p className="text-xs text-muted-foreground font-handwrite">
                             {cert.date}
                           </p>
-                           <div className="flex gap-2">
+                           <div className="flex gap-1 sm:gap-2">
                              {cert.showDownload && (
                                <Button 
                                  variant="outline" 
                                  size="sm" 
-                                 className="font-handwrite text-xs"
+                                 className="font-handwrite text-xs h-6 sm:h-8 px-1 sm:px-2"
                                  disabled={cert.downloadDisabled}
                                  onClick={() => cert.downloadUrl && window.open(cert.downloadUrl, '_blank')}
                                >
-                                 <Download className="w-3 h-3 mr-1" />
-                                 Show
+                                 <Download className="w-2 h-2 sm:w-3 sm:h-3 mr-0 sm:mr-1" />
+                                 <span className="hidden sm:inline">Show</span>
                                </Button>
                              )}
                              {cert.showVerify && (
                                <Button 
                                  variant="outline" 
                                  size="sm" 
-                                 className="font-handwrite text-xs"
+                                 className="font-handwrite text-xs h-6 sm:h-8 px-1 sm:px-2"
                                  disabled={cert.verifyDisabled}
                                  onClick={() => cert.verifyUrl && window.open(cert.verifyUrl, '_blank')}
                                >
-                                 <ExternalLink className="w-3 h-3 mr-1" />
-                                 Verify
+                                 <ExternalLink className="w-2 h-2 sm:w-3 sm:h-3 mr-0 sm:mr-1" />
+                                 <span className="hidden sm:inline">Verify</span>
                                </Button>
                              )}
                            </div>
