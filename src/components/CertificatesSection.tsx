@@ -295,8 +295,8 @@ const CertificatesSection = () => {
                 {isLeft ? (
                   <>
                     {/* Content on left */}
-                    <div className="w-1/2 flex justify-end" style={{ paddingRight: `${37 + baseShift}px` }}>
-                      <div className="p-6 max-w-md">
+                    <div className="w-1/2 flex justify-end relative z-10" style={{ paddingRight: `${37 + baseShift}px` }}>
+                      <div className="p-6 max-w-md relative z-10">
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
                              <h3 className={`text-xs sm:text-sm md:text-base lg:text-lg font-bold font-handwrite mb-1 ${cert.textColor} ${cert.title.includes('Degree') ? 'underline' : ''}`}>
