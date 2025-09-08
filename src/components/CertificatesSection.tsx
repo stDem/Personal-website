@@ -287,22 +287,10 @@ const CertificatesSection = () => {
             // Calculate horizontal shift based on position (closer to line = less shift)
             const baseShift = positionInSameSide * 25; // 25px per position away from line
             
-            // Simplified card positioning: space cards evenly on each side
-            const cardSpacing = 390; // spacing between cards
-            
-            // Count cards on the same side before this one
-            let cardsOnSameSide = 0;
-            for (let i = 0; i < index; i++) {
-              if (getBarSide(i) === isLeft) {
-                cardsOnSameSide++;
-              }
-            }
-            
-            // Position card based on color block center + spacing for same-side cards
+            // Position card to match its bar center - independent positioning
             const colorBlockTop = getBarTopPosition(cert);
             const colorBlockCenter = colorBlockTop + (getBarHeight(cert) / 2);
-            const basePosition = Math.max(colorBlockTop - 80, cardsOnSameSide * cardSpacing); // Increased offset
-            const topPosition = basePosition + 30; // Increased margin
+            const topPosition = colorBlockCenter - 80; // Center card on bar center
             
             // Calculate connection line from color block center to card center
             const cardCenter = topPosition + 80; // Approximate center of card height
