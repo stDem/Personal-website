@@ -3,23 +3,41 @@ import { Download, ExternalLink } from "lucide-react";
 
 const CertificatesSection = () => {
   const certificates = [
-    {
-      title: "Certificate: Advanced Computer Vision with TensorFlow",
-      issuer: "DeepLearning.AI",
+      {
+      title: "Generative AI with LLMs",
+      issuer: "Amazon Web Services (AWS)",
       date: "Aug 2025 – Sep 2025",
-      skills: ["Computer Vision", "TensorFlow", "Deep Learning", "Image Processing"],
-      startDate: new Date(2025, 7, 1), // August 2025
+      skills: ["Generative AI", "LLM", "Transformers"],
+      startDate: new Date(2025, 7, 15), // August 2025
       endDate: new Date(2025, 8, 30), // September 2025
       startYear: 2025,
       endYear: 2025,
       color: "bg-purple-700",
       textColor: "text-purple-600",
-      verifyUrl: null,
+      verifyUrl: "https://coursera.org/verify/BERWAYETIR4Z",
       showVerify: true,
-      verifyDisabled: true,
-      downloadUrl: null,
+      verifyDisabled: false,
+      downloadUrl: "https://drive.google.com/file/d/1j1AXJMxFbsRe25RZFFpkACg2_M9TqJlc/view?usp=sharing",
       showDownload: true,
-      downloadDisabled: true
+      downloadDisabled: false
+    },
+    {
+      title: "Certificate: Advanced Computer Vision with TensorFlow",
+      issuer: "DeepLearning.AI",
+      date: "Aug 2025 – Aug 2025",
+      skills: ["Computer Vision", "TensorFlow", "Deep Learning", "Image Processing"],
+      startDate: new Date(2025, 4, 15), // August 2025
+      endDate: new Date(2025, 6, 20), // 
+      startYear: 2025,
+      endYear: 2025,
+      color: "bg-stone-700",
+      textColor: "text-stone-600",
+      verifyUrl: "https://coursera.org/verify/28BEO74BYBMT",
+      showVerify: true,
+      verifyDisabled: false,
+      downloadUrl: "https://drive.google.com/file/d/1KL1WeY0aWs5DKwrhT6odHb8CS536XptI/view?usp=sharing",
+      showDownload: true,
+      downloadDisabled: false
     },
     {
       title: "Certificate: Web Programming",
@@ -44,8 +62,8 @@ const CertificatesSection = () => {
       issuer: "Kreativstorm",
       date: "Jan 2025 – Feb 2025",
       skills: ["JS", "HTML", "CSS", "Git"],
-      startDate: new Date(2025, 0, 1), // January 2025
-      endDate: new Date(2025, 1, 28), // February 2025
+      startDate: new Date(2024, 10, 1), // January 2025
+      endDate: new Date(2024, 12, 1), // February 2025
       startYear: 2025,
       endYear: 2025,
       color: "bg-green-700",
@@ -149,7 +167,7 @@ const CertificatesSection = () => {
   // Base timeline reference dates (reversed: 2026 at top, 2018 at bottom)
   const timelineStart = new Date(2026, 11, 31); // December 31, 2026 (top)
   const timelineEnd = new Date(2018, 0, 1); // January 1, 2018 (bottom)
-  const timelineHeight = 1800; // Total timeline height in pixels
+  const timelineHeight = 2500; // Total timeline height in pixels
   
   // Calculate position based on actual date (reversed timeline)
   const getDatePosition = (date) => {
@@ -168,7 +186,7 @@ const CertificatesSection = () => {
     // Calculate height based on actual duration
     const startPos = getDatePosition(cert.startDate);
     const endPos = getDatePosition(cert.endDate);
-    return Math.abs(endPos - startPos) + 30; // Add minimum height for visibility
+    return Math.abs(endPos - startPos) + 20; // Add minimum height for visibility
   };
   
   const getBarTopPosition = (cert) => {
@@ -188,7 +206,7 @@ const CertificatesSection = () => {
         </p>
         
         {/* Timeline */}
-        <div className="max-w-6xl mx-auto relative" style={{ height: '2000px' }}>
+        <div className="max-w-6xl mx-auto relative" style={{ height: '2600px' }}>
           {/* Central timeline line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/20 h-full"></div>
           
@@ -209,7 +227,7 @@ const CertificatesSection = () => {
             
             // Custom positioning to avoid overlaps
             const getBarSide = (index) => {
-              const pattern = [true, false, true, false, true, false, true, false]; // Custom pattern
+              const pattern = [true, true, false, true, false, true, false, true, false]; // Custom pattern
               return pattern[index];
             };
             const isLeft = getBarSide(index);
@@ -249,7 +267,7 @@ const CertificatesSection = () => {
           {certificates.map((cert, index) => {
             // Define getBarSide function first
             const getBarSide = (index) => {
-              const pattern = [true, false, true, false, true, false, true, false];
+              const pattern = [true, true, false, true, false, true, false, true, false];
               return pattern[index];
             };
             const isLeft = getBarSide(index);
@@ -270,7 +288,7 @@ const CertificatesSection = () => {
             const baseShift = positionInSameSide * 25; // 25px per position away from line
             
             // Simplified card positioning: space cards evenly on each side
-            const cardSpacing = 320; // Reduced spacing between cards
+            const cardSpacing = 390; // spacing between cards
             
             // Count cards on the same side before this one
             let cardsOnSameSide = 0;

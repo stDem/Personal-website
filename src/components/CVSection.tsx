@@ -147,13 +147,23 @@ const CVSection = () => {
         <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Additional Diplomas and Certificates</h2>
         <div className="space-y-6">
 
+          <div className="border-l-4 border-secondary/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <div>
+                <h3 className="text-lg font-bold text-foreground">Amazon Web Services (AWS)</h3>
+                <p className="font-semibold text-secondary">Certificate: Generative AI with LLMs</p>
+              </div>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Aug 2025 – Sep 2025 / Online, DE</span>
+            </div>
+          </div>
+
           <div className="border-l-4 border-accent/30 pl-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
               <div>
                 <h3 className="text-lg font-bold text-foreground">DeepLearning.AI</h3>
                 <p className="font-semibold text-secondary">Certificate: Advanced Computer Vision with TensorFlow</p>
               </div>
-              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Aug 2025 – Sep 2025 / Online, DE</span>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Aug 2025 – Aug 2025 / Online, DE</span>
             </div>
           </div>
 
@@ -210,7 +220,7 @@ const CVSection = () => {
       </div>
 
       {/* Projects */}
-      <div className="bg-card rounded-lg p-8 border">
+      {/* <div className="bg-card rounded-lg p-8 border">
         <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Projects</h2>
         <div className="space-y-8">
           <div>
@@ -321,7 +331,7 @@ const CVSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
