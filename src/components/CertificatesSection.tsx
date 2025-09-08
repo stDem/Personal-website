@@ -19,7 +19,8 @@ const CertificatesSection = () => {
       verifyDisabled: false,
       downloadUrl: "https://drive.google.com/file/d/1j1AXJMxFbsRe25RZFFpkACg2_M9TqJlc/view?usp=sharing",
       showDownload: true,
-      downloadDisabled: false
+      downloadDisabled: false,
+      topPosition: -10
     },
     {
       title: "Certificate: Advanced Computer Vision with TensorFlow",
@@ -37,7 +38,8 @@ const CertificatesSection = () => {
       verifyDisabled: false,
       downloadUrl: "https://drive.google.com/file/d/1KL1WeY0aWs5DKwrhT6odHb8CS536XptI/view?usp=sharing",
       showDownload: true,
-      downloadDisabled: false
+      downloadDisabled: false,
+      topPosition: 40
     },
     {
       title: "Certificate: Web Programming",
@@ -55,7 +57,8 @@ const CertificatesSection = () => {
       verifyDisabled: true,
       downloadUrl: null,
       showDownload: true,
-      downloadDisabled: true
+      downloadDisabled: true,
+      topPosition: 0
     },
     {
       title: "Certificate: Frontend Development Hands-on Training",
@@ -73,7 +76,8 @@ const CertificatesSection = () => {
       verifyDisabled: false,
       downloadUrl: "https://drive.google.com/file/d/1uyCQ9A6x5pnyHTb0Dx1wNXey3FIVC9uI/view?usp=sharing",
       showDownload: true,
-      downloadDisabled: false
+      downloadDisabled: false,
+      topPosition: 45
     },
     {
       title: "Master's Degree in Computer Science: Artificial Intelligence",
@@ -91,7 +95,8 @@ const CertificatesSection = () => {
       verifyDisabled: true,
       downloadUrl: null,
       showDownload: true,
-      downloadDisabled: true
+      downloadDisabled: true,
+      topPosition: -250
     },
     {
       title: "Diploma of Professional Retraining: Frontend-developer Specialist",
@@ -107,7 +112,8 @@ const CertificatesSection = () => {
       showVerify: false,
       downloadUrl: "https://drive.google.com/file/d/1dcFE8WqWGWexKwEB987_o0jeaspga_hf/view?usp=sharing",
       showDownload: true,
-      downloadDisabled: false
+      downloadDisabled: false,
+      topPosition: 100
     },
     {
       title: "Certificate: Meta Front-End Developer",
@@ -125,7 +131,8 @@ const CertificatesSection = () => {
       verifyDisabled: false,
       downloadUrl: "https://drive.google.com/file/d/1GIpA_uCZyhsH4huttw5uWQC2KzVD4V5g/view?usp=sharing",
       showDownload: true,
-      downloadDisabled: false
+      downloadDisabled: false,
+      topPosition: 0
     },
     {
       title: "Diploma of Professional Retraining: Information Systems and Technologies",
@@ -141,7 +148,8 @@ const CertificatesSection = () => {
       showVerify: false,
       downloadUrl: "https://drive.google.com/file/d/1_4J6MJJI2BhkTevdrlkInwBgzPaSOrTP/view?usp=sharing",
       showDownload: true,
-      downloadDisabled: false
+      downloadDisabled: false,
+      topPosition: 0
     },
     {
       title: "Bachelor's Degree with Honors in Engineering: Automation of technological processes and production (Robotics)",
@@ -157,7 +165,8 @@ const CertificatesSection = () => {
       showVerify: false,
       downloadUrl: "https://drive.google.com/file/d/1wRo6ll5qoHGhMtaxyD6zUprTS4F_mO8t/view?usp=sharing",
       showDownload: true,
-      downloadDisabled: false
+      downloadDisabled: false,
+      topPosition: -400
     }
   ];
 
@@ -293,11 +302,11 @@ const CertificatesSection = () => {
             const topPosition = colorBlockCenter - 80; // Center card on bar center
             
             // Calculate connection line from color block center to card center
-            const cardCenter = topPosition + 80; // Approximate center of card height
-            const verticalConnectorOffset = cardCenter - colorBlockCenter;
+            // const cardCenter = topPosition + 80; // Approximate center of card height
+            // const verticalConnectorOffset = cardCenter - colorBlockCenter;
             
             return (
-              <div key={index} className="absolute flex items-center w-full" style={{ top: `${topPosition}px` }}>
+              <div key={index} className="absolute flex items-center w-full" style={{ top: `${topPosition + cert.topPosition}px` }}>
                 {isLeft ? (
                   <>
                     {/* Content on left */}
