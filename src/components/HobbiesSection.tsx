@@ -21,7 +21,7 @@ const HobbiesSection = () => {
     {
       title: "Swimming",
       icon: "𓆝",
-      description: "I have been sweemming since I was 3 years old and absolutely love the feeling of being in water.",
+      description: "I have been swimming since I was 3 years old and absolutely love the feeling of being in water.",
       detailedDescription: "Swimming has become one of my favorite activities. I've been swimming since I was 3 years old, and until middle school I did it professionaly, which developed my resilience and determination. Now I do this sport to maintain my health and activity. There's something incredibly peaceful about being in the water - it's both a great workout and a form of meditation for me.",
       highlights: ["more than 21 years current practice", "8 years professional childhood training", "Pool and open water swimming"],
       color: "text-blue-90",
