@@ -4,7 +4,7 @@ import { Download, ExternalLink } from "lucide-react";
 const CertificatesSection = () => {
   const certificates = [
       {
-      title: "Generative AI with LLMs",
+      title: "Certificate: Generative AI with LLMs",
       issuer: "Amazon Web Services (AWS)",
       date: "Aug 2025 – Sep 2025",
       skills: ["Generative AI", "LLM", "Transformers"],
