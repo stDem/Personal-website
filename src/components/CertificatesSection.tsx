@@ -39,7 +39,7 @@ const CertificatesSection = () => {
       downloadUrl: "https://drive.google.com/file/d/1KL1WeY0aWs5DKwrhT6odHb8CS536XptI/view?usp=sharing",
       showDownload: true,
       downloadDisabled: false,
-      topPosition: 43
+      topPosition: 45
     },
     {
       title: "Certificate: Web Programming",
