@@ -18,7 +18,7 @@ const ProjectsSection = () => {
       // live: "https://uxray.anst-dem.com/",
       status: "Completed",
       category: "ai",
-      image: "../assets/main.png"
+      image: "/lovable-uploads/main.png"
     },
       {
       title: "AI Web Design Analysis",
