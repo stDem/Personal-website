@@ -10,6 +10,17 @@ const ProjectsSection = () => {
 
   const aiProjects = [
       {
+      title: "Autonomous driving car JetRacer NVIDIA",
+      description: "This project combines supervised learning approach and object detection (YOLO) to enable the car drive automously and to recognize road signs and obstacles on the road and apply rules based on detection.",
+      tech: ["ML", "Supervised Learning", "Object Detection (YOLO)"],
+      github: "https://github.com/stDem/Autonomous-driving-car-JetRacer-NVIDIA",
+      // live: "https://web-design-oracle.lovable.app/",
+      // live: "https://uxray.anst-dem.com/",
+      status: "Completed",
+      category: "ai",
+      image: "../assets/main.png"
+    },
+      {
       title: "AI Web Design Analysis",
       description: "Modern web application that leverages AI APIs to analyze and provide insights on web design patterns, user experience, and design best practices.",
       tech: ["AI API", "React", "TypeScript", "Tailwind CSS"],

@@ -82,7 +82,7 @@ const CertificatesSection = () => {
     {
       title: "Master's Degree in Computer Science: Artificial Intelligence",
       issuer: "Technische Hochschule Würzburg-Schweinfurt",
-      date: "Mar 2024 – Mar 2026",
+      date: "Mar 2024 – Ongoing",
       skills: ["Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks"],
       startDate: new Date(2024, 2, 1), // March 2024
       endDate: new Date(2026, 2, 31), // March 2026
@@ -208,7 +208,7 @@ const CertificatesSection = () => {
   return (
     <section id="certificates" className="sketchy-section">
       <div className="container mx-auto px-4">
-        <h2 className="sketchy-title text-center">Certificates & Qualifications</h2>
+        <h2 className="sketchy-title text-center">Education & Qualifications</h2>
         <p className="text-xl text-center font-handwrite text-muted-foreground mb-12 max-w-3xl mx-auto">
           Continuous learning is my passion! Here are some certifications that validate 
           my skills and commitment to stay up to date with the latest technology.

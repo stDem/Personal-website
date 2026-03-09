@@ -69,8 +69,8 @@ const Footer = ({ currentSection, onSectionChange }: FooterProps) => {
               {[
                 { id: 'personal', name: 'About' },
                 { id: 'projects', name: 'Projects' },
-                { id: 'certificates', name: 'Certificates' },
-                // { id: 'achievements', name: 'Achievements' },
+                { id: 'certificates', name: 'Education' },
+                { id: 'achievements', name: 'Achievements' },
                 { id: 'hobbies', name: 'Hobbies' }
               ].map((item) => (
                 <button

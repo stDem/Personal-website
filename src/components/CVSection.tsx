@@ -41,6 +41,17 @@ const CVSection = () => {
       <div className="bg-card rounded-lg p-8 border mb-8">
         <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Experience</h2>
         <div className="space-y-8">
+
+          <div className="border-l-4 border-secondary/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <div>
+                <h3 className="text-xl font-bold text-foreground">BMW Group</h3>
+                <p className="font-semibold text-secondary">AI Intern - QMT Front Desk Lab</p>
+              </div>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Feb 2026 – Ongoing / Munich, DE</span>
+            </div>
+          </div>
+
           <div className="border-l-4 border-primary/30 pl-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
               <div>
