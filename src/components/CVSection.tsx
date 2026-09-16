@@ -5,11 +5,7 @@ const CVSection = () => {
       <div className="bg-card rounded-lg p-8 border mb-8">
         <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Summary</h2>
         <p className="text-muted-foreground leading-relaxed">
-          <strong className="text-foreground">Artificial Intelligence</strong> Master's student with a solid foundation in Machine learning, Natural Language Processing 
-          (with expertise in LLM, LoRA, BERT, GPT, LLaMA etc.), Deep Learning, GenAI, and Computer Vision, and strong analytical skills. 
-          Possess a knowledge of databases SQL and Web development technologies, supporting the seamless integration of AI models into 
-          interactive applications. Pursued a bachelor's degree in Robotics with a strong knowledge in industrial automation. Known for a 
-          strong sense of responsibility, adaptability, and a continuous drive to learn and improve in both technical and collaborative environments.
+          <strong className="text-foreground">Artificial Intelligence</strong> Master’s student with practical experience in Machine Learning, Deep Learning, Computer Vision and data-driven AI solutions with extend experience in web development. Currently conducting my Master’s thesis at BMW Group following an AI internship, developing AI-based solutions for real-world industrial use cases. Holds a Bachelor’s degree in Robotics with an automotive focus and more than 2.5 years of experience as a Design Engineer for industrial automation. Strong background in robotics, engineering design and industrial processes, combined with hands-on AI development and a strong interest in Physical AI and intelligent production systems.
         </p>
       </div>
 
@@ -38,9 +34,23 @@ const CVSection = () => {
       </div>
 
       {/* Experience */}
+
       <div className="bg-card rounded-lg p-8 border mb-8">
         <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Experience</h2>
         <div className="space-y-8">
+
+          <div className="border-l-4 border-primary/30 pl-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
+              <div>
+                <h3 className="text-xl font-bold text-foreground">BMW Group</h3>
+                <p className="font-semibold text-secondary">Master Thesis - QMT Front Desk Lab</p>
+              </div>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Aug 2026 – Nov 2026 / Munich, DE</span>
+            </div>
+            <div className="mt-3 space-y-2">
+              <p className="text-muted-foreground">• Topic: "KI-gestützte Optimierung des Incidentprozess in der Kaufteilqualität Werke der BMW Group."</p>
+            </div>
+          </div>
 
           <div className="border-l-4 border-secondary/30 pl-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
@@ -48,7 +58,10 @@ const CVSection = () => {
                 <h3 className="text-xl font-bold text-foreground">BMW Group</h3>
                 <p className="font-semibold text-secondary">AI Intern - QMT Front Desk Lab</p>
               </div>
-              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Feb 2026 – Ongoing / Munich, DE</span>
+              <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">Feb 2026 – Jul 2026 / Munich, DE</span>
+            </div>
+            <div className="mt-3 space-y-2">
+              <p className="text-muted-foreground">• Design and development of AI solutions to automate and improve cross-plant quality processes</p>
             </div>
           </div>
 
@@ -99,32 +112,33 @@ const CVSection = () => {
       <div className="bg-card rounded-lg p-8 border mb-8">
         <h2 className="text-3xl font-bold mb-6 text-primary border-b border-border pb-3">Skills</h2>
         <div className="grid gap-6">
+
           <div className="p-4 bg-muted/50 rounded-lg">
             <h4 className="font-bold text-foreground mb-3">Programming Languages</h4>
             <div className="flex flex-wrap gap-2">
-              {["Python", "JavaScript/TypeScript", "HTML5", "CSS/SCSS", "SQL"].map((skill) => (
+              {["Python", "JavaScript/TypeScript", "SQL", "C# (basic)", "C++ (basic)"].map((skill) => (
                 <span key={skill} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
                   {skill}
                 </span>
               ))}
             </div>
           </div>
-          
+
           <div className="p-4 bg-muted/50 rounded-lg">
-            <h4 className="font-bold text-foreground mb-3">Software Development</h4>
+            <h4 className="font-bold text-foreground mb-3">AI & ML</h4>
             <div className="flex flex-wrap gap-2">
-              {["GIT", "Node.js", "API", "Linux", "My-SQL-Workbench", "Programming Paradigms"].map((skill) => (
+              {["PyTorch", "TensorFlow", "scikit-learn", "Numpy", "Pandas", "Keras", "Flask", "Deep Learning", "Computer Vision", "Machine Learning", "Multimodal AI"].map((skill) => (
                 <span key={skill} className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">
                   {skill}
                 </span>
               ))}
             </div>
           </div>
-          
+
           <div className="p-4 bg-muted/50 rounded-lg">
-            <h4 className="font-bold text-foreground mb-3">Python Frameworks & Libraries</h4>
+            <h4 className="font-bold text-foreground mb-3">LLM & Generative AI</h4>
             <div className="flex flex-wrap gap-2">
-              {["PyTorch", "TensorFlow", "Numpy", "Pandas", "Keras", "Flask", "scikit-learn", "Jupyter"].map((skill) => (
+              {["LLMs", "Generative AI", "Transformers", "Hugging Face", "RAG", "LangGraph", "LangChain", "LoRA / PEFT"].map((skill) => (
                 <span key={skill} className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">
                   {skill}
                 </span>
@@ -133,9 +147,42 @@ const CVSection = () => {
           </div>
           
           <div className="p-4 bg-muted/50 rounded-lg">
-            <h4 className="font-bold text-foreground mb-3">Web Frameworks & Libraries</h4>
+            <h4 className="font-bold text-foreground mb-3">MLOps & Cloud</h4>
             <div className="flex flex-wrap gap-2">
-              {["React JS", "Vue.js", "Bootstrap", "Chakra UI", "Material UI"].map((skill) => (
+              {["Docker", "AWS", "CI/CD", "Kubernetes", "Cloud Computing", "REST APIs", "Git", "Linux"].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <div className="p-4 bg-muted/50 rounded-lg">
+            <h4 className="font-bold text-foreground mb-3">Engineering & Automation</h4>
+            <div className="flex flex-wrap gap-2">
+              {["Industrial Automation", "Robotics", "CAD", "Robot Simulation", "Technical Design", "Engineering Standards / ISO"].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <div className="p-4 bg-muted/50 rounded-lg">
+            <h4 className="font-bold text-foreground mb-3">Data & Databases</h4>
+            <div className="flex flex-wrap gap-2">
+              {["MySQL", "SQL", "Data Processing", "Data Analysis", "Pipelines"].map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <div className="p-4 bg-muted/50 rounded-lg">
+            <h4 className="font-bold text-foreground mb-3">Web Development</h4>
+            <div className="flex flex-wrap gap-2">
+              {["React JS", "Vue.js", "Node.js", "REST APIs", "API Integration", "HTML5", "CSS/SCSS", "Bootstrap"].map((skill) => (
                 <span key={skill} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
                   {skill}
                 </span>
