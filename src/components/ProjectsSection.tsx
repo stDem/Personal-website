@@ -159,6 +159,7 @@ const ProjectsSection = () => {
     }
   };
 
+  
   return (
     <section id="projects" className="sketchy-section">
       <div className="container mx-auto px-4">
