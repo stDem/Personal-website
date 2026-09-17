@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Brain, Globe } from "lucide-react";
 import { useState } from "react";
 
-// Import project images - using placeholders for now
 const projectPlaceholder = "/placeholder.svg";
 
 const ProjectsSection = () => {
@@ -14,72 +13,64 @@ const ProjectsSection = () => {
       description: "This project combines supervised learning approach and object detection (YOLO) to enable the car drive automously and to recognize road signs and obstacles on the road and apply rules based on detection.",
       tech: ["ML", "Supervised Learning", "Object Detection (YOLO)"],
       github: "https://github.com/stDem/Autonomous-driving-car-JetRacer-NVIDIA",
-      // live: "https://web-design-oracle.lovable.app/",
-      // live: "https://uxray.anst-dem.com/",
       status: "Completed",
       category: "ai",
-      image: "/lovable-uploads/main.png"
+      image: projectPlaceholder
     },
       {
       title: "AI Web Design Analysis",
       description: "Modern web application that leverages AI APIs to analyze and provide insights on web design patterns, user experience, and design best practices.",
       tech: ["AI API", "React", "TypeScript", "Tailwind CSS"],
       github: "https://github.com/stDem/AI-Web-Design-Analysis",
-      live: "https://web-design-oracle.lovable.app/",
-      // live: "https://uxray.anst-dem.com/",
+      live: "https://uxray.anst-dem.com/",
       status: "In Progress",
       category: "ai",
-      image: "/lovable-uploads/uxray.png"
+      image: projectPlaceholder
     },
     {
       title: "Dota2 Draft Prediction",
       description: "A web application that helps players predict the best hero picks in Dota 2 drafts using machine learning based on ally and enemy picks and provides detailed explanations using NLP.",
       tech: ["ML", "NLP", "JavaScript", "HTML", "CSS"],
       github: "https://github.com/stDem/Dota2-draft-prediction",
-      // live: "https://anst-dem.com/",
       status: "Completed",
       category: "ai",
-      image: "/lovable-uploads/dota.png"
+      image: projectPlaceholder
     },
     {
       title: "Fall Detection System",
       description: "Comprehensive fall detection solution combining machine learning, computer vision, mobile app development, and chatbot integration for elderly care and safety monitoring.",
       tech: ["ML", "Computer Vision", "Mobile App", "Chatbot"],
       github: "https://github.com/stDem/Fall-Detection-Project",
-      // live: "https://anst-dem.com/",
       status: "Completed",
       category: "ai",
-      image: "/lovable-uploads/fall.jpeg"
+      image: projectPlaceholder
     },
     {
       title: "Handwritten Japanese characters Classification",
       description: "This project aimed to train different classification neural network models (VGG, ResNet, EfficientNet, HybridVGGResNet) using several TRAIN datasets and evaluate it on several TEST datasets.",
       tech: ["Deep Learning", "Python", "CNN models"],
       github: "https://github.com/stDem/ANN-numpy-array-images",
-      // live: "https://anst-dem.com/",
       status: "Completed",
       category: "ai",
-      image: "/lovable-uploads/kmnist.png"
+      image: projectPlaceholder
     },
     {
       title: "All computer vision projects",
       description: "Collection of Computer Vision projects implementing various neural network architectures for Image Segmetation, Object Detection, and data Visualization.",
       tech: ["Computer Vision", "Python", "CNN models"],
       github: "https://github.com/stDem/ANN-numpy-array-images",
-      // live: "https://anst-dem.com/",
       status: "Completed",
       category: "ai",
-      image: "/lovable-uploads/"
+      image: projectPlaceholder
     },
     {
       title: "Motion Classification System",
       description: "Machine learning model designed to classify different types of human motions and activities using sensor data and pattern recognition algorithms.",
       tech: ["ML", "Python", "Pattern Recognition"],
       github: "https://github.com/stDem/Motions-classification",
-      // live: "https://anst-dem.com/",
       status: "Completed",
       category: "ai",
-      image: "/lovable-uploads/motion.png"
+      image: projectPlaceholder
     }
   ];
 
@@ -92,7 +83,7 @@ const ProjectsSection = () => {
       live: "https://anst-dem.com/",
       status: "In Progress",
       category: "web",
-      image: "/lovable-uploads/portfolio.png"
+      image: projectPlaceholder
     },
     {
       title: "Work Space Website",
@@ -102,7 +93,7 @@ const ProjectsSection = () => {
       live: "https://workspace.anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: "/lovable-uploads/dcc5c4a2-cb63-4fd8-8bed-85a7f7e75cec.png"
+      image: projectPlaceholder
     },
         {
       title: "Old Portfolio Website",
@@ -112,7 +103,7 @@ const ProjectsSection = () => {
       live: "https://portfolio.anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: "/lovable-uploads/34441cb5-7ee7-44e5-9720-1c4dc2a34957.png"
+      image: projectPlaceholder
     },
     {
       title: "Little Lemon Restaurant",
@@ -122,7 +113,7 @@ const ProjectsSection = () => {
       live: "https://littlelemon.anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: "/lovable-uploads/84f5ab7a-4645-4085-b16a-f6a0a14389e6.png"
+      image: projectPlaceholder
     },
     {
       title: "Interior Design Portfolio",
@@ -132,7 +123,7 @@ const ProjectsSection = () => {
       live: "https://interiordesign.anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: "/lovable-uploads/8fbce848-a219-4aac-be1c-cc135d7aefab.png"
+      image: projectPlaceholder
     },
     {
       title: "Auto Service Website",
@@ -142,7 +133,7 @@ const ProjectsSection = () => {
       live: "https://autoservice.anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: "/lovable-uploads/f9f1b27a-7857-4e58-87c0-3e4e638adfef.png"
+      image: projectPlaceholder
     }
   ];
 
@@ -159,7 +150,6 @@ const ProjectsSection = () => {
     }
   };
 
-  
   return (
     <section id="projects" className="sketchy-section">
       <div className="container mx-auto px-4">
@@ -169,7 +159,6 @@ const ProjectsSection = () => {
           Each one represents a unique challenge and learning experience!
         </p>
         
-        {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
           <div className="inline-flex bg-background border rounded-lg p-1 shadow-sm">
             <button
@@ -258,37 +247,33 @@ const ProjectsSection = () => {
                 >
                   <a 
                     href={project.github} 
-                    target="_blank" 
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2"
                   >
                     <Github className="w-4 h-4" />
-                    Code
+                    GitHub
                   </a>
                 </Button>
-                <Button
-                  variant="default"
-                  size="sm"
-                  className="sketchy-btn flex-1"
-                  asChild={!!project.live}
-                  disabled={!project.live}
-                >
-                  {project.live ? (
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
+
+                {project.live && (
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="flex-1"
+                    asChild
+                  >
+                    <a
+                      href={project.live}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2"
                     >
                       <ExternalLink className="w-4 h-4" />
-                      Live
+                      Live Demo
                     </a>
-                  ) : (
-                    <span className="inline-flex items-center justify-center gap-2">
-                      <ExternalLink className="w-4 h-4" />
-                      Live
-                    </span>
-                  )}</Button>
+                  </Button>
+                )}
               </div>
             </div>
           ))}
