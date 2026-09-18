@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Brain, Globe } from "lucide-react";
 import { useState } from "react";
 
-const projectPlaceholder = "/placeholder.svg";
+const projectPlaceholder = "/lovable-uploads/portfolio.png";
 
 const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -10,12 +10,12 @@ const ProjectsSection = () => {
   const aiProjects = [
       {
       title: "Autonomous driving car JetRacer NVIDIA",
-      description: "This project combines supervised learning approach and object detection (YOLO) to enable the car drive automously and to recognize road signs and obstacles on the road and apply rules based on detection.",
+      description: "This project combines supervised learning approach and object detection (YOLO) to enable the car drive autonomously and to recognize road signs and obstacles on the road and apply rules based on detection.",
       tech: ["ML", "Supervised Learning", "Object Detection (YOLO)"],
       github: "https://github.com/stDem/Autonomous-driving-car-JetRacer-NVIDIA",
       status: "Completed",
       category: "ai",
-      image: projectPlaceholder
+      image: "/lovable-uploads/main.png"
     },
       {
       title: "AI Web Design Analysis",
@@ -25,7 +25,7 @@ const ProjectsSection = () => {
       live: "https://uxray.anst-dem.com/",
       status: "In Progress",
       category: "ai",
-      image: projectPlaceholder
+      image: "/lovable-uploads/uxray.png"
     },
     {
       title: "Dota2 Draft Prediction",
@@ -34,7 +34,7 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/Dota2-draft-prediction",
       status: "Completed",
       category: "ai",
-      image: projectPlaceholder
+      image: "/lovable-uploads/dota.png"
     },
     {
       title: "Fall Detection System",
@@ -43,7 +43,7 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/Fall-Detection-Project",
       status: "Completed",
       category: "ai",
-      image: projectPlaceholder
+      image: "/lovable-uploads/fall.jpeg"
     },
     {
       title: "Handwritten Japanese characters Classification",
@@ -52,7 +52,7 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/ANN-numpy-array-images",
       status: "Completed",
       category: "ai",
-      image: projectPlaceholder
+      image: "/lovable-uploads/kmnist.png"
     },
     {
       title: "All computer vision projects",
@@ -70,7 +70,7 @@ const ProjectsSection = () => {
       github: "https://github.com/stDem/Motions-classification",
       status: "Completed",
       category: "ai",
-      image: projectPlaceholder
+      image: "/lovable-uploads/motion.png"
     }
   ];
 
@@ -83,7 +83,7 @@ const ProjectsSection = () => {
       live: "https://anst-dem.com/",
       status: "In Progress",
       category: "web",
-      image: projectPlaceholder
+      image: "/lovable-uploads/portfolio.png"
     },
     {
       title: "Work Space Website",
@@ -93,7 +93,7 @@ const ProjectsSection = () => {
       live: "https://workspace.anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: projectPlaceholder
+      image: "/lovable-uploads/dcc5c4a2-cb63-4fd8-8bed-85a7f7e75cec.png"
     },
         {
       title: "Old Portfolio Website",
@@ -103,7 +103,7 @@ const ProjectsSection = () => {
       live: "https://portfolio.anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: projectPlaceholder
+      image: "/lovable-uploads/34441cb5-7ee7-44e5-9720-1c4dc2a34957.png"
     },
     {
       title: "Little Lemon Restaurant",
@@ -113,7 +113,7 @@ const ProjectsSection = () => {
       live: "https://littlelemon.anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: projectPlaceholder
+      image: "/lovable-uploads/84f5ab7a-4645-4085-b16a-f6a0a14389e6.png"
     },
     {
       title: "Interior Design Portfolio",
@@ -123,7 +123,7 @@ const ProjectsSection = () => {
       live: "https://interiordesign.anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: projectPlaceholder
+      image: "/lovable-uploads/8fbce848-a219-4aac-be1c-cc135d7aefab.png"
     },
     {
       title: "Auto Service Website",
@@ -133,7 +133,7 @@ const ProjectsSection = () => {
       live: "https://autoservice.anst-dem.com/",
       status: "Completed",
       category: "web",
-      image: projectPlaceholder
+      image: "/lovable-uploads/f9f1b27a-7857-4e58-87c0-3e4e638adfef.png"
     }
   ];
 
