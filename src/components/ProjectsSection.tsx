@@ -60,8 +60,7 @@ const ProjectsSection = () => {
       tech: ["Computer Vision", "Python", "CNN models"],
       github: "https://github.com/stDem/ANN-numpy-array-images",
       status: "Completed",
-      category: "ai",
-      image: projectPlaceholder
+      category: "ai"
     },
     {
       title: "Motion Classification System",
